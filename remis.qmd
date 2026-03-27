@@ -105,4 +105,153 @@ C(\theta^{(1)}) = C(\phi(\theta^{(2)})),
 where \( C(\cdot) \) denotes the theoretical claim supported by the estimand. 
 In this case, replication is evaluated at the level of theoretical equivalence rather than parameter identity.
 
+### Replicating Structural Equation Models
 
+According to @Kaplan2009, structural equation modeling (SEM) comprises a class of methodologies designed to express a hypothesized model through summary statistics derived from empirical observations, parameterized by a reduced set of structural parameters.
+As SEMs are also considered to be a way to formulate social science theories[@DeLeeuw2009], for a SEM to be deemed replicated, the encompassed theory needs to hold in the data, either globally or regarding certain parameters.
+
+For models involving continuous latent variables, the associated hypotheses typically pertain to the means, variances, and covariances of the observed variables. 
+Hypotheses may also concern effect sizes, ordering of parameter magnitudes, or specific parameter values. 
+Because SEMs often contain many estimated parameters, replication should generally focus on those outcomes that are substantively relevant to the hypothesis under study.
+
+#### Global model fit versus parameter-level replication
+
+Global model fit concerns the adequacy of the model-implied covariance structure. 
+Let \( \boldsymbol{\Sigma}(\theta) \) denote the covariance matrix implied by the model parameters \( \theta \), and let \( \mathbf{S}^{(d)} \) denote the observed covariance matrix in dataset \( d \). 
+Global fit evaluates whether
+
+\[
+\boldsymbol{\Sigma}(\theta) \approx \mathbf{S}^{(d)}.
+\]
+
+Equivalently, one may express this through a fitting function \( F \) such that replication at the level of global fit would require
+
+\[
+F\!\left(\mathbf{S}^{(d)}, \boldsymbol{\Sigma}(\hat{\theta}^{(d)})\right)
+\]
+
+to be sufficiently small for both \( d = 1 \) and \( d = 2 \).
+
+However, good global fit in both datasets does not imply replication at the level of parameters. 
+In general,
+
+\[
+\boldsymbol{\Sigma}(\theta^{(1)}) \approx \boldsymbol{\Sigma}(\theta^{(2)})
+\]
+
+does not imply
+
+\[
+\theta^{(1)} \approx \theta^{(2)}.
+\]
+
+Multiple parameter configurations may produce similar model-implied covariance structures. 
+Global fit therefore concerns the adequacy of the model-implied distribution, whereas replication at the level of parameters concerns the stability of theoretically relevant estimands.
+
+Accordingly, let \( \theta^* \subset \theta \) denote the subset of parameters that encode the substantive claim of interest. 
+Replication at the level of parameters is defined as
+
+\[
+\theta^{*(1)} \approx \theta^{*(2)}.
+\]
+
+This formulation captures replication as stability of theory-relevant parameters, rather than mere admissibility of the overall model.
+
+If i aim at replication it is therefore reasonable to treat both datasets as independent realizations of the same underlying model.
+Thus, a problem of symmetric parameter comparison across datasets. 
+In a multiple-group SEM framework, parameters are estimated freely in both datasets and then compared through equality constraints imposed across groups. 
+This reflects the null hypothesis
+
+\[
+H_0: \theta^{*(1)} = \theta^{*(2)},
+\]
+
+which is formulated at the level of population parameters rather than sample-specific estimates. 
+Because exact equality is often too strict a criterion, approximate formulations are more plausible, for example
+
+\[
+|\theta^{*(1)} - \theta^{*(2)}| \le \epsilon,
+\]
+
+for a substantively justified tolerance \( \epsilon \).
+
+Under this perspective, replication of SEMs can be treated as analogous to invariance testing across groups, with datasets taking the role of groups. 
+Where MI is conditional on group definitions, replication is conditional on data independence. 
+Formally,
+
+\[
+\text{Replication} \Longleftrightarrow \theta^{*(d)} \text{ is stable across } d.
+\]
+
+This makes the relation to MI and SI explicit: both invariance testing and replication evaluate robustness of parameters under variation, differing mainly in the source of that variation.
+Replication of SEMs across an original and a replication sample should therefore proceed within a sequential multiple-group manner. 
+First, measurement invariance between the two samples has to be established:
+
+\[
+\theta_M^{(1)} = \theta_M^{(2)}.
+\]
+
+At least metric invariance is required for structural parameters to be meaningfully compared, because without comparable factor loadings, differences in structural relations may reflect measurement non-equivalence rather than substantive divergence. 
+Conditional on sufficient measurement invariance, structural replication is assessed by comparing an unconstrained multiple-group model, in which the structural parameters of interest are freely estimated across datasets, with a constrained model in which they are set to be equal:
+
+\[
+H_0: \theta_S^{*(1)} = \theta_S^{*(2)}.
+\]
+
+This comparison could be evaluated with a likelihood-ratio statistic,
+
+\[
+\Delta \chi^2 = -2(\ell_C - \ell_U),
+\]
+
+where \( \ell_C \) and \( \ell_U \) denote the log-likelihoods of the constrained and unconstrained models, respectively. 
+A statistically non-significant deterioration in model fit is compatible with structural stability of the targeted parameters, whereas a statistically significant deterioration indicates instability. 
+At the same time, such tests should be interpreted cautiously because they are sensitive to sample size and do not by themselves capture uncertainty in a substantively calibrated way.
+
+At the level of parameters, again some would consider SEMs replicated when the statistical significance of paths and correlations is consistent across studies. 
+However, failure to reproduce statistical significance does not necessarily imply non-replication, because significance is highly sensitive to sampling variability, statistical power, and measurement error. Replication should therefore not be reduced to consistency of significance decisions alone.
+This implies that replication of SEMs is best understood as a graded, parameter- and claim-relative process.  
+Let
+
+\[
+\theta^* = \{\theta_1, \dots, \theta_r\}
+\]
+
+denote the set of parameters relevant to the theoretical claim of interest. 
+Replication can then be represented as the vector
+
+\[
+R = \left(
+\mathbb{I}\left(|\theta_j^{(1)} - \theta_j^{(2)}| \le \epsilon_j\right)
+\right)_{j=1}^r,
+\]
+
+where \( \mathbb{I}(\cdot) \) is an indicator function and \( \epsilon_j \) is a substantively justified tolerance for parameter \( j \). 
+Full replication corresponds to the case in which all relevant parameters are stable, whereas partial replication corresponds to stability of only a subset of them. 
+
+This perspective renders approximate and partial replication theoretically grounded rather than ad hoc. 
+Limited deviations in parameter estimates can then be interpreted as meaningful quantitative differences rather than categorical failures of replication, paralleling contemporary approaches to approximate invariance.
+It follows that models in their entirety should not be treated as the primary objects of replication. 
+Rather, models serve as entry points for evaluating the stability of the theoretical commitments they encode. 
+This shifts attention away from global model fit toward the robustness of substantively meaningful parameters. 
+In this sense, global fit is a necessary but not sufficient condition for replication:
+
+\[
+\text{Replication} \Rightarrow \text{adequate model fit},
+\]
+
+but the converse does not hold. 
+Measurement quality also becomes central to replication validity, because instability across datasets may reflect violations of
+
+\[
+\theta_M^{(1)} = \theta_M^{(2)}
+\]
+
+rather than instability of structural relations. 
+Replication claims that do not explicitly address measurement equivalence therefore remain ambiguous.
+
+Conceptual replication has a formal structure under this perspective as it concerns stability of higher-level theoretical claims under deliberate changes in operationalization. 
+This can be understood as stability of \( C(\cdot) \) under transformations of the estimand space, rather than equality of the same parameter across datasets. 
+Replication success therefore becomes explicitly conditional on the estimand, the theoretical scope, and the operational context, requiring precise statements about what exactly has or has not replicated.
+The distinction between invariance testing and replication may therefore be understood as one of scope rather than kind. 
+Invariance evaluates stability across groups within a dataset, whereas replication evaluates stability across independent datasets or study instantiations, but both address the same underlying question of robustness under variation.
