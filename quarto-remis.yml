@@ -1,0 +1,19 @@
+project:
+  type: manuscript
+
+manuscript:
+  title: "ReMis"
+
+bibliography: references.bib
+
+format:
+  pdf:
+    documentclass: apa7
+    classoption:
+      - man
+    papersize: letter
+    fontsize: 12pt
+    linestretch: 2
+    geometry: margin=1in
+    header-includes:
+      - \usepackage{csquotes}
