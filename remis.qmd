@@ -1,5 +1,66 @@
 ## Remis [A fun title could go here]
 
+### Invariance Testing
 Measurement invariance (MI) refers to the statistical property that a measurement instrument assesses the same latent construct equivalently across different groups. 
 In other words, the measurement model operates in the same manner across groups. 
 When MI is established, meaningful comparisons of the underlying construct between groups are justified.
+
+Let \( \mathbf{y}_i^{(g)} \) denote the observed variables for individual \( i \) in group \( g \), and let \( \boldsymbol{\eta}_i^{(g)} \) denote the corresponding latent variables. 
+The measurement model can be written as
+
+\[
+\mathbf{y}_i^{(g)} = \boldsymbol{\nu}^{(g)} + \boldsymbol{\Lambda}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\varepsilon}_i^{(g)},
+\]
+
+where \( \boldsymbol{\Lambda}^{(g)} \) is the loading matrix, \( \boldsymbol{\nu}^{(g)} \) is the intercept vector, and \( \boldsymbol{\varepsilon}_i^{(g)} \) is the residual term with covariance matrix \( \boldsymbol{\Theta}^{(g)} \). 
+From a statistical modelling perspective, MI refers to invariance of the measurement parameters across groups:
+
+\[
+\theta_M^{(g)} = \theta_M \quad \forall g,
+\]
+
+where
+
+\[
+\theta_M = \{ \boldsymbol{\Lambda}, \boldsymbol{\nu}, \boldsymbol{\Theta} \}.
+\]
+
+*Structural invariance* (SI), by contrast, refers to equality of structural coefficients across groups, that is, to the requirement that the same association between latent factors exists across groups. 
+The structural model may be written as
+
+\[
+\boldsymbol{\eta}_i^{(g)} = \boldsymbol{\alpha}^{(g)} + \mathbf{B}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\zeta}_i^{(g)},
+\]
+
+where \( \mathbf{B}^{(g)} \) contains the structural coefficients, \( \boldsymbol{\alpha}^{(g)} \) contains latent intercepts, and \( \boldsymbol{\zeta}_i^{(g)} \) has covariance matrix \( \boldsymbol{\Psi}^{(g)} \). 
+SI is then defined as
+
+\[
+\theta_S^{(g)} = \theta_S \quad \forall g,
+\]
+
+with
+
+\[
+\theta_S = \{ \mathbf{B}, \boldsymbol{\alpha}, \boldsymbol{\Psi} \}.
+\]
+
+Traditionally, MI and SI are characterized via increasingly strict levels of invariance that each add further restrictions on statistical parameters across groups. 
+In the classical view, MI is attained only when configural, metric, scalar, and residual invariance hold. 
+These correspond to successive equality restrictions on \( \boldsymbol{\Lambda}^{(g)} \), \( \boldsymbol{\nu}^{(g)} \), and \( \boldsymbol{\Theta}^{(g)} \).
+More recent perspectives conceptualize invariance as the absence of systematic moderation of key parameters by variables external to the measurement model. 
+Formally, if model parameters depend on group membership through
+
+\[
+\theta(g) = \theta + \Delta(g),
+\]
+
+then invariance corresponds to the condition
+
+\[
+\Delta(g) = 0 \quad \forall g.
+\]
+
+Covariance invariance analyses evaluate whether the unstandardized covariances among latent factors, represented by elements of \( \boldsymbol{\Psi}^{(g)} \), are equivalent across groups, whereas SI analyses examine whether the structural coefficients \( \mathbf{B}^{(g)} \) are equal across groups. 
+These analyses are required to determine whether predictive and non-predictive relationships between latent factors are invariant or moderated across groups within a theoretical model.
+
