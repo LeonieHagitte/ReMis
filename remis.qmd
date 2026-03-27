@@ -1,0 +1,5 @@
+## Remis [A fun title could go here]
+
+Measurement invariance (MI) refers to the statistical property that a measurement instrument assesses the same latent construct equivalently across different groups. 
+In other words, the measurement model operates in the same manner across groups. 
+When MI is established, meaningful comparisons of the underlying construct between groups are justified.
