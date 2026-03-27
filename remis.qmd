@@ -1,6 +1,7 @@
 ## Remis [A fun title could go here]
 
 ### Invariance Testing
+
 Measurement invariance (MI) refers to the statistical property that a measurement instrument assesses the same latent construct equivalently across different groups. 
 In other words, the measurement model operates in the same manner across groups. 
 When MI is established, meaningful comparisons of the underlying construct between groups are justified.
@@ -63,4 +64,45 @@ then invariance corresponds to the condition
 
 Covariance invariance analyses evaluate whether the unstandardized covariances among latent factors, represented by elements of \( \boldsymbol{\Psi}^{(g)} \), are equivalent across groups, whereas SI analyses examine whether the structural coefficients \( \mathbf{B}^{(g)} \) are equal across groups. 
 These analyses are required to determine whether predictive and non-predictive relationships between latent factors are invariant or moderated across groups within a theoretical model.
+
+### Replication
+
+Replication is the ability to obtain consistent findings when a study is repeated with new independent data being collected under the same or sufficiently similar methodological and theoretical conditions as the original study. 
+In the context of empirical research, a finding can be understood at different analytical levels: as an empirical regularity, as an estimand-based claim, or as a theoretical claim about an underlying mechanism that generates observed patterns. 
+The type or extent of replication relevant to a finding depends on which of these levels the finding is defined at. 
+
+@Radder1992 characterizes replication as comprising three distinct forms: (a) material replication; (b) reproducibility of the theoretical interpretation; and (c) replication of the experimental result through an alternative material procedure.
+@Schmidt2009 builds on this definition and establishes the concepts of direct replication as a restrictive and narrow form of replication and conceptual replication as a wider notion of replication. 
+
+Let \( d \in \{1,2\} \) index datasets, with \( d = 1 \) denoting the original study and \( d = 2 \) the replication study. 
+In direct replication, the same estimand \( \theta^* \) is targeted under equivalent conditions:
+
+\[
+\theta^{*(1)} \approx \theta^{*(2)}.
+\]
+
+Under finite sampling, exact equality,
+
+\[
+\theta^{*(1)} = \theta^{*(2)},
+\]
+
+is generally implausible. 
+Thus, a finding is said to be directly replicated, when a *repetition of an experimental procedure is performed*.
+This in turn relates to non-experimental methods as when a new study estimates the same estimand under conditions that are equal to the original, operationalizing the variables in the same way, with differences limited to incidental sources of variation such as sample, time, or setting. 
+Under this definition, deviations from exact numerical equality of coefficients are to be minimal, however exact numerical equality is not neccessary. 
+
+By contrast, conceptual replication concerns the stability of a theoretical claim under changes in operationalization. 
+This relates to @Radder1992, his b and c compartments of a replication, so that the same theoretical claim or construct is supported using a different estimand that is theoretically analogous to the original. 
+This involves changes in operationalization, such as different independent or dependent measures, while retaining the underlying conceptual target. 
+Let \( \theta^{(1)} \in \Theta_1 \) and \( \theta^{(2)} \in \Theta_2 \) denote estimands from two differently operationalized studies. 
+Conceptual replication can then be expressed through a mapping \( \phi \) such that
+
+\[
+C(\theta^{(1)}) = C(\phi(\theta^{(2)})),
+\]
+
+where \( C(\cdot) \) denotes the theoretical claim supported by the estimand. 
+In this case, replication is evaluated at the level of theoretical equivalence rather than parameter identity.
+
 
