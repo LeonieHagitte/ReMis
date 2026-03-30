@@ -33,5 +33,5 @@ jobs:
         with:
           name: rendered-output
           path: |
-            _site/remis.html
-            _site/remis.pdf
+            ./remis.html
+            ./remis.pdf
