@@ -210,10 +210,14 @@ $$ \theta^* = \{\theta_1, \dots, \theta_r\} $$
 
 denote the set of parameters relevant to the theoretical claim of interest. Replication can then be represented as the vector
 
-$$ R = \left( \mathbb{I}\left(\|\theta_j^{(1)} - \theta_j^{(2)}\| \le \epsilon_j\right) \right)^r{j=1}, $$
+$$ R = \left( \mathbb{I}\left(\|\theta_j^{(1)} - \theta_j^{(2)}\| \le \epsilon_j\right) \right)_{j=1}^r, $$
 
 where $\mathbb{I}(\cdot)$ is an indicator function and $\epsilon_j$ is a substantively justified tolerance for parameter $j$. 
-Full replication corresponds to the case in which all relevant parameters are stable, whereas partial replication corresponds to stability of only a subset of them.
+A parameter is said to be *stable* if
+
+$$|\theta_j^{(1)} - \theta_j^{(2)}| \le \epsilon_j.$$
+
+Full replication corresponds to the case in which all relevant parameters satisfy this condition, whereas partial replication corresponds to stability of only a subset of them.
 
 This perspective renders approximate and partial replication theoretically grounded rather than ad hoc. 
 Limited deviations in parameter estimates can then be interpreted as meaningful quantitative differences rather than categorical failures of replication, paralleling contemporary approaches to approximate invariance. 
