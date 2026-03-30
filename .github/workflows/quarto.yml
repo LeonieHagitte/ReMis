@@ -1,8 +1,11 @@
-name: Render Quarto
+name: Render manuscript
 
 on:
   push:
-    branches: [main]
+    paths:
+      - "remis.qmd"
+      - "_quarto.yml"
+      - "references.bib"
   workflow_dispatch:
 
 jobs:
@@ -10,11 +13,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repo
+      - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Set up Quarto
+      - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render
-        run: quarto render
+      - name: Setup TinyTeX (for PDF)
+        uses: r-lib/actions/setup-tinytex@v2
+
+      - name: Install LaTeX packages
+        run: tlmgr install apa7 csquotes
+
+      - name: Render manuscript
+        run: quarto render remis.qmd
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-output
+          path: |
+            _site/remis.html
+            _site/remis.pdf
