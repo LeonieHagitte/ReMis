@@ -171,7 +171,7 @@ which is formulated at the level of population parameters rather than sample-spe
 Empirically, this hypothesis is assessed using the corresponding parameter estimates. 
 Because exact equality is often too strict a criterion, approximate formulations are more plausible, for example 
 
-$$\left|\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\rVert \le \epsilon_j \quad \forall j, $$
+$$\left|\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\right| \le \epsilon_j \quad \forall j, $$
 
 where $\epsilon_j$ denotes a substantively justified tolerance for parameter $j$.
 
@@ -213,12 +213,12 @@ $$ \theta^* = \{\theta_1, \dots, \theta_r\} $$
 
 denote the set of parameters relevant to the theoretical claim of interest. Replication can then be represented as the vector
 
-$$ R = \left( \mathbb{I}\left(\left|\theta_j^{(1)} - \theta_j^{(2)}\rVert \le \epsilon_j\right) \right)_{j=1}^r, $$
+$$ R = \left( \mathbb{I}\left(\left|\theta_j^{(1)} - \theta_j^{(2)}\right| \le \epsilon_j\right) \right)_{j=1}^r, $$
 
 where $\mathbb{I}(\cdot)$ is an indicator function and $\epsilon_j$ is a substantively justified tolerance for parameter $j$. 
 A parameter is said to be *stable* if
 
-$$\left|\theta_j^{(1)} - \theta_j^{(2)}\rVert \le \epsilon_j.$$
+$$\left|\theta_j^{(1)} - \theta_j^{(2)}\right| \le \epsilon_j.$$
 
 Full replication corresponds to the case in which all relevant parameters satisfy this condition, whereas partial replication corresponds to stability of only a subset of them.
 
