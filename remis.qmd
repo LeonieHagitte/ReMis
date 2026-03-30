@@ -1,12 +1,9 @@
 ---
 title: "ReMis [A fun title could go here]"
-
 author:
   - name: "Leonie Hagitte"
 shorttitle: "ReMis"
-
 bibliography: references.bib
-
 format:
   pdf:
     documentclass: apa7
