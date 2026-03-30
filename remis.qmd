@@ -196,7 +196,8 @@ This comparison could be evaluated with a likelihood-ratio statistic,
 $$ \Delta \chi^2 = -2(\ell_C - \ell_U), $$
 
 where $\ell_C$ and $\ell_U$ denote the log-likelihoods of the constrained and unconstrained models, respectively. 
-A statistically non-significant deterioration in model fit is compatible with structural stability of the targeted parameters, whereas a statistically significant deterioration indicates instability. 
+If a model in which the parameters are constrained to be equal across groups fits the data no worse than a model in which they are freely estimated, this is consistent with structural stability of those parameters. 
+Conversely, if the constrained model fits the data worse, this indicates that the parameters differ across groups.
 At the same time, such tests should be interpreted cautiously because they are sensitive to sample size and do not by themselves capture uncertainty in a substantively calibrated way.
 
 At the level of parameters, again some would consider SEMs replicated when the statistical significance of paths and correlations is consistent across studies. 
