@@ -1,5 +1,6 @@
 project:
   type: manuscript
+  output-dir: _site
 
 manuscript:
   article: remis.qmd
@@ -7,6 +8,9 @@ manuscript:
 bibliography: references.bib
 
 format:
+  html:
+    toc: true
+    number-sections: true
   pdf:
     documentclass: apa7
     classoption: [man]
