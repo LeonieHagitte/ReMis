@@ -213,7 +213,7 @@ $$ \theta^* = \{\theta_1, \dots, \theta_r\} $$
 
 denote the set of parameters relevant to the theoretical claim of interest. Replication can then be represented as the vector
 
-$$ \hat\R = \left( \mathbb{I}\left(\left|\hat\theta_j^{(1)} - \hat\theta_j^{(2)}\right| \le \epsilon_j\right) \right)_{j=1}^r, $$
+$$ \hatR = \left( \mathbb{I}\left(\left|\hat\theta_j^{(1)} - \hat\theta_j^{(2)}\right| \le \epsilon_j\right) \right)_{j=1}^r, $$
 
 where $\mathbb{I}(\cdot)$ is an indicator function and $\epsilon_j$ is a substantively justified tolerance for parameter $j$. 
 A parameter is said to be empirically *stable* if
