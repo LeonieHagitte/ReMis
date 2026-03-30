@@ -21,13 +21,18 @@ The measurement model can be written as
 $$ 
 \mathbf{y}_i^{(g)} = \boldsymbol{\nu}^{(g)} + \boldsymbol{\Lambda}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\varepsilon}_i^{(g)}, 
 $$
+with
+
+$$
+\boldsymbol{\varepsilon}_i^{(g)} \sim (0, \boldsymbol{\Theta}^{(g)}).
+$$
 
 Where:  
 
-- $y_i^{(g)}$: observed responses of individual $i$ in group $g$  
+- $\mathbf{y}_i^{(g)}$: observed responses of individual $i$ in group $g$  
+- $\nu^{(g)}$: item intercepts  
 - $\eta_i^{(g)}$: latent variables for individual $i$  
 - $\Lambda^{(g)}$: factor loadings linking latent variables to observed indicators  
-- $\nu^{(g)}$: item intercepts 
 - $\varepsilon_i^{(g)}$: residual errors 
 - $\Theta^{(g)}$: residual covariance matrix  
 
