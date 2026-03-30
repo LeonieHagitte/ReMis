@@ -50,7 +50,19 @@ The structural model may be written as
 
 $$ \boldsymbol{\eta}_i^{(g)} = \boldsymbol{\alpha}^{(g)} + \mathbf{B}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\zeta}_i^{(g)}, $$
 
-where $\mathbf{B}^{(g)}$ contains the structural coefficients, $\boldsymbol{\alpha}^{(g)}$ contains latent intercepts, and $\boldsymbol{\zeta}_i^{(g)}$ has covariance matrix $\boldsymbol{\Psi}^{(g)}$.  
+with  
+
+$$
+\boldsymbol{\zeta}_i^{(g)} \sim (0, \boldsymbol{\Psi}^{(g)}).
+$$
+
+where  
+
+- $\boldsymbol{\alpha}^{(g)}$ contains latent intercepts    
+- $\mathbf{B}^{(g)}$ contains the structural coefficients  
+- $\boldsymbol{\zeta}_i^{(g)}$ is a vector of structural disturbance terms   
+- $\boldsymbol{\Psi}^{(g)}$ is their covariance matrix  
+
 SI is then defined as 
 
 $$\theta_S^{(g)} = \theta_S \quad \forall g,$$
