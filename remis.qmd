@@ -77,11 +77,11 @@ These correspond to successive equality restrictions on $\boldsymbol{\Lambda}^{(
 More recent perspectives conceptualize invariance as the absence of systematic moderation of key parameters by variables external to the measurement model. 
 Formally, if model parameters depend on group membership through
 
-$$ \theta_(g) = \theta + \Delta_(g), $$
+$$ \theta^{(g)} = \theta + \Delta^{(g)}, $$
 
 then invariance corresponds to the condition
 
-$$ \Delta_(g) = 0 \quad \forall g. $$
+$$ \Delta^{(g)} = 0 \quad \forall g. $$
 
 Covariance invariance analyses evaluate whether the unstandardized covariances among latent factors, represented by elements of $\boldsymbol{\Psi}^{(g)}$, are equivalent across groups, whereas SI analyses examine whether the structural coefficients $\mathbf{B}^{(g)}$ are equal across groups. 
 These analyses are required to determine whether relationships between latent factors are invariant across groups or vary systematically as a function of group membership. 
@@ -171,7 +171,7 @@ which is formulated at the level of population parameters rather than sample-spe
 Empirically, this hypothesis is assessed using the corresponding parameter estimates. 
 Because exact equality is often too strict a criterion, approximate formulations are more plausible, for example 
 
-$$\lVert\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\rVert \le \epsilon_j \quad \forall j, $$
+$$\left|\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\rVert \le \epsilon_j \quad \forall j, $$
 
 where $\epsilon_j$ denotes a substantively justified tolerance for parameter $j$.
 
@@ -213,12 +213,12 @@ $$ \theta^* = \{\theta_1, \dots, \theta_r\} $$
 
 denote the set of parameters relevant to the theoretical claim of interest. Replication can then be represented as the vector
 
-$$ R = \left( \mathbb{I}\left(\lVert\theta_j^{(1)} - \theta_j^{(2)}\rVert \le \epsilon_j\right) \right)_{j=1}^r, $$
+$$ R = \left( \mathbb{I}\left(\left|\theta_j^{(1)} - \theta_j^{(2)}\rVert \le \epsilon_j\right) \right)_{j=1}^r, $$
 
 where $\mathbb{I}(\cdot)$ is an indicator function and $\epsilon_j$ is a substantively justified tolerance for parameter $j$. 
 A parameter is said to be *stable* if
 
-$$\lVert\theta_j^{(1)} - \theta_j^{(2)}\rVert \le \epsilon_j.$$
+$$\left|\theta_j^{(1)} - \theta_j^{(2)}\rVert \le \epsilon_j.$$
 
 Full replication corresponds to the case in which all relevant parameters satisfy this condition, whereas partial replication corresponds to stability of only a subset of them.
 
