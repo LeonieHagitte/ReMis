@@ -84,7 +84,7 @@ then invariance corresponds to the condition
 $$ \Delta(g) = 0 \quad \forall g. $$
 
 Covariance invariance analyses evaluate whether the unstandardized covariances among latent factors, represented by elements of $\boldsymbol{\Psi}^{(g)}$, are equivalent across groups, whereas SI analyses examine whether the structural coefficients $\mathbf{B}^{(g)}$ are equal across groups. 
-These analyses are required to determine whether predictive and non-predictive relationships between latent factors are invariant or moderated across groups within a theoretical model.
+These analyses are required to determine whether relationships between latent factors are invariant across groups or vary systematically as a function of group membership. 
 
 ### Replication
 
