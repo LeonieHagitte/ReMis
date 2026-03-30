@@ -1,8 +1,9 @@
 ---
 title: "ReMis [A fun title could go here]"
+shorttitle: "ReMis"
 author:
   - name: "Leonie Hagitte"
-shorttitle: "ReMis"
+
 bibliography: references.bib
 format:
   pdf:
