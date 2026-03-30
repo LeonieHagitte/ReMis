@@ -1,7 +1,7 @@
 ---
 title: "ReMis [A fun title could go here]"
 author:
-  - name: "Leonie"
+  - name: "Leonie Hagitte"
 format:
   pdf:
     documentclass: apa7
