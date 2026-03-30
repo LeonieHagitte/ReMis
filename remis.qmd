@@ -128,7 +128,7 @@ For models involving continuous latent variables, the associated hypotheses typi
 Hypotheses may also concern effect sizes, ordering of parameter magnitudes, or specific parameter values. 
 Because SEMs often contain many estimated parameters, replication should generally focus on those outcomes that are substantively relevant to the hypothesis under study.
 
-#### Global model fit versus parameter-level replication
+### Global model fit versus parameter-level replication
 
 Global model fit concerns the adequacy of the model-implied covariance structure. 
 Let $\boldsymbol{\Sigma}(\theta)$ denote the covariance matrix implied by the model parameters $\theta$, and let $\mathbf{S}^{(d)}$ denote the observed covariance matrix in dataset $d$. 
@@ -161,7 +161,7 @@ $$\theta^{*(1)} \approx \theta^{*(2)}. $$
 This formulation captures replication as stability of theory-relevant parameters, rather than mere admissibility of the overall model.
 
 If i aim at replication it is therefore reasonable to treat both datasets as independent realizations of the same underlying model. 
-Thus, a problem of symmetric parameter comparison across datasets. 
+Thus, it is a problem of symmetric parameter comparison across datasets. 
 In a multiple-group SEM framework, parameters are estimated freely in both datasets and then compared through equality constraints imposed across groups. 
 This reflects the null hypothesis
 
