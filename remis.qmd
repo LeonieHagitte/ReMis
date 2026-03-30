@@ -105,7 +105,7 @@ Under finite sampling, exact equality,
 $$\theta^{*(1)} =\theta^{*(2)}, $$
 is generally implausible.  
 
-Thus, a finding is said to be directly replicated, when a *repetition of an experimental procedure is performed*. 
+Thus, direct replication refers to a repetition of the original experimental or observational procedure aimed at re-estimating the same estimand under equivalent conditions. 
 This in turn relates to non-experimental methods as when a new study estimates the same estimand under conditions that are equal to the original, operationalizing the variables in the same way, with differences limited to incidental sources of variation such as sample, time, or setting. 
 Under this definition, deviations from exact numerical equality of coefficients are to be minimal, however exact numerical equality is not neccessary.
 
@@ -209,16 +209,16 @@ Replication should therefore not be reduced to consistency of significance decis
 This implies that replication of SEMs is best understood as a graded, parameter- and claim-relative process.  
 Let
 
-$$ \theta^* = \{\theta_1, \dots, \theta_r\} $$
+$$ \theta^* = \{\theta_1^*, \dots, \theta_r^*\} $$
 
 denote the set of parameters relevant to the theoretical claim of interest. Replication can then be represented as the vector
 
-$$ \hat{R} = \left( \mathbb{I}\left(\left|\hat\theta_j^{(1)} - \hat\theta_j^{(2)}\right| \le \epsilon_j\right) \right)_{j=1}^r, $$
+$$ \hat{R} = \left( \mathbb{I}\left(\left|\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\right| \le \epsilon_j\right) \right)_{j=1}^r, $$
 
 where $\mathbb{I}(\cdot)$ is an indicator function and $\epsilon_j$ is a substantively justified tolerance for parameter $j$. 
 A parameter is said to be empirically *stable* if
 
-$$\left|\hat\theta_j^{(1)} - \hat\theta_j^{(2)}\right| \le \epsilon_j.$$
+$$\left|\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\right| \le \epsilon_j.$$
 
 Full replication corresponds to the case in which all relevant parameters satisfy this condition, whereas partial replication corresponds to stability of only a subset of them.
 
