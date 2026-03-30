@@ -1,0 +1,569 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  12pt,
+  letterpaper,
+  man]{apa7}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{setspace}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{csquotes}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={ReMis {[}A fun title could go here{]}},
+  pdfauthor={Leonie},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{ReMis {[}A fun title could go here{]}}
+\author{Leonie}
+\date{}
+\begin{document}
+\maketitle
+
+
+\setstretch{2}
+\subsubsection{Invariance Testing}\label{invariance-testing}
+
+Measurement invariance (MI) refers to the statistical property that a
+measurement instrument assesses the same latent construct equivalently
+across different groups. In other words, the measurement model operates
+in the same manner across groups. When MI is established, meaningful
+comparisons of the underlying construct between groups are justified.
+
+Let \(\mathbf{y}_i^{(g)}\) denote the observed variables for individual
+\(i\) in group \(g\), and let \(\boldsymbol{\eta}_i^{(g)}\) denote the
+corresponding latent variables. The measurement model can be written as
+
+\[ 
+\mathbf{y}_i^{(g)} = \boldsymbol{\nu}^{(g)} + \boldsymbol{\Lambda}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\varepsilon}_i^{(g)}, 
+\]
+
+Where:
+
+\begin{itemize}
+\tightlist
+\item
+  \(y_i^{(g)}\): observed responses of individual \(i\) in group \(g\)\\
+\item
+  \(\eta_i^{(g)}\): latent variables for individual \(i\)\\
+\item
+  \(\Lambda^{(g)}\): factor loadings linking latent variables to
+  observed indicators\\
+\item
+  \(\nu^{(g)}\): item intercepts
+\item
+  \(\varepsilon_i^{(g)}\): residual errors
+\item
+  \(\Theta^{(g)}\): residual covariance matrix
+\end{itemize}
+
+From a statistical modelling perspective, MI refers to invariance of the
+measurement parameters across groups:
+
+\[ \theta_M^{(g)} = \theta_M \quad \forall g ,\]
+
+where
+
+\[ \theta_M = \{\boldsymbol{\Lambda}, \boldsymbol{\nu}, \boldsymbol{\Theta}\}. \]
+
+\emph{Structural invariance} (SI), by contrast, refers to equality of
+structural coefficients across groups, that is, to the requirement that
+the same association between latent factors exists across groups. The
+structural model may be written as
+
+\[ \boldsymbol{\eta}_i^{(g)} = \boldsymbol{\alpha}^{(g)} + \mathbf{B}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\zeta}_i^{(g)}, \]
+
+where \(\mathbf{B}^{(g)}\) contains the structural coefficients,
+\(\boldsymbol{\alpha}^{(g)}\) contains latent intercepts, and
+\(\boldsymbol{\zeta}_i^{(g)}\) has covariance matrix
+\(\boldsymbol{\Psi}^{(g)}\).\\
+SI is then defined as
+
+\[\theta_S^{(g)} = \theta_S \quad \forall g,\]
+
+with
+
+\[\theta_S = \{\mathbf{B}, \boldsymbol{\alpha}, \boldsymbol{\Psi}\}. \]
+
+Traditionally, MI and SI are characterized via increasingly strict
+levels of invariance that each add further restrictions on statistical
+parameters across groups. In the classical view, MI is attained only
+when configural, metric, scalar, and residual invariance hold. These
+correspond to successive equality restrictions on
+\(\boldsymbol{\Lambda}^{(g)}\), \(\boldsymbol{\nu}^{(g)}\), and
+\(\boldsymbol{\Theta}^{(g)}\). More recent perspectives conceptualize
+invariance as the absence of systematic moderation of key parameters by
+variables external to the measurement model. Formally, if model
+parameters depend on group membership through
+
+\[ \theta(g) = \theta + \Delta(g), \]
+
+then invariance corresponds to the condition
+
+\[ \Delta(g) = 0 \quad \forall g. \]
+
+Covariance invariance analyses evaluate whether the unstandardized
+covariances among latent factors, represented by elements of
+\(\boldsymbol{\Psi}^{(g)}\), are equivalent across groups, whereas SI
+analyses examine whether the structural coefficients
+\(\mathbf{B}^{(g)}\) are equal across groups. These analyses are
+required to determine whether predictive and non-predictive
+relationships between latent factors are invariant or moderated across
+groups within a theoretical model.
+
+\subsubsection{Replication}\label{replication}
+
+Replication is the ability to obtain consistent findings when a study is
+repeated with new independent data being collected under the same or
+sufficiently similar methodological and theoretical conditions as the
+original study. In the context of empirical research, a finding can be
+understood at different analytical levels: as an empirical regularity,
+as an estimand-based claim, or as a theoretical claim about an
+underlying mechanism that generates observed patterns. The type or
+extent of replication relevant to a finding depends on which of these
+levels the finding is defined at.
+
+Radder (1992) characterizes replication as comprising three distinct
+forms: (a) material replication; (b) reproducibility of the theoretical
+interpretation; and (c) replication of the experimental result through
+an alternative material procedure. Schmidt (2009) builds on this
+definition and establishes the concepts of direct replication as a
+restrictive and narrow form of replication and conceptual replication as
+a wider notion of replication.
+
+Let \(d \in \{1,2\}\) index datasets, with \(d = 1\) denoting the
+original study and \(d = 2\) the replication study. In direct
+replication, the same estimand \(\theta^*\) is targeted under equivalent
+conditions:
+
+\[\theta^{*(1)} \approx \theta^{*(2)}. \]
+
+Under finite sampling, exact equality,
+
+\[\theta^{*(1)} =\theta^{*(2)}, \] is generally implausible.
+
+Thus, a finding is said to be directly replicated, when a
+\emph{repetition of an experimental procedure is performed}. This in
+turn relates to non-experimental methods as when a new study estimates
+the same estimand under conditions that are equal to the original,
+operationalizing the variables in the same way, with differences limited
+to incidental sources of variation such as sample, time, or setting.
+Under this definition, deviations from exact numerical equality of
+coefficients are to be minimal, however exact numerical equality is not
+neccessary.
+
+By contrast, conceptual replication concerns the stability of a
+theoretical claim under changes in operationalization. This relates to
+Radder (1992), his b and c compartments of a replication, so that the
+same theoretical claim or construct is supported using a different
+estimand that is theoretically analogous to the original. This involves
+changes in operationalization, such as different independent or
+dependent measures, while retaining the underlying conceptual target.
+Let \$\theta\^{}\{(1)\} \in \Theta\_1 \$ and \$ \theta\^{}\{(2)\}
+\in \Theta\_2 \$ denote estimands from two differently operationalized
+studies. Conceptual replication can then be expressed through a mapping
+\(\phi\) such that
+
+\[C(\theta^{(1)}) = C(\phi(\theta^{(2)})), \]
+
+where \(C(\cdot)\) denotes the theoretical claim supported by the
+estimand. In this case, replication is evaluated at the level of
+theoretical equivalence rather than parameter identity.
+
+\subsubsection{Replicating Structural Equation
+Models}\label{replicating-structural-equation-models}
+
+According to Kaplan (2009), structural equation modeling (SEM) comprises
+a class of methodologies designed to express a hypothesized model
+through summary statistics derived from empirical observations,
+parameterized by a reduced set of structural parameters. As SEMs are
+also considered to be a way to formulate social science theories(De
+Leeuw and Berk 2009), for a SEM to be deemed replicated, the encompassed
+theory needs to hold in the data, either globally or regarding certain
+parameters.
+
+For models involving continuous latent variables, the associated
+hypotheses typically pertain to the means, variances, and covariances of
+the observed variables. Hypotheses may also concern effect sizes,
+ordering of parameter magnitudes, or specific parameter values. Because
+SEMs often contain many estimated parameters, replication should
+generally focus on those outcomes that are substantively relevant to the
+hypothesis under study.
+
+\paragraph{Global model fit versus parameter-level
+replication}\label{global-model-fit-versus-parameter-level-replication}
+
+Global model fit concerns the adequacy of the model-implied covariance
+structure. Let \(\boldsymbol{\Sigma}(\theta)\) denote the covariance
+matrix implied by the model parameters \(\theta\), and let
+\(\mathbf{S}^{(d)}\) denote the observed covariance matrix in dataset
+\(d\). Global fit evaluates whether
+
+\[\boldsymbol{\Sigma}(\theta) \approx \mathbf{S}^{(d)}.\]
+
+Equivalently, one may express this through a fitting function \(F\) such
+that replication at the level of global fit would require
+
+\[F\left(\mathbf{S}^{(d)}, \boldsymbol{\Sigma}(\hat{\theta}^{(d)})\right) \]
+
+to be sufficiently small for both \(d = 1\) and \(d = 2\).
+
+However, good global fit in both datasets does not imply replication at
+the level of parameters. In general,
+
+\[\boldsymbol{\Sigma}(\theta^{(1)}) \approx \boldsymbol{\Sigma}(\theta^{(2)})\]
+
+does not imply
+
+\[\theta^{(1)} \approx \theta^{(2)}. \]
+
+Multiple parameter configurations may produce similar model-implied
+covariance structures. Global fit therefore concerns the adequacy of the
+model-implied distribution, whereas replication at the level of
+parameters concerns the stability of theoretically relevant estimands.
+
+Accordingly, let \(\theta^* \subset \theta\) denote the subset of
+parameters that encode the substantive claim of interest. Replication at
+the level of parameters is defined as
+
+\[\theta^{*(1)} \approx \theta^{*(2)}. \]
+
+This formulation captures replication as stability of theory-relevant
+parameters, rather than mere admissibility of the overall model.
+
+If i aim at replication it is therefore reasonable to treat both
+datasets as independent realizations of the same underlying model. Thus,
+a problem of symmetric parameter comparison across datasets. In a
+multiple-group SEM framework, parameters are estimated freely in both
+datasets and then compared through equality constraints imposed across
+groups. This reflects the null hypothesis
+
+\[ H_0: \theta^{*(1)} = \theta^{*(2)}, \]
+
+which is formulated at the level of population parameters rather than
+sample-specific estimates. Because exact equality is often too strict a
+criterion, approximate formulations are more plausible, for example
+
+\[\|\theta^{*(1)} - \theta^{*(2)}\| \le \epsilon, \]
+
+for a substantively justified tolerance \((\epsilon)\).
+
+Under this perspective, replication of SEMs can be treated as analogous
+to invariance testing across groups, with datasets taking the role of
+groups. Where MI is conditional on group definitions, replication is
+conditional on data independence. Formally,
+
+\[\text{Replication} \Longleftrightarrow \theta^{*(d)} \text{ is stable across } d. \]
+
+This makes the relation to MI and SI explicit: both invariance testing
+and replication evaluate robustness of parameters under variation,
+differing mainly in the source of that variation. Replication of SEMs
+across an original and a replication sample should therefore proceed
+within a sequential multiple-group manner. First, measurement invariance
+between the two samples has to be established:
+
+\[\theta_M^{(1)} = \theta_M^{(2)}. \]
+
+At least metric invariance is required for structural parameters to be
+meaningfully compared, because without comparable factor loadings,
+differences in structural relations may reflect measurement
+non-equivalence rather than substantive divergence. Conditional on
+sufficient measurement invariance, structural replication is assessed by
+comparing an unconstrained multiple-group model, in which the structural
+parameters of interest are freely estimated across datasets, with a
+constrained model in which they are set to be equal:
+
+\[ H_0: \theta_S^{*(1)} = \theta_S^{*(2)}. \]
+
+This comparison could be evaluated with a likelihood-ratio statistic,
+
+\[ \Delta \chi^2 = -2(\ell_C - \ell_U), \]
+
+where \(\ell_C\) and \(\ell_U\) denote the log-likelihoods of the
+constrained and unconstrained models, respectively. A statistically
+non-significant deterioration in model fit is compatible with structural
+stability of the targeted parameters, whereas a statistically
+significant deterioration indicates instability. At the same time, such
+tests should be interpreted cautiously because they are sensitive to
+sample size and do not by themselves capture uncertainty in a
+substantively calibrated way.
+
+At the level of parameters, again some would consider SEMs replicated
+when the statistical significance of paths and correlations is
+consistent across studies. However, failure to reproduce statistical
+significance does not necessarily imply non-replication, because
+significance is highly sensitive to sampling variability, statistical
+power, and measurement error. Replication should therefore not be
+reduced to consistency of significance decisions alone. This implies
+that replication of SEMs is best understood as a graded, parameter- and
+claim-relative process.\\
+Let
+
+\[ \theta^* = \{\theta_1, \dots, \theta_r\} \]
+
+denote the set of parameters relevant to the theoretical claim of
+interest. Replication can then be represented as the vector
+
+\[ R = \left( \mathbb{I}\left(\|\theta_j^{(1)} - \theta_j^{(2)}\| \le \epsilon_j\right) \right)^r{j=1}, \]
+
+where \(\mathbb{I}(\cdot)\) is an indicator function and \(\epsilon_j\)
+is a substantively justified tolerance for parameter \(j\). Full
+replication corresponds to the case in which all relevant parameters are
+stable, whereas partial replication corresponds to stability of only a
+subset of them.
+
+This perspective renders approximate and partial replication
+theoretically grounded rather than ad hoc. Limited deviations in
+parameter estimates can then be interpreted as meaningful quantitative
+differences rather than categorical failures of replication, paralleling
+contemporary approaches to approximate invariance. It follows that
+models in their entirety should not be treated as the primary objects of
+replication. Rather, models serve as entry points for evaluating the
+stability of the theoretical commitments they encode. This shifts
+attention away from global model fit toward the robustness of
+substantively meaningful parameters. In this sense, global fit is a
+necessary but not sufficient condition for replication:
+
+\[ \text{Replication} \Rightarrow \text{adequate model fit}, \]
+
+but the converse does not hold. Measurement quality also becomes central
+to replication validity, because instability across datasets may reflect
+violations of
+
+\[ \theta_M^{(1)} = \theta_M^{(2)} \]
+
+rather than instability of structural relations. Replication claims that
+do not explicitly address measurement equivalence therefore remain
+ambiguous.
+
+Conceptual replication has a formal structure under this perspective as
+it concerns stability of higher-level theoretical claims under
+deliberate changes in operationalization. This can be understood as
+stability of \(C(\cdot)\) under transformations of the estimand space,
+rather than equality of the same parameter across datasets. Replication
+success therefore becomes explicitly conditional on the estimand, the
+theoretical scope, and the operational context, requiring precise
+statements about what exactly has or has not replicated. The distinction
+between invariance testing and replication may therefore be understood
+as one of scope rather than kind. Invariance evaluates stability across
+groups within a dataset, whereas replication evaluates stability across
+independent datasets or study instantiations, but both address the same
+underlying question of robustness under variation.
+
+\subsection*{References}\label{references}
+\addcontentsline{toc}{subsection}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-DeLeeuw2009}
+De Leeuw, J., and R. Berk. 2009. {``{Preface}.''} In \emph{Structural
+Equation Modeling: Foundations and Extensions}, edited by J. De Leeuw
+and R. Berk, 2nd ed., vi. SAGE Publications, Inc.
+\url{https://doi.org/10.4135/9781452226576}.
+
+\bibitem[\citeproctext]{ref-Kaplan2009}
+Kaplan, David. 2009. \emph{Structural {Equation} {Modeling} (2nd Ed.):
+{Foundations} and {Extensions}}. Edited by J. De Leeuw and R. Berk. 2nd
+ed. Thousand Oaks, California: SAGE Publications, Inc.
+\url{https://doi.org/10.4135/9781452226576}.
+
+\bibitem[\citeproctext]{ref-Radder1992}
+Radder, Hans. 1992. {``Experimental Reproducibility and the
+Experimenters' Regress.''} \emph{PSA: Proceedings of the Biennial
+Meeting of the Philosophy of Science Association} 1992: 63--73.
+\url{http://www.jstor.org/stable/192744}.
+
+\bibitem[\citeproctext]{ref-Schmidt2009}
+Schmidt, Stefan. 2009. {``Shall We {Really} Do It {Again}? {The}
+{Powerful} {Concept} of {Replication} Is {Neglected} in the {Social}
+{Sciences}.''} \emph{Review of General Psychology} 13 (2): 90--100.
+\url{https://doi.org/10.1037/a0015108}.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}

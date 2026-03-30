@@ -1,4 +1,13 @@
-## Remis [A fun title could go here]
+---
+title: "ReMis [A fun title could go here]"
+author:
+  - name: "Leonie"
+format:
+  pdf:
+    documentclass: apa7
+    classoption: [man]
+bibliography: references.bib
+---
 
 ### Invariance Testing
 
@@ -6,115 +15,96 @@ Measurement invariance (MI) refers to the statistical property that a measuremen
 In other words, the measurement model operates in the same manner across groups. 
 When MI is established, meaningful comparisons of the underlying construct between groups are justified.
 
-Let \( \mathbf{y}_i^{(g)} \) denote the observed variables for individual \( i \) in group \( g \), and let \( \boldsymbol{\eta}_i^{(g)} \) denote the corresponding latent variables. 
+Let $\mathbf{y}_i^{(g)}$ denote the observed variables for individual $i$ in group $g$, and let $\boldsymbol{\eta}_i^{(g)}$ denote the corresponding latent variables. 
 The measurement model can be written as
 
-\[
-\mathbf{y}_i^{(g)} = \boldsymbol{\nu}^{(g)} + \boldsymbol{\Lambda}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\varepsilon}_i^{(g)},
-\]
+$$ 
+\mathbf{y}_i^{(g)} = \boldsymbol{\nu}^{(g)} + \boldsymbol{\Lambda}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\varepsilon}_i^{(g)}, 
+$$
 
-Where:
-- $y_i^{(g)}$: observed responses of individual $i$ in group $g$
-- $\eta_i^{(g)}$: latent variables for individual $i$
-- $\Lambda^{(g)}$: factor loadings linking latent variables to observed indicators
-- $\nu^{(g)}$: item intercepts
-- $\varepsilon_i^{(g)}$: residual errors
-- $\Theta^{(g)}$: residual covariance matrix
+Where:  
+
+- $y_i^{(g)}$: observed responses of individual $i$ in group $g$  
+- $\eta_i^{(g)}$: latent variables for individual $i$  
+- $\Lambda^{(g)}$: factor loadings linking latent variables to observed indicators  
+- $\nu^{(g)}$: item intercepts 
+- $\varepsilon_i^{(g)}$: residual errors 
+- $\Theta^{(g)}$: residual covariance matrix  
+
 
 From a statistical modelling perspective, MI refers to invariance of the measurement parameters across groups:
 
-\[
-\theta_M^{(g)} = \theta_M \quad \forall g,
-\]
+$$ \theta_M^{(g)} = \theta_M \quad \forall g ,$$
 
 where
 
-\[
-\theta_M = \{ \boldsymbol{\Lambda}, \boldsymbol{\nu}, \boldsymbol{\Theta} \}.
-\]
+$$ \theta_M = \{\boldsymbol{\Lambda}, \boldsymbol{\nu}, \boldsymbol{\Theta}\}. $$
 
 *Structural invariance* (SI), by contrast, refers to equality of structural coefficients across groups, that is, to the requirement that the same association between latent factors exists across groups. 
 The structural model may be written as
 
-\[
-\boldsymbol{\eta}_i^{(g)} = \boldsymbol{\alpha}^{(g)} + \mathbf{B}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\zeta}_i^{(g)},
-\]
+$$ \boldsymbol{\eta}_i^{(g)} = \boldsymbol{\alpha}^{(g)} + \mathbf{B}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\zeta}_i^{(g)}, $$
 
-where \( \mathbf{B}^{(g)} \) contains the structural coefficients, \( \boldsymbol{\alpha}^{(g)} \) contains latent intercepts, and \( \boldsymbol{\zeta}_i^{(g)} \) has covariance matrix \( \boldsymbol{\Psi}^{(g)} \). 
-SI is then defined as
+where $\mathbf{B}^{(g)}$ contains the structural coefficients, $\boldsymbol{\alpha}^{(g)}$ contains latent intercepts, and $\boldsymbol{\zeta}_i^{(g)}$ has covariance matrix $\boldsymbol{\Psi}^{(g)}$.  
+SI is then defined as 
 
-\[
-\theta_S^{(g)} = \theta_S \quad \forall g,
-\]
+$$\theta_S^{(g)} = \theta_S \quad \forall g,$$
 
 with
 
-\[
-\theta_S = \{ \mathbf{B}, \boldsymbol{\alpha}, \boldsymbol{\Psi} \}.
-\]
+$$\theta_S = \{\mathbf{B}, \boldsymbol{\alpha}, \boldsymbol{\Psi}\}. $$
 
 Traditionally, MI and SI are characterized via increasingly strict levels of invariance that each add further restrictions on statistical parameters across groups. 
 In the classical view, MI is attained only when configural, metric, scalar, and residual invariance hold. 
-These correspond to successive equality restrictions on \( \boldsymbol{\Lambda}^{(g)} \), \( \boldsymbol{\nu}^{(g)} \), and \( \boldsymbol{\Theta}^{(g)} \).
+These correspond to successive equality restrictions on $\boldsymbol{\Lambda}^{(g)}$, $\boldsymbol{\nu}^{(g)}$, and $\boldsymbol{\Theta}^{(g)}$. 
 More recent perspectives conceptualize invariance as the absence of systematic moderation of key parameters by variables external to the measurement model. 
 Formally, if model parameters depend on group membership through
 
-\[
-\theta(g) = \theta + \Delta(g),
-\]
+$$ \theta(g) = \theta + \Delta(g), $$
 
 then invariance corresponds to the condition
 
-\[
-\Delta(g) = 0 \quad \forall g.
-\]
+$$ \Delta(g) = 0 \quad \forall g. $$
 
-Covariance invariance analyses evaluate whether the unstandardized covariances among latent factors, represented by elements of \( \boldsymbol{\Psi}^{(g)} \), are equivalent across groups, whereas SI analyses examine whether the structural coefficients \( \mathbf{B}^{(g)} \) are equal across groups. 
+Covariance invariance analyses evaluate whether the unstandardized covariances among latent factors, represented by elements of $\boldsymbol{\Psi}^{(g)}$, are equivalent across groups, whereas SI analyses examine whether the structural coefficients $\mathbf{B}^{(g)}$ are equal across groups. 
 These analyses are required to determine whether predictive and non-predictive relationships between latent factors are invariant or moderated across groups within a theoretical model.
 
 ### Replication
 
 Replication is the ability to obtain consistent findings when a study is repeated with new independent data being collected under the same or sufficiently similar methodological and theoretical conditions as the original study. 
 In the context of empirical research, a finding can be understood at different analytical levels: as an empirical regularity, as an estimand-based claim, or as a theoretical claim about an underlying mechanism that generates observed patterns. 
-The type or extent of replication relevant to a finding depends on which of these levels the finding is defined at. 
+The type or extent of replication relevant to a finding depends on which of these levels the finding is defined at.
 
-@Radder1992 characterizes replication as comprising three distinct forms: (a) material replication; (b) reproducibility of the theoretical interpretation; and (c) replication of the experimental result through an alternative material procedure.
-@Schmidt2009 builds on this definition and establishes the concepts of direct replication as a restrictive and narrow form of replication and conceptual replication as a wider notion of replication. 
+@Radder1992 characterizes replication as comprising three distinct forms: (a) material replication; (b) reproducibility of the theoretical interpretation; and (c) replication of the experimental result through an alternative material procedure. 
+@Schmidt2009 builds on this definition and establishes the concepts of direct replication as a restrictive and narrow form of replication and conceptual replication as a wider notion of replication.
 
-Let \( d \in \{1,2\} \) index datasets, with \( d = 1 \) denoting the original study and \( d = 2 \) the replication study. 
-In direct replication, the same estimand \( \theta^* \) is targeted under equivalent conditions:
+Let $d \in \{1,2\}$ index datasets, with $d = 1$ denoting the original study and $d = 2$ the replication study. 
+In direct replication, the same estimand $\theta^*$ is targeted under equivalent conditions:
 
-\[
-\theta^{*(1)} \approx \theta^{*(2)}.
-\]
+$$\theta^{*(1)} \approx \theta^{*(2)}. $$
 
 Under finite sampling, exact equality,
 
-\[
-\theta^{*(1)} = \theta^{*(2)},
-\]
+$$\theta^{*(1)} =\theta^{*(2)}, $$
+is generally implausible.  
 
-is generally implausible. 
-Thus, a finding is said to be directly replicated, when a *repetition of an experimental procedure is performed*.
+Thus, a finding is said to be directly replicated, when a *repetition of an experimental procedure is performed*. 
 This in turn relates to non-experimental methods as when a new study estimates the same estimand under conditions that are equal to the original, operationalizing the variables in the same way, with differences limited to incidental sources of variation such as sample, time, or setting. 
-Under this definition, deviations from exact numerical equality of coefficients are to be minimal, however exact numerical equality is not neccessary. 
+Under this definition, deviations from exact numerical equality of coefficients are to be minimal, however exact numerical equality is not neccessary.
 
 By contrast, conceptual replication concerns the stability of a theoretical claim under changes in operationalization. 
 This relates to @Radder1992, his b and c compartments of a replication, so that the same theoretical claim or construct is supported using a different estimand that is theoretically analogous to the original. 
 This involves changes in operationalization, such as different independent or dependent measures, while retaining the underlying conceptual target. 
-Let \( \theta^{(1)} \in \Theta_1 \) and \( \theta^{(2)} \in \Theta_2 \) denote estimands from two differently operationalized studies. 
-Conceptual replication can then be expressed through a mapping \( \phi \) such that
+Let $\theta^{(1)} \in \Theta_1 $ and $ \theta^{(2)} \in \Theta_2 $ denote estimands from two differently operationalized studies. 
+Conceptual replication can then be expressed through a mapping $\phi$ such that
 
-\[
-C(\theta^{(1)}) = C(\phi(\theta^{(2)})),
-\]
+$$C(\theta^{(1)}) = C(\phi(\theta^{(2)})), $$
 
-where \( C(\cdot) \) denotes the theoretical claim supported by the estimand. 
-In this case, replication is evaluated at the level of theoretical equivalence rather than parameter identity.
+where $C(\cdot)$ denotes the theoretical claim supported by the estimand. In this case, replication is evaluated at the level of theoretical equivalence rather than parameter identity.
 
 ### Replicating Structural Equation Models
 
-According to @Kaplan2009, structural equation modeling (SEM) comprises a class of methodologies designed to express a hypothesized model through summary statistics derived from empirical observations, parameterized by a reduced set of structural parameters.
+According to @Kaplan2009, structural equation modeling (SEM) comprises a class of methodologies designed to express a hypothesized model through summary statistics derived from empirical observations, parameterized by a reduced set of structural parameters. 
 As SEMs are also considered to be a way to formulate social science theories[@DeLeeuw2009], for a SEM to be deemed replicated, the encompassed theory needs to hold in the data, either globally or regarding certain parameters.
 
 For models involving continuous latent variables, the associated hypotheses typically pertain to the means, variances, and covariances of the observed variables. 
@@ -124,141 +114,109 @@ Because SEMs often contain many estimated parameters, replication should general
 #### Global model fit versus parameter-level replication
 
 Global model fit concerns the adequacy of the model-implied covariance structure. 
-Let \( \boldsymbol{\Sigma}(\theta) \) denote the covariance matrix implied by the model parameters \( \theta \), and let \( \mathbf{S}^{(d)} \) denote the observed covariance matrix in dataset \( d \). 
+Let $\boldsymbol{\Sigma}(\theta)$ denote the covariance matrix implied by the model parameters $\theta$, and let $\mathbf{S}^{(d)}$ denote the observed covariance matrix in dataset $d$. 
 Global fit evaluates whether
 
-\[
-\boldsymbol{\Sigma}(\theta) \approx \mathbf{S}^{(d)}.
-\]
+$$\boldsymbol{\Sigma}(\theta) \approx \mathbf{S}^{(d)}.$$
 
-Equivalently, one may express this through a fitting function \( F \) such that replication at the level of global fit would require
+Equivalently, one may express this through a fitting function $F$ such that replication at the level of global fit would require
 
-\[
-F\!\left(\mathbf{S}^{(d)}, \boldsymbol{\Sigma}(\hat{\theta}^{(d)})\right)
-\]
+$$F\left(\mathbf{S}^{(d)}, \boldsymbol{\Sigma}(\hat{\theta}^{(d)})\right) $$
 
-to be sufficiently small for both \( d = 1 \) and \( d = 2 \).
+to be sufficiently small for both $d = 1$ and $d = 2$.
 
 However, good global fit in both datasets does not imply replication at the level of parameters. 
 In general,
 
-\[
-\boldsymbol{\Sigma}(\theta^{(1)}) \approx \boldsymbol{\Sigma}(\theta^{(2)})
-\]
+$$\boldsymbol{\Sigma}(\theta^{(1)}) \approx \boldsymbol{\Sigma}(\theta^{(2)})$$
 
 does not imply
 
-\[
-\theta^{(1)} \approx \theta^{(2)}.
-\]
+$$\theta^{(1)} \approx \theta^{(2)}. $$
 
 Multiple parameter configurations may produce similar model-implied covariance structures. 
 Global fit therefore concerns the adequacy of the model-implied distribution, whereas replication at the level of parameters concerns the stability of theoretically relevant estimands.
 
-Accordingly, let \( \theta^* \subset \theta \) denote the subset of parameters that encode the substantive claim of interest. 
-Replication at the level of parameters is defined as
+Accordingly, let $\theta^* \subset \theta$ denote the subset of parameters that encode the substantive claim of interest. Replication at the level of parameters is defined as
 
-\[
-\theta^{*(1)} \approx \theta^{*(2)}.
-\]
+$$\theta^{*(1)} \approx \theta^{*(2)}. $$
 
 This formulation captures replication as stability of theory-relevant parameters, rather than mere admissibility of the overall model.
 
-If i aim at replication it is therefore reasonable to treat both datasets as independent realizations of the same underlying model.
+If i aim at replication it is therefore reasonable to treat both datasets as independent realizations of the same underlying model. 
 Thus, a problem of symmetric parameter comparison across datasets. 
 In a multiple-group SEM framework, parameters are estimated freely in both datasets and then compared through equality constraints imposed across groups. 
 This reflects the null hypothesis
 
-\[
-H_0: \theta^{*(1)} = \theta^{*(2)},
-\]
+$$ H_0: \theta^{*(1)} = \theta^{*(2)}, $$
 
 which is formulated at the level of population parameters rather than sample-specific estimates. 
 Because exact equality is often too strict a criterion, approximate formulations are more plausible, for example
 
-\[
-|\theta^{*(1)} - \theta^{*(2)}| \le \epsilon,
-\]
+$$\|\theta^{*(1)} - \theta^{*(2)}\| \le \epsilon, $$
 
-for a substantively justified tolerance \( \epsilon \).
+for a substantively justified tolerance $(\epsilon)$.
 
 Under this perspective, replication of SEMs can be treated as analogous to invariance testing across groups, with datasets taking the role of groups. 
 Where MI is conditional on group definitions, replication is conditional on data independence. 
 Formally,
 
-\[
-\text{Replication} \Longleftrightarrow \theta^{*(d)} \text{ is stable across } d.
-\]
+$$\text{Replication} \Longleftrightarrow \theta^{*(d)} \text{ is stable across } d. $$
 
-This makes the relation to MI and SI explicit: both invariance testing and replication evaluate robustness of parameters under variation, differing mainly in the source of that variation.
+This makes the relation to MI and SI explicit: both invariance testing and replication evaluate robustness of parameters under variation, differing mainly in the source of that variation. 
 Replication of SEMs across an original and a replication sample should therefore proceed within a sequential multiple-group manner. 
 First, measurement invariance between the two samples has to be established:
 
-\[
-\theta_M^{(1)} = \theta_M^{(2)}.
-\]
+$$\theta_M^{(1)} = \theta_M^{(2)}. $$
 
 At least metric invariance is required for structural parameters to be meaningfully compared, because without comparable factor loadings, differences in structural relations may reflect measurement non-equivalence rather than substantive divergence. 
 Conditional on sufficient measurement invariance, structural replication is assessed by comparing an unconstrained multiple-group model, in which the structural parameters of interest are freely estimated across datasets, with a constrained model in which they are set to be equal:
 
-\[
-H_0: \theta_S^{*(1)} = \theta_S^{*(2)}.
-\]
+$$ H_0: \theta_S^{*(1)} = \theta_S^{*(2)}. $$
 
 This comparison could be evaluated with a likelihood-ratio statistic,
 
-\[
-\Delta \chi^2 = -2(\ell_C - \ell_U),
-\]
+$$ \Delta \chi^2 = -2(\ell_C - \ell_U), $$
 
-where \( \ell_C \) and \( \ell_U \) denote the log-likelihoods of the constrained and unconstrained models, respectively. 
+where $\ell_C$ and $\ell_U$ denote the log-likelihoods of the constrained and unconstrained models, respectively. 
 A statistically non-significant deterioration in model fit is compatible with structural stability of the targeted parameters, whereas a statistically significant deterioration indicates instability. 
 At the same time, such tests should be interpreted cautiously because they are sensitive to sample size and do not by themselves capture uncertainty in a substantively calibrated way.
 
 At the level of parameters, again some would consider SEMs replicated when the statistical significance of paths and correlations is consistent across studies. 
-However, failure to reproduce statistical significance does not necessarily imply non-replication, because significance is highly sensitive to sampling variability, statistical power, and measurement error. Replication should therefore not be reduced to consistency of significance decisions alone.
+However, failure to reproduce statistical significance does not necessarily imply non-replication, because significance is highly sensitive to sampling variability, statistical power, and measurement error. 
+Replication should therefore not be reduced to consistency of significance decisions alone. 
 This implies that replication of SEMs is best understood as a graded, parameter- and claim-relative process.  
 Let
 
-\[
-\theta^* = \{\theta_1, \dots, \theta_r\}
-\]
+$$ \theta^* = \{\theta_1, \dots, \theta_r\} $$
 
-denote the set of parameters relevant to the theoretical claim of interest. 
-Replication can then be represented as the vector
+denote the set of parameters relevant to the theoretical claim of interest. Replication can then be represented as the vector
 
-\[
-R = \left(
-\mathbb{I}\left(|\theta_j^{(1)} - \theta_j^{(2)}| \le \epsilon_j\right)
-\right)_{j=1}^r,
-\]
+$$ R = \left( \mathbb{I}\left(\|\theta_j^{(1)} - \theta_j^{(2)}\| \le \epsilon_j\right) \right)^r{j=1}, $$
 
-where \( \mathbb{I}(\cdot) \) is an indicator function and \( \epsilon_j \) is a substantively justified tolerance for parameter \( j \). 
-Full replication corresponds to the case in which all relevant parameters are stable, whereas partial replication corresponds to stability of only a subset of them. 
+where $\mathbb{I}(\cdot)$ is an indicator function and $\epsilon_j$ is a substantively justified tolerance for parameter $j$. 
+Full replication corresponds to the case in which all relevant parameters are stable, whereas partial replication corresponds to stability of only a subset of them.
 
 This perspective renders approximate and partial replication theoretically grounded rather than ad hoc. 
-Limited deviations in parameter estimates can then be interpreted as meaningful quantitative differences rather than categorical failures of replication, paralleling contemporary approaches to approximate invariance.
+Limited deviations in parameter estimates can then be interpreted as meaningful quantitative differences rather than categorical failures of replication, paralleling contemporary approaches to approximate invariance. 
 It follows that models in their entirety should not be treated as the primary objects of replication. 
 Rather, models serve as entry points for evaluating the stability of the theoretical commitments they encode. 
 This shifts attention away from global model fit toward the robustness of substantively meaningful parameters. 
 In this sense, global fit is a necessary but not sufficient condition for replication:
 
-\[
-\text{Replication} \Rightarrow \text{adequate model fit},
-\]
+$$ \text{Replication} \Rightarrow \text{adequate model fit}, $$
 
-but the converse does not hold. 
-Measurement quality also becomes central to replication validity, because instability across datasets may reflect violations of
+but the converse does not hold. Measurement quality also becomes central to replication validity, because instability across datasets may reflect violations of
 
-\[
-\theta_M^{(1)} = \theta_M^{(2)}
-\]
+$$ \theta_M^{(1)} = \theta_M^{(2)} $$
 
 rather than instability of structural relations. 
 Replication claims that do not explicitly address measurement equivalence therefore remain ambiguous.
 
 Conceptual replication has a formal structure under this perspective as it concerns stability of higher-level theoretical claims under deliberate changes in operationalization. 
-This can be understood as stability of \( C(\cdot) \) under transformations of the estimand space, rather than equality of the same parameter across datasets. 
-Replication success therefore becomes explicitly conditional on the estimand, the theoretical scope, and the operational context, requiring precise statements about what exactly has or has not replicated.
-The distinction between invariance testing and replication may therefore be understood as one of scope rather than kind. 
+This can be understood as stability of $C(\cdot)$ under transformations of the estimand space, rather than equality of the same parameter across datasets. 
+Replication success therefore becomes explicitly conditional on the estimand, the theoretical scope, and the operational context, requiring precise statements about what exactly has or has not replicated. 
+The distinction between invariance testing and replication may therefore be understood as one of scope rather than kind.
 Invariance evaluates stability across groups within a dataset, whereas replication evaluates stability across independent datasets or study instantiations, but both address the same underlying question of robustness under variation.
+
+## References

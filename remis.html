@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>remis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="remis_files/libs/clipboard/clipboard.min.js"></script>
+<script src="remis_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="remis_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="remis_files/libs/quarto-html/popper.min.js"></script>
+<script src="remis_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="remis_files/libs/quarto-html/anchor.min.js"></script>
+<link href="remis_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="remis_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="remis_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="remis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="remis_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="remis-a-fun-title-could-go-here" class="level2">
+<h2 class="anchored" data-anchor-id="remis-a-fun-title-could-go-here">Remis [A fun title could go here]</h2>
+<section id="invariance-testing" class="level3">
+<h3 class="anchored" data-anchor-id="invariance-testing">Invariance Testing</h3>
+<p>Measurement invariance (MI) refers to the statistical property that a measurement instrument assesses the same latent construct equivalently across different groups. In other words, the measurement model operates in the same manner across groups. When MI is established, meaningful comparisons of the underlying construct between groups are justified.</p>
+<p>Let ( _i^{(g)} ) denote the observed variables for individual ( i ) in group ( g ), and let ( _i^{(g)} ) denote the corresponding latent variables. The measurement model can be written as</p>
+<p>[ _i^{(g)} = ^{(g)} + ^{(g)} _i^{(g)} + _i^{(g)}, ]</p>
+<p>Where: - <span class="math inline">\(y_i^{(g)}\)</span>: observed responses of individual <span class="math inline">\(i\)</span> in group <span class="math inline">\(g\)</span> - <span class="math inline">\(\eta_i^{(g)}\)</span>: latent variables for individual <span class="math inline">\(i\)</span> - <span class="math inline">\(\Lambda^{(g)}\)</span>: factor loadings linking latent variables to observed indicators - <span class="math inline">\(\nu^{(g)}\)</span>: item intercepts - <span class="math inline">\(\varepsilon_i^{(g)}\)</span>: residual errors - <span class="math inline">\(\Theta^{(g)}\)</span>: residual covariance matrix</p>
+<p>From a statistical modelling perspective, MI refers to invariance of the measurement parameters across groups:</p>
+<p>[ _M^{(g)} = _M g, ]</p>
+<p>where</p>
+<p>[ _M = { , , }. ]</p>
+<p><em>Structural invariance</em> (SI), by contrast, refers to equality of structural coefficients across groups, that is, to the requirement that the same association between latent factors exists across groups. The structural model may be written as</p>
+<p>[ _i^{(g)} = ^{(g)} + ^{(g)} _i^{(g)} + _i^{(g)}, ]</p>
+<p>where ( ^{(g)} ) contains the structural coefficients, ( ^{(g)} ) contains latent intercepts, and ( _i^{(g)} ) has covariance matrix ( ^{(g)} ). SI is then defined as</p>
+<p>[ _S^{(g)} = _S g, ]</p>
+<p>with</p>
+<p>[ _S = { , , }. ]</p>
+<p>Traditionally, MI and SI are characterized via increasingly strict levels of invariance that each add further restrictions on statistical parameters across groups. In the classical view, MI is attained only when configural, metric, scalar, and residual invariance hold. These correspond to successive equality restrictions on ( ^{(g)} ), ( ^{(g)} ), and ( ^{(g)} ). More recent perspectives conceptualize invariance as the absence of systematic moderation of key parameters by variables external to the measurement model. Formally, if model parameters depend on group membership through</p>
+<p>[ (g) = + (g), ]</p>
+<p>then invariance corresponds to the condition</p>
+<p>[ (g) = 0 g. ]</p>
+<p>Covariance invariance analyses evaluate whether the unstandardized covariances among latent factors, represented by elements of ( ^{(g)} ), are equivalent across groups, whereas SI analyses examine whether the structural coefficients ( ^{(g)} ) are equal across groups. These analyses are required to determine whether predictive and non-predictive relationships between latent factors are invariant or moderated across groups within a theoretical model.</p>
+</section>
+<section id="replication" class="level3">
+<h3 class="anchored" data-anchor-id="replication">Replication</h3>
+<p>Replication is the ability to obtain consistent findings when a study is repeated with new independent data being collected under the same or sufficiently similar methodological and theoretical conditions as the original study. In the context of empirical research, a finding can be understood at different analytical levels: as an empirical regularity, as an estimand-based claim, or as a theoretical claim about an underlying mechanism that generates observed patterns. The type or extent of replication relevant to a finding depends on which of these levels the finding is defined at.</p>
+<p><span class="citation" data-cites="Radder1992">@Radder1992</span> characterizes replication as comprising three distinct forms: (a) material replication; (b) reproducibility of the theoretical interpretation; and (c) replication of the experimental result through an alternative material procedure. <span class="citation" data-cites="Schmidt2009">@Schmidt2009</span> builds on this definition and establishes the concepts of direct replication as a restrictive and narrow form of replication and conceptual replication as a wider notion of replication.</p>
+<p>Let ( d ) index datasets, with ( d = 1 ) denoting the original study and ( d = 2 ) the replication study. In direct replication, the same estimand ( ^* ) is targeted under equivalent conditions:</p>
+<p>[ ^{<em>(1)}</em> ^{(2)}. ]</p>
+<p>Under finite sampling, exact equality,</p>
+<p>[ ^{<em>(1)} =</em> ^{(2)}, ]</p>
+<p>is generally implausible. Thus, a finding is said to be directly replicated, when a <em>repetition of an experimental procedure is performed</em>. This in turn relates to non-experimental methods as when a new study estimates the same estimand under conditions that are equal to the original, operationalizing the variables in the same way, with differences limited to incidental sources of variation such as sample, time, or setting. Under this definition, deviations from exact numerical equality of coefficients are to be minimal, however exact numerical equality is not neccessary.</p>
+<p>By contrast, conceptual replication concerns the stability of a theoretical claim under changes in operationalization. This relates to <span class="citation" data-cites="Radder1992">@Radder1992</span>, his b and c compartments of a replication, so that the same theoretical claim or construct is supported using a different estimand that is theoretically analogous to the original. This involves changes in operationalization, such as different independent or dependent measures, while retaining the underlying conceptual target. Let ( ^{(1)} _1 ) and ( ^{(2)} _2 ) denote estimands from two differently operationalized studies. Conceptual replication can then be expressed through a mapping ( ) such that</p>
+<p>[ C(^{(1)}) = C((^{(2)})), ]</p>
+<p>where ( C() ) denotes the theoretical claim supported by the estimand. In this case, replication is evaluated at the level of theoretical equivalence rather than parameter identity.</p>
+</section>
+<section id="replicating-structural-equation-models" class="level3">
+<h3 class="anchored" data-anchor-id="replicating-structural-equation-models">Replicating Structural Equation Models</h3>
+<p>According to <span class="citation" data-cites="Kaplan2009">@Kaplan2009</span>, structural equation modeling (SEM) comprises a class of methodologies designed to express a hypothesized model through summary statistics derived from empirical observations, parameterized by a reduced set of structural parameters. As SEMs are also considered to be a way to formulate social science theories<span class="citation" data-cites="DeLeeuw2009">[@DeLeeuw2009]</span>, for a SEM to be deemed replicated, the encompassed theory needs to hold in the data, either globally or regarding certain parameters.</p>
+<p>For models involving continuous latent variables, the associated hypotheses typically pertain to the means, variances, and covariances of the observed variables. Hypotheses may also concern effect sizes, ordering of parameter magnitudes, or specific parameter values. Because SEMs often contain many estimated parameters, replication should generally focus on those outcomes that are substantively relevant to the hypothesis under study.</p>
+<section id="global-model-fit-versus-parameter-level-replication" class="level4">
+<h4 class="anchored" data-anchor-id="global-model-fit-versus-parameter-level-replication">Global model fit versus parameter-level replication</h4>
+<p>Global model fit concerns the adequacy of the model-implied covariance structure. Let ( () ) denote the covariance matrix implied by the model parameters ( ), and let ( ^{(d)} ) denote the observed covariance matrix in dataset ( d ). Global fit evaluates whether</p>
+<p>[ () ^{(d)}. ]</p>
+<p>Equivalently, one may express this through a fitting function ( F ) such that replication at the level of global fit would require</p>
+<p>[ F!(^{(d)}, (^{(d)})) ]</p>
+<p>to be sufficiently small for both ( d = 1 ) and ( d = 2 ).</p>
+<p>However, good global fit in both datasets does not imply replication at the level of parameters. In general,</p>
+<p>[ (^{(1)}) (^{(2)}) ]</p>
+<p>does not imply</p>
+<p>[ ^{(1)} ^{(2)}. ]</p>
+<p>Multiple parameter configurations may produce similar model-implied covariance structures. Global fit therefore concerns the adequacy of the model-implied distribution, whereas replication at the level of parameters concerns the stability of theoretically relevant estimands.</p>
+<p>Accordingly, let ( ^* ) denote the subset of parameters that encode the substantive claim of interest. Replication at the level of parameters is defined as</p>
+<p>[ ^{<em>(1)}</em> ^{(2)}. ]</p>
+<p>This formulation captures replication as stability of theory-relevant parameters, rather than mere admissibility of the overall model.</p>
+<p>If i aim at replication it is therefore reasonable to treat both datasets as independent realizations of the same underlying model. Thus, a problem of symmetric parameter comparison across datasets. In a multiple-group SEM framework, parameters are estimated freely in both datasets and then compared through equality constraints imposed across groups. This reflects the null hypothesis</p>
+<p>[ H_0: ^{<em>(1)} =</em> ^{(2)}, ]</p>
+<p>which is formulated at the level of population parameters rather than sample-specific estimates. Because exact equality is often too strict a criterion, approximate formulations are more plausible, for example</p>
+<p>[ |^{<em>(1)} -</em> ^{(2)}| , ]</p>
+<p>for a substantively justified tolerance ( ).</p>
+<p>Under this perspective, replication of SEMs can be treated as analogous to invariance testing across groups, with datasets taking the role of groups. Where MI is conditional on group definitions, replication is conditional on data independence. Formally,</p>
+<p>[ ^{*(d)} d.&nbsp;]</p>
+<p>This makes the relation to MI and SI explicit: both invariance testing and replication evaluate robustness of parameters under variation, differing mainly in the source of that variation. Replication of SEMs across an original and a replication sample should therefore proceed within a sequential multiple-group manner. First, measurement invariance between the two samples has to be established:</p>
+<p>[ _M^{(1)} = _M^{(2)}. ]</p>
+<p>At least metric invariance is required for structural parameters to be meaningfully compared, because without comparable factor loadings, differences in structural relations may reflect measurement non-equivalence rather than substantive divergence. Conditional on sufficient measurement invariance, structural replication is assessed by comparing an unconstrained multiple-group model, in which the structural parameters of interest are freely estimated across datasets, with a constrained model in which they are set to be equal:</p>
+<p>[ H_0: _S^{*(1)} = _S^{*(2)}. ]</p>
+<p>This comparison could be evaluated with a likelihood-ratio statistic,</p>
+<p>[ ^2 = -2(_C - _U), ]</p>
+<p>where ( _C ) and ( _U ) denote the log-likelihoods of the constrained and unconstrained models, respectively. A statistically non-significant deterioration in model fit is compatible with structural stability of the targeted parameters, whereas a statistically significant deterioration indicates instability. At the same time, such tests should be interpreted cautiously because they are sensitive to sample size and do not by themselves capture uncertainty in a substantively calibrated way.</p>
+<p>At the level of parameters, again some would consider SEMs replicated when the statistical significance of paths and correlations is consistent across studies. However, failure to reproduce statistical significance does not necessarily imply non-replication, because significance is highly sensitive to sampling variability, statistical power, and measurement error. Replication should therefore not be reduced to consistency of significance decisions alone. This implies that replication of SEMs is best understood as a graded, parameter- and claim-relative process.<br>
+Let</p>
+<p>[ ^* = {_1, , _r} ]</p>
+<p>denote the set of parameters relevant to the theoretical claim of interest. Replication can then be represented as the vector</p>
+<p>[ R = ( (|_j^{(1)} - _j^{(2)}| *j*) ){j=1}^r, ]</p>
+<p>where ( () ) is an indicator function and ( _j ) is a substantively justified tolerance for parameter ( j ). Full replication corresponds to the case in which all relevant parameters are stable, whereas partial replication corresponds to stability of only a subset of them.</p>
+<p>This perspective renders approximate and partial replication theoretically grounded rather than ad hoc. Limited deviations in parameter estimates can then be interpreted as meaningful quantitative differences rather than categorical failures of replication, paralleling contemporary approaches to approximate invariance. It follows that models in their entirety should not be treated as the primary objects of replication. Rather, models serve as entry points for evaluating the stability of the theoretical commitments they encode. This shifts attention away from global model fit toward the robustness of substantively meaningful parameters. In this sense, global fit is a necessary but not sufficient condition for replication:</p>
+<p>[ , ]</p>
+<p>but the converse does not hold. Measurement quality also becomes central to replication validity, because instability across datasets may reflect violations of</p>
+<p>[ _M^{(1)} = _M^{(2)} ]</p>
+<p>rather than instability of structural relations. Replication claims that do not explicitly address measurement equivalence therefore remain ambiguous.</p>
+<p>Conceptual replication has a formal structure under this perspective as it concerns stability of higher-level theoretical claims under deliberate changes in operationalization. This can be understood as stability of ( C() ) under transformations of the estimand space, rather than equality of the same parameter across datasets. Replication success therefore becomes explicitly conditional on the estimand, the theoretical scope, and the operational context, requiring precise statements about what exactly has or has not replicated. The distinction between invariance testing and replication may therefore be understood as one of scope rather than kind. Invariance evaluates stability across groups within a dataset, whereas replication evaluates stability across independent datasets or study instantiations, but both address the same underlying question of robustness under variation.</p>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

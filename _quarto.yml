@@ -2,18 +2,17 @@ project:
   type: manuscript
 
 manuscript:
-  title: "ReMis"
+  article: remis.qmd
 
 bibliography: references.bib
 
 format:
   pdf:
     documentclass: apa7
-    classoption:
-      - man
+    classoption: [man]
     papersize: letter
     fontsize: 12pt
     linestretch: 2
-    geometry: margin=1in
-    header-includes:
-      - \usepackage{csquotes}
+    include-in-header:
+      text: |
+        \usepackage{csquotes}
