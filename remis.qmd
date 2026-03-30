@@ -112,7 +112,7 @@ Under this definition, deviations from exact numerical equality of coefficients 
 By contrast, conceptual replication concerns the stability of a theoretical claim under changes in operationalization. 
 This relates to @Radder1992, his b and c compartments of a replication, so that the same theoretical claim or construct is supported using a different estimand that is theoretically analogous to the original. 
 This involves changes in operationalization, such as different independent or dependent measures, while retaining the underlying conceptual target. 
-Let $\theta^{(1)} \in \Theta_1 $ and $ \theta^{(2)} \in \Theta_2 $ denote estimands from two differently operationalized studies. 
+Let $\theta^{(1)} \in \Theta_1$ and $\theta^{(2)} \in \Theta_2$ denote estimands from two differently operationalized studies. 
 Conceptual replication can then be expressed through a mapping $\phi$ such that
 
 $$C(\theta^{(1)}) = C(\phi(\theta^{(2)})), $$
