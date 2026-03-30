@@ -168,9 +168,10 @@ This reflects the null hypothesis
 $$ H_0: \theta^{*(1)} = \theta^{*(2)}, $$
 
 which is formulated at the level of population parameters rather than sample-specific estimates. 
-Because exact equality is often too strict a criterion, approximate formulations are more plausible, for example
+Empirically, this hypothesis is assessed using the corresponding parameter estimates. 
+Because exact equality is often too strict a criterion, approximate formulations are more plausible, for example 
 
-$$\lVert\theta_j^{*(1)} - \theta_j^{*(2)}\rVert \le \epsilon_j \quad \forall j, $$
+$$\lVert\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\rVert \le \epsilon_j \quad \forall j, $$
 
 where $\epsilon_j$ denotes a substantively justified tolerance for parameter $j$.
 
@@ -180,6 +181,8 @@ Formally,
 
 $$\text{Replication} \Longleftrightarrow \theta^{*(d)} \text{ is stable across } d. $$
 
+This definition is formulated at the level of population parameters. 
+Empirically, stability is assessed using the corresponding sample-based parameter estimates $\hat{\theta}^{*(d)}$.
 This makes the relation to MI and SI explicit: both invariance testing and replication evaluate robustness of parameters under variation, differing mainly in the source of that variation. 
 Replication of SEMs across an original and a replication sample should therefore proceed within a sequential multiple-group manner. 
 First, measurement invariance between the two samples has to be established:
