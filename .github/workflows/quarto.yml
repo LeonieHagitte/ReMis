@@ -19,7 +19,7 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Setup TinyTeX (for PDF)
+      - name: Setup TinyTeX
         uses: r-lib/actions/setup-tinytex@v2
 
       - name: Install LaTeX packages
@@ -28,10 +28,13 @@ jobs:
       - name: Render manuscript
         run: quarto render remis.qmd
 
-      - name: Upload results
+      - name: List rendered files
+        run: ls -lah
+
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: rendered-output
+          name: rendered-manuscript
           path: |
-            ./remis.html
-            ./remis.pdf
+            remis.html
+            remis.pdf
