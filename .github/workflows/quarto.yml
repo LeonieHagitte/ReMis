@@ -8,6 +8,9 @@ on:
       - "references.bib"
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   render:
     runs-on: ubuntu-latest
@@ -15,6 +18,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install R packages
+        run: |
+          Rscript -e 'install.packages(c("rmarkdown","knitr"), repos="https://cloud.r-project.org")'
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -25,16 +35,17 @@ jobs:
       - name: Install LaTeX packages
         run: tlmgr install apa7 csquotes
 
-      - name: Render manuscript
-        run: quarto render remis.qmd
+      - name: Render project
+        run: quarto render
 
-      - name: List rendered files
-        run: ls -lah
+      - name: Show rendered files
+        run: find . -maxdepth 2 -type f | sort
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: rendered-manuscript
+          if-no-files-found: error
           path: |
             remis.html
             remis.pdf
