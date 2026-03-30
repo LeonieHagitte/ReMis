@@ -170,9 +170,9 @@ $$ H_0: \theta^{*(1)} = \theta^{*(2)}, $$
 which is formulated at the level of population parameters rather than sample-specific estimates. 
 Because exact equality is often too strict a criterion, approximate formulations are more plausible, for example
 
-$$\|\theta^{*(1)} - \theta^{*(2)}\| \le \epsilon, $$
+$$\|\theta_j^{*(1)} - \theta_j^{*(2)}\| \le \epsilon_j \quad \forall j, $$
 
-for a substantively justified tolerance $(\epsilon)$.
+where $\epsilon_j$ denotes a substantively justified tolerance for parameter $j$.
 
 Under this perspective, replication of SEMs can be treated as analogous to invariance testing across groups, with datasets taking the role of groups. 
 Where MI is conditional on group definitions, replication is conditional on data independence. 
