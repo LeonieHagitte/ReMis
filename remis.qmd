@@ -10,6 +10,18 @@ format:
     documentclass: apa7
     classoption: [man]
 ---
+### Introduction 
+
+Structural equation models (SEMs) are widely used in applied research to test hypotheses about latent constructs and their relationships. 
+In practice, replication is typically assessed by fitting the same model to a new dataset and evaluating whether global fit indices remain acceptable or whether selected parameters retain statistical significance.
+Empirically, these approaches often yield ambiguous or unstable outcomes. 
+Models may exhibit acceptable global fit across datasets while differing substantially in parameter estimates, reflecting the non-uniqueness of the model-implied covariance structure. 
+Conversely, parameters that were statistically significant in an original study may fail to reach significance in a replication due to differences in sample size, measurement quality, or sampling variability.
+In addition, estimation itself may be unstable. 
+A model that converges in one dataset may fail to converge in another sample drawn from the same population, or even in resampled versions of the original data. 
+Such behavior indicates sensitivity of the model to sampling fluctuations or weak identification, and implies that replication may fail at the level of model estimation rather than parameter comparison.
+These issues highlight, that replication in SEM is underdetermined/ unsolved. 
+We argue that replication of SEMs can be formalized as a problem of parameter stability analogous to invariance testing. 
 
 ### Invariance Testing
 
@@ -123,7 +135,7 @@ where $C(\cdot)$ denotes the theoretical claim supported by the estimand. In thi
 
 ### Replicating Structural Equation Models
 
-According to @Kaplan2009, structural equation modeling (SEM) comprises a class of methodologies designed to express a hypothesized model through summary statistics derived from empirical observations, parameterized by a reduced set of structural parameters. 
+According to @Kaplan2009, SEM comprises a class of methodologies designed to express a hypothesized model through summary statistics derived from empirical observations, parameterized by a reduced set of structural parameters. 
 As SEMs are also considered to be a way to formulate social science theories[@DeLeeuw2009], for a SEM to be deemed replicated, the encompassed theory needs to hold in the data, either globally or regarding certain parameters.
 
 For models involving continuous latent variables, the associated hypotheses typically pertain to the means, variances, and covariances of the observed variables. 
