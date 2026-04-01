@@ -10,6 +10,7 @@ format:
     documentclass: apa7
     classoption: [man]
 ---
+
 ### Introduction 
 
 Structural equation models (SEMs) are widely used in applied research to test hypotheses about latent constructs and their relationships. 
