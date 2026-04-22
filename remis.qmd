@@ -21,8 +21,8 @@ Conversely, parameters that were statistically significant in an original study 
 In addition, estimation itself may be unstable. 
 A model that converges in one dataset may fail to converge in another sample drawn from the same population, or even in resampled versions of the original data. 
 Such behavior indicates sensitivity of the model to sampling fluctuations or weak identification, and implies that replication may fail at the level of model estimation rather than parameter comparison.
-These issues highlight, that replication in SEM is underdetermined/ unsolved. 
-We argue that replication of SEMs can be formalized as a problem of parameter stability analogous to invariance testing. 
+These issues highlight, that replication in SEM is underdetermined and unsolved. 
+To solve that problem, we argue that replication of SEMs can be formalized as a problem of parameter stability analogous to invariance testing. 
 
 ### Invariance Testing
 
@@ -169,7 +169,8 @@ $$\theta^{(1)} \approx \theta^{(2)}. $$
 Multiple parameter configurations may produce similar model-implied covariance structures. 
 Global fit therefore concerns the adequacy of the model-implied distribution, whereas replication at the level of parameters concerns the stability of theoretically relevant estimands.
 
-Accordingly, let $\theta^* \subset \theta$ denote the subset of parameters that encode the substantive claim of interest. Replication at the level of parameters is defined as
+Accordingly, let $\theta^* \subset \theta$ denote the subset of parameters that encode the substantive claim of interest. 
+Replication at the level of parameters is defined as
 
 $$\theta^{*(1)} \approx \theta^{*(2)}. $$
 
