@@ -321,9 +321,12 @@ matrix implied by the model parameters \(\theta\), and let
 Equivalently, one may express this through a fitting function \(F\) such
 that replication at the level of global fit would require
 
-\[F\left(\mathbf{S}^{(d)}, \boldsymbol{\Sigma}(\hat{\theta}^{(d)})\right) \]
+\[
+F\bigl(S^{(d)}, \Sigma(\hat{\theta}^{(d)})\bigr) \le c \quad \text{for } d = 1,2,
+\]
 
-to be sufficiently small for both \(d = 1\) and \(d = 2\).
+where \(c\) denotes a context-dependent criterion for acceptable model
+fit.
 
 However, good global fit in both datasets does not imply replication at
 the level of parameters. In general,
@@ -339,9 +342,12 @@ covariance structures. Global fit therefore concerns the adequacy of the
 model-implied distribution, whereas replication at the level of
 parameters concerns the stability of theoretically relevant estimands.
 
-Accordingly, let \(\theta^* \subset \theta\) denote the subset of
-parameters that encode the substantive claim of interest. Replication at
-the level of parameters is defined as
+Accordingly, restricting attention to estimands that correspond directly
+to model parameters,let
+\(\theta^{*} := (\theta_{j_1}, \ldots, \theta_{j_r})\) denote the subset
+of model parameters corresponding to the substantive claim of interest.
+
+Replication at the level of parameters is defined as
 
 \[\theta^{*(1)} \approx \theta^{*(2)}. \]
 
@@ -370,8 +376,10 @@ parameter \(j\).
 
 Under this perspective, replication of SEMs can be treated as analogous
 to invariance testing across groups, with datasets taking the role of
-groups. This analogy can be formalized using the framework of
-measurement and structural invariance.
+groups. In the context of multiple-group SEM, datasets are treated as
+distinct groups. Accordingly, we define \(g \equiv d\), where \(g\)
+indexes groups and \(d\) indexes datasets. This analogy can be
+formalized using the framework of measurement and structural invariance.
 
 \subsubsection{Invariance Testing}\label{invariance-testing}
 
@@ -499,8 +507,21 @@ MI and SI explicit: both invariance testing and replication evaluate
 robustness of parameters under variation, differing mainly in the source
 of that variation. Replication of SEMs across an original and a
 replication sample should therefore proceed within a sequential
-multiple-group manner. First, measurement invariance between the two
-samples has to be established:
+multiple-group manner.
+
+Replication, as defined above, refers to the stability of
+theory-relevant parameters across independent datasets and is not
+conditional on measurement invariance. However, in the context of SEM,
+the empirical assessment of structural parameter stability requires that
+the underlying measurement model operates equivalently across datasets.
+Without such equivalence, observed differences in structural parameters
+may reflect differences in measurement rather than differences in the
+underlying relations of interest. Measurement invariance is therefore a
+necessary condition for the valid interpretation of structural
+replication.
+
+First, measurement invariance between the two samples has to be
+established:
 
 \[\theta_M^{(1)} = \theta_M^{(2)}. \]
 
@@ -566,13 +587,12 @@ models in their entirety should not be treated as the primary objects of
 replication. Rather, models serve as entry points for evaluating the
 stability of the theoretical commitments they encode. This shifts
 attention away from global model fit toward the robustness of
-substantively meaningful parameters. In this sense, global fit is a
-necessary but not sufficient condition for replication:
-
-\[ \text{Replication} \Rightarrow \text{adequate model fit}, \]
-
-but the converse does not hold. Measurement quality also becomes central
-to replication validity, because instability across datasets may reflect
+substantively meaningful parameters. Because parameter stability under
+model misspecification may reflect shared misspecification rather than
+stability of the underlying relations, global fit is a necessary but not
+sufficient condition for meaningful interpretation of replication. But
+the converse does not hold. Measurement quality also becomes central to
+replication validity, because instability across datasets may reflect
 violations of
 
 \[ \theta_M^{(1)} = \theta_M^{(2)} \]
