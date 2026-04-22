@@ -76,9 +76,11 @@ $$\boldsymbol{\Sigma}(\theta) \approx \mathbf{S}^{(d)}.$$
 
 Equivalently, one may express this through a fitting function $F$ such that replication at the level of global fit would require
 
-$$F\left(\mathbf{S}^{(d)}, \boldsymbol{\Sigma}(\hat{\theta}^{(d)})\right) $$
+$$
+F\bigl(S^{(d)}, \Sigma(\hat{\theta}^{(d)})\bigr) \le c \quad \text{for } d = 1,2,
+$$
 
-to be sufficiently small for both $d = 1$ and $d = 2$.
+where $c$ denotes a context-dependent criterion for acceptable model fit.
 
 However, good global fit in both datasets does not imply replication at the level of parameters. 
 In general,
@@ -92,7 +94,8 @@ $$\theta^{(1)} \approx \theta^{(2)}. $$
 Multiple parameter configurations may produce similar model-implied covariance structures. 
 Global fit therefore concerns the adequacy of the model-implied distribution, whereas replication at the level of parameters concerns the stability of theoretically relevant estimands.
 
-Accordingly, let $\theta^* \subset \theta$ denote the subset of parameters that encode the substantive claim of interest. 
+Accordingly, restricting attention to estimands that correspond directly to model parameters,let $\theta^{*} := (\theta_{j_1}, \ldots, \theta_{j_r})$ denote the subset of model parameters corresponding to the substantive claim of interest.
+
 Replication at the level of parameters is defined as
 
 $$\theta^{*(1)} \approx \theta^{*(2)}. $$
@@ -255,11 +258,8 @@ Limited deviations in parameter estimates can then be interpreted as meaningful 
 It follows that models in their entirety should not be treated as the primary objects of replication. 
 Rather, models serve as entry points for evaluating the stability of the theoretical commitments they encode. 
 This shifts attention away from global model fit toward the robustness of substantively meaningful parameters. 
-In this sense, global fit is a necessary but not sufficient condition for replication:
-
-$$ \text{Replication} \Rightarrow \text{adequate model fit}, $$
-
-but the converse does not hold. Measurement quality also becomes central to replication validity, because instability across datasets may reflect violations of
+Because parameter stability under model misspecification may reflect shared misspecification rather than stability of the underlying relations, global fit is a necessary but not sufficient condition for meaningful interpretation of replication. 
+But the converse does not hold. Measurement quality also becomes central to replication validity, because instability across datasets may reflect violations of
 
 $$ \theta_M^{(1)} = \theta_M^{(2)} $$
 
