@@ -24,83 +24,6 @@ Such behavior indicates sensitivity of the model to sampling fluctuations or wea
 These issues highlight, that replication in SEM is underdetermined and unsolved. 
 To solve that problem, we argue that replication of SEMs can be formalized as a problem of parameter stability analogous to invariance testing. 
 
-### Invariance Testing
-
-Measurement invariance (MI) refers to the statistical property that a measurement instrument assesses the same latent construct equivalently across different groups. 
-In other words, the measurement model operates in the same manner across groups. 
-When MI is established, meaningful comparisons of the underlying construct between groups are justified.
-
-Let $\mathbf{y}_i^{(g)}$ denote the observed variables for individual $i$ in group $g$, and let $\boldsymbol{\eta}_i^{(g)}$ denote the corresponding latent variables. 
-The measurement model can be written as
-
-$$ 
-\mathbf{y}_i^{(g)} = \boldsymbol{\nu}^{(g)} + \boldsymbol{\Lambda}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\varepsilon}_i^{(g)}, 
-$$
-with
-
-$$
-\boldsymbol{\varepsilon}_i^{(g)} \sim (0, \boldsymbol{\Theta}^{(g)}).
-$$
-
-Where:  
-
-- $\mathbf{y}_i^{(g)}$: observed responses of individual $i$ in group $g$  
-- $\nu^{(g)}$: item intercepts  
-- $\eta_i^{(g)}$: latent variables for individual $i$  
-- $\Lambda^{(g)}$: factor loadings linking latent variables to observed indicators  
-- $\varepsilon_i^{(g)}$: residual errors 
-- $\Theta^{(g)}$: residual covariance matrix  
-
-
-From a statistical modelling perspective, MI refers to invariance of the measurement parameters across groups:
-
-$$ \theta_M^{(g)} = \theta_M \quad \forall g ,$$
-
-where
-
-$$ \theta_M = \{\boldsymbol{\Lambda}, \boldsymbol{\nu}, \boldsymbol{\Theta}\}. $$
-
-*Structural invariance* (SI), by contrast, refers to equality of structural coefficients across groups, that is, to the requirement that the same association between latent factors exists across groups. 
-The structural model may be written as
-
-$$ \boldsymbol{\eta}_i^{(g)} = \boldsymbol{\alpha}^{(g)} + \mathbf{B}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\zeta}_i^{(g)}, $$
-
-with  
-
-$$
-\boldsymbol{\zeta}_i^{(g)} \sim (0, \boldsymbol{\Psi}^{(g)}).
-$$
-
-where  
-
-- $\boldsymbol{\alpha}^{(g)}$ contains latent intercepts    
-- $\mathbf{B}^{(g)}$ contains the structural coefficients  
-- $\boldsymbol{\zeta}_i^{(g)}$ is a vector of structural disturbance terms   
-- $\boldsymbol{\Psi}^{(g)}$ is their covariance matrix  
-
-SI is then defined as 
-
-$$\theta_S^{(g)} = \theta_S \quad \forall g,$$
-
-with
-
-$$\theta_S = \{\mathbf{B}, \boldsymbol{\alpha}, \boldsymbol{\Psi}\}. $$
-
-Traditionally, MI and SI are characterized via increasingly strict levels of invariance that each add further restrictions on statistical parameters across groups. 
-In the classical view, MI is attained only when configural, metric, scalar, and residual invariance hold. 
-These correspond to successive equality restrictions on $\boldsymbol{\Lambda}^{(g)}$, $\boldsymbol{\nu}^{(g)}$, and $\boldsymbol{\Theta}^{(g)}$. 
-More recent perspectives conceptualize invariance as the absence of systematic moderation of key parameters by variables external to the measurement model. 
-Formally, if model parameters depend on group membership through
-
-$$ \theta^{(g)} = \theta + \Delta^{(g)}, $$
-
-then invariance corresponds to the condition
-
-$$ \Delta^{(g)} = 0 \quad \forall g. $$
-
-Covariance invariance analyses evaluate whether the unstandardized covariances among latent factors, represented by elements of $\boldsymbol{\Psi}^{(g)}$, are equivalent across groups, whereas SI analyses examine whether the structural coefficients $\mathbf{B}^{(g)}$ are equal across groups. 
-These analyses are required to determine whether relationships between latent factors are invariant across groups or vary systematically as a function of group membership. 
-
 ### Replication
 
 Replication is the ability to obtain consistent findings when a study is repeated with new independent data being collected under the same or sufficiently similar methodological and theoretical conditions as the original study. 
@@ -192,6 +115,87 @@ $$\left|\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\right| \le \epsilon_j \quad \f
 where $\epsilon_j$ denotes a substantively justified tolerance for parameter $j$.
 
 Under this perspective, replication of SEMs can be treated as analogous to invariance testing across groups, with datasets taking the role of groups. 
+This analogy can be formalized using the framework of measurement and structural invariance.
+
+### Invariance Testing
+
+Measurement invariance (MI) refers to the statistical property that a measurement instrument assesses the same latent construct equivalently across different groups. 
+In other words, the measurement model operates in the same manner across groups. 
+When MI is established, meaningful comparisons of the underlying construct between groups are justified.
+
+Let $\mathbf{y}_i^{(g)}$ denote the observed variables for individual $i$ in group $g$, and let $\boldsymbol{\eta}_i^{(g)}$ denote the corresponding latent variables. 
+The measurement model can be written as
+
+$$ 
+\mathbf{y}_i^{(g)} = \boldsymbol{\nu}^{(g)} + \boldsymbol{\Lambda}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\varepsilon}_i^{(g)}, 
+$$
+with
+
+$$
+\boldsymbol{\varepsilon}_i^{(g)} \sim (0, \boldsymbol{\Theta}^{(g)}).
+$$
+
+Where:  
+
+- $\mathbf{y}_i^{(g)}$: observed responses of individual $i$ in group $g$  
+- $\nu^{(g)}$: item intercepts  
+- $\eta_i^{(g)}$: latent variables for individual $i$  
+- $\Lambda^{(g)}$: factor loadings linking latent variables to observed indicators  
+- $\varepsilon_i^{(g)}$: residual errors 
+- $\Theta^{(g)}$: residual covariance matrix  
+
+
+From a statistical modelling perspective, MI refers to invariance of the measurement parameters across groups:
+
+$$ \theta_M^{(g)} = \theta_M \quad \forall g ,$$
+
+where
+
+$$ \theta_M = \{\boldsymbol{\Lambda}, \boldsymbol{\nu}, \boldsymbol{\Theta}\}. $$
+
+*Structural invariance* (SI), by contrast, refers to equality of structural coefficients across groups, that is, to the requirement that the same association between latent factors exists across groups. 
+The structural model may be written as
+
+$$ \boldsymbol{\eta}_i^{(g)} = \boldsymbol{\alpha}^{(g)} + \mathbf{B}^{(g)} \boldsymbol{\eta}_i^{(g)} + \boldsymbol{\zeta}_i^{(g)}, $$
+
+with  
+
+$$
+\boldsymbol{\zeta}_i^{(g)} \sim (0, \boldsymbol{\Psi}^{(g)}).
+$$
+
+where  
+
+- $\boldsymbol{\alpha}^{(g)}$ contains latent intercepts    
+- $\mathbf{B}^{(g)}$ contains the structural coefficients  
+- $\boldsymbol{\zeta}_i^{(g)}$ is a vector of structural disturbance terms   
+- $\boldsymbol{\Psi}^{(g)}$ is their covariance matrix  
+
+SI is then defined as 
+
+$$\theta_S^{(g)} = \theta_S \quad \forall g,$$
+
+with
+
+$$\theta_S = \{\mathbf{B}, \boldsymbol{\alpha}, \boldsymbol{\Psi}\}. $$
+
+Traditionally, MI and SI are characterized via increasingly strict levels of invariance that each add further restrictions on statistical parameters across groups. 
+In the classical view, MI is attained only when configural, metric, scalar, and residual invariance hold. 
+These correspond to successive equality restrictions on $\boldsymbol{\Lambda}^{(g)}$, $\boldsymbol{\nu}^{(g)}$, and $\boldsymbol{\Theta}^{(g)}$. 
+More recent perspectives conceptualize invariance as the absence of systematic moderation of key parameters by variables external to the measurement model. 
+Formally, if model parameters depend on group membership through
+
+$$ \theta^{(g)} = \theta + \Delta^{(g)}, $$
+
+then invariance corresponds to the condition
+
+$$ \Delta^{(g)} = 0 \quad \forall g. $$
+
+Covariance invariance analyses evaluate whether the unstandardized covariances among latent factors, represented by elements of $\boldsymbol{\Psi}^{(g)}$, are equivalent across groups, whereas SI analyses examine whether the structural coefficients $\mathbf{B}^{(g)}$ are equal across groups. 
+These analyses are required to determine whether relationships between latent factors are invariant across groups or vary systematically as a function of group membership. 
+
+### Using Invariance Testing to replicate SEMs 
+
 Where MI is conditional on group definitions, replication is conditional on data independence. 
 Formally,
 
