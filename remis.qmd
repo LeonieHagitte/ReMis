@@ -207,6 +207,12 @@ This definition is formulated at the level of population parameters.
 Empirically, stability is assessed using the corresponding sample-based parameter estimates $\hat{\theta}^{*(d)}$.
 This makes the relation to MI and SI explicit: both invariance testing and replication evaluate robustness of parameters under variation, differing mainly in the source of that variation. 
 Replication of SEMs across an original and a replication sample should therefore proceed within a sequential multiple-group manner. 
+
+Replication, as defined above, refers to the stability of theory-relevant parameters across independent datasets and is not conditional on measurement invariance.
+However, in the context of SEM, the empirical assessment of structural parameter stability requires that the underlying measurement model operates equivalently across datasets. 
+Without such equivalence, observed differences in structural parameters may reflect differences in measurement rather than differences in the underlying relations of interest. 
+Measurement invariance is therefore a necessary condition for the valid interpretation of structural replication.
+
 First, measurement invariance between the two samples has to be established:
 
 $$\theta_M^{(1)} = \theta_M^{(2)}. $$
