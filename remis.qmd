@@ -115,6 +115,8 @@ $$\left|\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\right| \le \epsilon_j \quad \f
 where $\epsilon_j$ denotes a substantively justified tolerance for parameter $j$.
 
 Under this perspective, replication of SEMs can be treated as analogous to invariance testing across groups, with datasets taking the role of groups. 
+In the context of multiple-group SEM, datasets are treated as distinct groups. 
+Accordingly, we define $g \equiv d$, where $g$ indexes groups and $d$ indexes datasets.
 This analogy can be formalized using the framework of measurement and structural invariance.
 
 ### Invariance Testing
