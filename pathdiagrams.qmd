@@ -1,0 +1,256 @@
+---
+title: "Path Diagrams Replication/Generalization"
+editor: visual
+---
+
+## Direct Replication (Classic)
+
+```{mermaid}
+graph LR
+subgraph O[Original]
+  Gf[Second-order factor] --> F1[Factor 1]
+  Gf --> F2[Factor 2]
+  Gf --> F3[Factor 3]
+
+  F1 --> A[Item A]
+  F1 --> B[Item B]
+  F1 --> C[Item C]
+
+  F2 --> D[Item D]
+  F2 --> E[Item E]
+  F2 --> F[Item F]
+
+  F3 --> G[Item G]
+  F3 --> H[Item H]
+  F3 --> I[Item I]
+end
+
+linkStyle 0 stroke:#d62728,stroke-width:6px;
+linkStyle 3 stroke:#d62728,stroke-width:6px;
+
+subgraph R[Replication]
+  bGf[Second-order factor] --> bF1[Factor 1]
+  bGf --> bF2[Factor 2]
+  bGf --> bF3[Factor 3]
+
+  bF1 --> bA[Item A]
+  bF1 --> bB[Item B]
+  bF1 --> bC[Item C]
+
+  bF2 --> bD[Item D]
+  bF2 --> bE[Item E]
+  bF2 --> bF[Item F]
+
+  bF3 --> bG[Item G]
+  bF3 --> bH[Item H]
+  bF3 --> bI[Item I]
+end
+
+linkStyle 12 stroke:#d62728,stroke-width:6px;
+linkStyle 15 stroke:#d62728,stroke-width:6px;
+O ~~~ R
+```
+
+## Conceptual Replication (Classic)
+
+```{mermaid}
+graph LR
+subgraph O[Original]
+  Gf[Second-order factor] --> F1[Factor 1]
+  Gf --> F2[Factor 2]
+  Gf --> F3[Factor 3]
+
+  F1 --> A[Item A]
+  F1 --> B[Item B]
+  F1 --> C[Item C]
+
+  F2 --> D[Item D]
+  F2 --> E[Item E]
+  F2 --> F[Item F]
+
+  F3 --> G[Item G]
+  F3 --> H[Item H]
+  F3 --> I[Item I]
+end
+
+linkStyle 0 stroke:#d62728,stroke-width:6px;
+linkStyle 3 stroke:#d62728,stroke-width:6px;
+
+subgraph R[Replication]
+  bGf[Second-order factor] --> bF1[Factor 1]
+  bGf --> bF2[Factor 2]
+  bGf --> bF3[Factor 3]
+
+  bF1 --> bA[Item A]
+  bF1 --> bB[Item B]
+  bF1 --> bC[Item C]
+
+  bF2 --> bD[Item D]
+  bF2 --> bE[Item E]
+  bF2 --> bF[Item F]
+
+  bF3 --> bG[Item G]
+  bF3 --> bH[Item H]
+  bF3 --> bI[Item I]
+end
+
+linkStyle 12 stroke:#d62728,stroke-width:6px;
+linkStyle 17 stroke:#d62728,stroke-width:6px;
+O ~~~ R
+```
+
+## Direct Replication (SEM)
+
+```{mermaid}
+graph LR
+subgraph O[Original]
+  Gf[Second-order factor] --> F1[Factor 1]
+  Gf --> F2[Factor 2]
+  Gf --> F3[Factor 3]
+
+  F1 --> A[Item A]
+  F1 --> B[Item B]
+  F1 --> C[Item C]
+
+  F2 --> D[Item D]
+  F2 --> E[Item E]
+  F2 --> F[Item F]
+
+  F3 --> G[Item G]
+  F3 --> H[Item H]
+  F3 --> I[Item I]
+end
+
+linkStyle 0 stroke:#d62728,stroke-width:6px;
+linkStyle 3 stroke:#d62728,stroke-width:6px;
+linkStyle 4 stroke:#d62728,stroke-width:6px;
+linkStyle 5 stroke:#d62728,stroke-width:6px;
+
+subgraph R[Replication]
+  bGf[Second-order factor] --> bF1[Factor 1]
+  bGf --> bF2[Factor 2]
+  bGf --> bF3[Factor 3]
+
+  bF1 --> bA[Item A]
+  bF1 --> bB[Item B]
+  bF1 --> bC[Item C]
+
+  bF2 --> bD[Item D]
+  bF2 --> bE[Item E]
+  bF2 --> bF[Item F]
+
+  bF3 --> bG[Item G]
+  bF3 --> bH[Item H]
+  bF3 --> bI[Item I]
+end
+
+linkStyle 12 stroke:#d62728,stroke-width:6px;
+linkStyle 15 stroke:#d62728,stroke-width:6px;
+linkStyle 16 stroke:#d62728,stroke-width:6px;
+linkStyle 17 stroke:#d62728,stroke-width:6px;
+O ~~~ R
+```
+
+# Conceptual Replication (SEM)
+
+```{mermaid}
+graph LR
+subgraph O[Original]
+  Gf[Second-order factor] --> F1[Factor 1]
+  Gf --> F2[Factor 2]
+  Gf --> F3[Factor 3]
+
+  F1 --> A[Item A]
+  F1 --> B[Item B]
+  F1 --> C[Item C]
+
+  F2 --> D[Item D]
+  F2 --> E[Item E]
+  F2 --> F[Item F]
+
+  F3 --> G[Item G]
+  F3 --> H[Item H]
+  F3 --> I[Item I]
+end
+
+linkStyle 0 stroke:#d62728,stroke-width:6px;
+linkStyle 3 stroke:#d62728,stroke-width:6px;
+linkStyle 4 stroke:#d62728,stroke-width:6px;
+
+
+subgraph R[Replication]
+  bGf[Second-order factor] --> bF1[Factor 1]
+  bGf --> bF2[Factor 2]
+  bGf --> bF3[Factor 3]
+
+  bF1 --> bA[Item A]
+  bF1 --> bB[Item B]
+  bF1 --> bC[Item C]
+
+  bF2 --> bD[Item D]
+  bF2 --> bE[Item E]
+  bF2 --> bF[Item F]
+
+  bF3 --> bG[Item G]
+  bF3 --> bH[Item H]
+  bF3 --> bI[Item I]
+end
+
+linkStyle 12 stroke:#d62728,stroke-width:6px;
+
+linkStyle 16 stroke:#d62728,stroke-width:6px;
+linkStyle 17 stroke:#d62728,stroke-width:6px;
+O ~~~ R
+```
+
+# Replication? (SEM)
+
+```{mermaid}
+graph LR
+subgraph O[Original]
+  Gf[Second-order factor] --> F1[Factor 1]
+  Gf --> F2[Factor 2]
+  Gf --> F3[Factor 3]
+
+  F1 --> A[Item A]
+  F1 --> B[Item B]
+  F1 --> C[Item C]
+
+  F2 --> D[Item D]
+  F2 --> E[Item E]
+  F2 --> F[Item F]
+
+  F3 --> G[Item G]
+  F3 --> H[Item H]
+  F3 --> I[Item I]
+end
+
+linkStyle 0 stroke:#d62728,stroke-width:6px;
+linkStyle 3 stroke:#d62728,stroke-width:6px;
+linkStyle 4 stroke:#d62728,stroke-width:6px;
+linkStyle 5 stroke:#d62728,stroke-width:6px;
+
+subgraph R[Replication]
+  bGf[Second-order factor] --> bF1[Factor 1]
+  bGf --> bF2[Factor 2]
+  bGf --> bF3[Factor 3]
+
+  bF1 --> bA[Item A]
+  bF1 --> bB[Item B]
+  bF1 --> bC[Item C]
+
+  bF2 --> bD[Item D]
+  bF2 --> bE[Item E]
+  bF2 --> bF[Item F]
+
+  bF3 --> bG[Item G]
+  bF3 --> bH[Item H]
+  bF3 --> bI[Item I]
+end
+
+linkStyle 12 stroke:#d62728,stroke-width:6px;
+linkStyle 18 stroke:#d62728,stroke-width:6px;
+linkStyle 19 stroke:#d62728,stroke-width:6px;
+linkStyle 20 stroke:#d62728,stroke-width:6px;
+O ~~~ R
+```
