@@ -1,6 +1,10 @@
 ---
 title: "Path Diagrams Replication/Generalization"
 editor: visual
+format:
+  html:
+    mermaid:
+      theme: neutral
 ---
 
 ## Direct Replication (Classic)
@@ -151,7 +155,7 @@ linkStyle 17 stroke:#d62728,stroke-width:6px;
 O ~~~ R
 ```
 
-# Conceptual Replication (SEM)
+## Conceptual Replication (SEM)
 
 ```{mermaid}
 graph LR
@@ -203,7 +207,7 @@ linkStyle 17 stroke:#d62728,stroke-width:6px;
 O ~~~ R
 ```
 
-# Replication? (SEM)
+## Ambiguous Replication (SEM)
 
 ```{mermaid}
 graph LR

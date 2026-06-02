@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Leonie Hagitte">
+
+<title>ReMis [A fun title could go here]</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-67270d1595a62d14f123c043d4fb2f18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta name="citation_title" content="ReMis [A fun title could go here]">
+<meta name="citation_author" content="Leonie Hagitte">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Preface;,citation_author=J. De Leeuw;,citation_author=R. Berk;,citation_editor=J. De Leeuw;,citation_editor=R. Berk;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_fulltext_html_url=https://doi.org/10.4135/9781452226576;,citation_doi=10.4135/9781452226576;,citation_inbook_title=Structural equation modeling: Foundations and extensions;">
+<meta name="citation_reference" content="citation_title=Structural Equation Modeling (2nd ed.): Foundations and Extensions;,citation_author=David Kaplan;,citation_editor=J. De Leeuw;,citation_editor=R. Berk;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_fulltext_html_url=https://methods.sagepub.com/book/edvol/structural-equation-modeling/toc;,citation_doi=10.4135/9781452226576;">
+<meta name="citation_reference" content="citation_title=Experimental reproducibility and the experimenters’ regress;,citation_author=Hans Radder;,citation_publication_date=1992;,citation_cover_date=1992;,citation_year=1992;,citation_fulltext_html_url=http://www.jstor.org/stable/192744;,citation_issn=02708647;,citation_volume=1992;,citation_journal_title=PSA: Proceedings of the Biennial Meeting of the Philosophy of Science Association;,citation_publisher=[Cambridge University Press, Springer];">
+<meta name="citation_reference" content="citation_title=Shall we Really do it Again? The Powerful Concept of Replication is Neglected in the Social Sciences;,citation_author=Stefan Schmidt;,citation_publication_date=2009-06;,citation_cover_date=2009-06;,citation_year=2009;,citation_fulltext_html_url=https://journals.sagepub.com/doi/10.1037/a0015108;,citation_issue=2;,citation_doi=10.1037/a0015108;,citation_issn=1089-2680, 1939-1552;,citation_volume=13;,citation_journal_title=Review of General Psychology;">
+<meta name="citation_reference" content="citation_title=Estimating the reproducibility of psychological science;,citation_author=Open Science Collaboration;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_issue=6251;,citation_doi=10.1126/science.aac4716;,citation_volume=349;,citation_journal_title=Science;">
+<meta name="citation_reference" content="citation_title=The Impact of Unmodeled Heteroskedasticity on Assessing Measurement Invariance in Single-group Models;,citation_author=Laura Kolbe;,citation_author=Terrence D. Jorgensen;,citation_author=Dylan Molenaar;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=1;,citation_doi=10.1080/10705511.2020.1766357;,citation_volume=28;,citation_journal_title=Structural Equation Modeling: A Multidisciplinary Journal;">
+<meta name="citation_reference" content="citation_title=Building a simpler moderated nonlinear factor analysis model with Markov Chain Monte Carlo estimation.;,citation_author=Craig K. Enders;,citation_author=Juan Diego Vera;,citation_author=Brian T. Keller;,citation_author=Agatha Lenartowicz;,citation_author=Sandra K. Loo;,citation_publication_date=2024-12;,citation_cover_date=2024-12;,citation_year=2024;,citation_doi=10.1037/met0000712;,citation_journal_title=Psychological Methods;">
+<meta name="citation_reference" content="citation_title=Simplifying the Assessment of Measurement Invariance over Multiple Background Variables: Using Regularized Moderated Nonlinear Factor Analysis to Detect Differential Item Functioning;,citation_author=Daniel J. Bauer;,citation_author=William C. M. Belzak;,citation_author=Veronica T. Cole;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_issue=1;,citation_doi=10.1080/10705511.2019.1642754;,citation_volume=27;,citation_journal_title=Structural Equation Modeling: A Multidisciplinary Journal;">
+<meta name="citation_reference" content="citation_title=A Bayesian Moderated Nonlinear Factor Analysis Approach for DIF Detection under Violation of the Equal Variance Assumption;,citation_author=Sooyong Lee;,citation_author=Suhwa Han;,citation_author=Seung W. Choi;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=2;,citation_doi=10.1111/jedm.12388;,citation_volume=61;,citation_journal_title=Journal of Educational Measurement;">
+<meta name="citation_reference" content="citation_title=Making the most of your research budget: Efficiency of a three-method measurement design with planned missing data;,citation_author=Mario Lawes;,citation_author=Martin Schultze;,citation_author=Michael Eid;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_issue=5;,citation_volume=27;,citation_journal_title=Assessment;,citation_publisher=Sage Publications Sage CA: Los Angeles, CA;">
+<meta name="citation_reference" content="citation_title=Assessing reliability in neuroimaging research through intra-class effect decomposition (ICED);,citation_author=Andreas M Brandmaier;,citation_author=Elisabeth Wenger;,citation_author=Nils C Bodammer;,citation_author=Simone Kühn;,citation_author=Naftali Raz;,citation_author=Ulman Lindenberger;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_doi=10.7554/eLife.35718;,citation_volume=7;,citation_journal_title=eLife;,citation_publisher=eLife Sciences Publications, Ltd;">
+<meta name="citation_reference" content="citation_title=Precision, reliability, and effect size of slope variance in latent growth curve models: Implications for statistical power analysis;,citation_author=Andreas M Brandmaier;,citation_author=Timo Von Oertzen;,citation_author=Paolo Ghisletta;,citation_author=Ulman Lindenberger;,citation_author=Christopher Hertzog;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_volume=9;,citation_journal_title=Frontiers in Psychology;,citation_publisher=Frontiers Media SA;">
+<meta name="citation_reference" content="citation_title=LIFESPAN: A tool for the computer-aided design of longitudinal studies;,citation_author=Andreas M Brandmaier;,citation_author=Timo Oertzen;,citation_author=Paolo Ghisletta;,citation_author=Christopher Hertzog;,citation_author=Ulman Lindenberger;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_volume=6;,citation_journal_title=Frontiers in Psychology;,citation_publisher=Frontiers Media SA;">
+<meta name="citation_reference" content="citation_title=Stop calling cohen’s d an effect size [preprint];,citation_author=Andreas M Brandmaier;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_fulltext_html_url=https://doi.org/10.31234/osf.io/n9ta7_v1;,citation_publisher=OSF;">
+<meta name="citation_reference" content="citation_title=Optimal planned missing data design for linear latent growth curve models;,citation_author=Andreas M Brandmaier;,citation_author=Paolo Ghisletta;,citation_author=Timo Oertzen;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_issue=4;,citation_volume=52;,citation_journal_title=Behavior research methods;,citation_publisher=Springer;">
+<meta name="citation_reference" content="citation_title=A Look at Robustness and Stability of 1- versus 0-Regularization: Discussion of Papers by Bertsimas et al. And Hastie et al.;,citation_author=Yuansi Chen;,citation_author=Armeen Taeb;,citation_author=Peter Bühlmann;">
+<meta name="citation_reference" content="citation_title=Temporally delayed linear modelling (TDLM) measures replay in both animals and humans;,citation_author=Yunzhe Liu;,citation_author=Raymond J Dolan;,citation_author=Cameron Higgins;,citation_author=Hector Penagos;,citation_author=Mark W Woolrich;,citation_author=H Freyja Ólafsdóttir;,citation_author=Caswell Barry;,citation_author=Zeb Kurth-Nelson;,citation_author=Timothy E Behrens;,citation_editor=Laura L Colgin;,citation_editor=Caleb Kemere;,citation_editor=Matthijs Meer;,citation_publication_date=2021-06;,citation_cover_date=2021-06;,citation_year=2021;,citation_doi=10.7554/eLife.66917;,citation_issn=2050-084X;,citation_volume=10;,citation_journal_title=eLife;,citation_publisher=eLife Sciences Publications, Ltd;">
+<meta name="citation_reference" content="citation_title=Human Learning in Atari;,citation_author=Pedro A. Tsividis;,citation_author=Thomas Pouncy;,citation_author=Jaqueline L. Xu;,citation_author=Joshua B. Tenenbaum;,citation_author=Samuel J. Gershman;,citation_publication_date=2017-03;,citation_cover_date=2017-03;,citation_year=2017;,citation_conference_title=2017 AAAI Spring Symposium Series;">
+<meta name="citation_reference" content="citation_title=Decoding cognition from spontaneous neural activity;,citation_author=Yunzhe Liu;,citation_author=Matthew M. Nour;,citation_author=Nicolas W. Schuck;,citation_author=Timothy E. J. Behrens;,citation_author=Raymond J. Dolan;,citation_publication_date=2022-04;,citation_cover_date=2022-04;,citation_year=2022;,citation_issue=4;,citation_doi=10.1038/s41583-022-00570-z;,citation_issn=1471-0048;,citation_volume=23;,citation_journal_title=Nature Reviews Neuroscience;,citation_publisher=Nature Publishing Group;">
+<meta name="citation_reference" content="citation_title=Fast Proximal Gradient Descent for A Class of Non-convex and Non-smooth Sparse Learning Problems;,citation_author=Yingzhen Yang;,citation_author=Jiahui Yu;">
+<meta name="citation_reference" content="citation_title=Sharp Thresholds for High-Dimensional and Noisy Sparsity Recovery Using $\ell _{1}$-Constrained Quadratic Programming (Lasso);,citation_author=Martin J. Wainwright;,citation_publication_date=2009-05;,citation_cover_date=2009-05;,citation_year=2009;,citation_issue=5;,citation_doi=10.1109/TIT.2009.2016018;,citation_issn=0018-9448;,citation_volume=55;,citation_journal_title=IEEE Transactions on Information Theory;">
+<meta name="citation_reference" content="citation_title=The Adaptive Lasso and Its Oracle Properties;,citation_author=Hui Zou;,citation_publication_date=2006-12;,citation_cover_date=2006-12;,citation_year=2006;,citation_issue=476;,citation_doi=10.1198/016214506000000735;,citation_issn=0162-1459, 1537-274X;,citation_volume=101;,citation_language=en-US;,citation_journal_title=Journal of the American Statistical Association;">
+<meta name="citation_reference" content="citation_title=On cross-validated Lasso in high dimensions;,citation_author=Denis Chetverikov;,citation_author=Zhipeng Liao;,citation_author=Victor Chernozhukov;,citation_publication_date=2021-06;,citation_cover_date=2021-06;,citation_year=2021;,citation_issue=3;,citation_doi=10.1214/20-AOS2000;,citation_issn=0090-5364;,citation_volume=49;,citation_journal_title=The Annals of Statistics;">
+<meta name="citation_reference" content="citation_title=On the Performance of Different Regularization Methods in Bifactor-(S-1) Models with Explanatory Variables, Recommendations, and Future Directions;,citation_abstract=Regularization methods in linear regression models with manifest variables have been shown to be effective in selecting key predictors from a set of many variables, while improving predictions for novel observations. Regularization methods are particularly attractive for the analysis of complex multidimensional data when theory development is the primary goal; for example when researchers attempt to predict general or specific factors in bifactor models using many potentially relevant predictors. However, applications of regularization methods in such models are still scarce. In a simulation study, we examined the performance of different regularization methods in bifactor-(S-1) models, varying the number of predictors, the correlations with the outcome (effect size), the underlying structure of multicollinearity as well as the sample size, the type of penalty, and a single-step versus a two-step approach. We explore potential caveats in the use of regularization methods in bifactor-(S-1) models, provide practical recommendations, and discuss future directions.;,citation_author=Benedikt Friemelt;,citation_author=Christian Bloszies;,citation_author=Maximilian S. Ernst;,citation_author=Aaron Peikert;,citation_author=Andreas M. Brandmaier;,citation_author=Tobias Koch;,citation_publication_date=2022-12;,citation_cover_date=2022-12;,citation_year=2022;,citation_issue=0;,citation_doi=10.1080/10705511.2022.2140664;,citation_issn=1070-5511;,citation_volume=0;,citation_journal_title=Structural Equation Modeling: A Multidisciplinary Journal;,citation_publisher=Routledge;">
+<meta name="citation_reference" content="citation_title=Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions;,citation_abstract=Across disciplines, researchers increasingly recognize that open science and reproducible research practices may accelerate scientific progress by allowing others to reuse research outputs and by promoting rigorous research that is more likely to yield trustworthy results. While initiatives, training programs, and funder policies encourage researchers to adopt reproducible research and open science practices, these practices are uncommon in many fields. Researchers need training to integrate these practices into their daily work. We organized a virtual brainstorming event, in collaboration with the German Reproducibility Network, to discuss strategies for making reproducible research and open science training the norm at research institutions. Here, we outline eleven strategies, concentrated in three areas: (1) offering training, (2) adapting research assessment criteria and program requirements, and (3) building communities. We provide a brief overview of each strategy, offer tips for implementation, and provide links to resources. Our goal is to encourage members of the research community to think creatively about the many ways they can contribute and collaborate to build communities, and make reproducible research and open science training the norm. Researchers may act in their roles as scientists, supervisors, mentors, instructors, and members of curriculum, hiring or evaluation committees. Institutional leadership and research administration and support staff can accelerate progress by implementing change across their institutions.;,citation_author=Friederike E. Kohrs;,citation_author=Susann Auer;,citation_author=Alexandra Bannach-Brown;,citation_author=Susann Fiedler;,citation_author=Tamarinde Haven;,citation_author=Verena Heise;,citation_author=Constance Holman;,citation_author=Flavio Azevedo;,citation_author=Rene Bernard;,citation_author=Armin Bleier;,citation_author=Nicole Bössel;,citation_author=Brian Cahill;,citation_author=Leyla Jael Castro;,citation_author=Adrian Ehrenhofer;,citation_author=Kristina Eichel;,citation_author=Maximilian Frank;,citation_author=Claudia Frick;,citation_author=Malte Friese;,citation_author=Anne Gärtner;,citation_author=Kerstin Gierend;,citation_author=David Joachim Grüning;,citation_author=Lena Hahn;,citation_author=Maren Huelsemann;,citation_author=Malika Ihle;,citation_author=Sabrina Illius;,citation_author=Laura M. König;,citation_author=Matthias König;,citation_author=Louisa Kulke;,citation_author=Anton Kutlin;,citation_author=Fritjof Lammers;,citation_author=David MA Mehler;,citation_author=Christoph Miehl;,citation_author=Anett Mueller-Alcazar;,citation_author=Claudia Neuendorf;,citation_author=Helen Niemeyer;,citation_author=Florian Pargent;,citation_author=Aaron Peikert;,citation_author=Christina U. Pfeuffer;,citation_author=Robert Reinecke;,citation_author=Jan Philipp Röer;,citation_author=Jessica L. Rohmann;,citation_author=Alfredo Sanchez-Tojar;,citation_author=Stefan Scherbaum;,citation_author=Elena Sixtus;,citation_author=Lisa Spitzer;,citation_author=Vera Maren Straßburger;,citation_author=Marcel Weber;,citation_author=Clarissa Whitmire;,citation_author=Josephine Zerna;,citation_author=Dilara Zorbek;,citation_author=Philipp Zumstein;,citation_author=Tracey Weissgerber;,citation_publication_date=2023-05;,citation_cover_date=2023-05;,citation_year=2023;,citation_doi=10.31219/osf.io/kcvra;,citation_language=en-US;,citation_publisher=OSF Preprints;">
+<meta name="citation_reference" content="citation_title=Strengthening the reporting of empirical simulation studies: Introducing the STRESS guidelines;,citation_abstract=This study develops a standardised checklist approach to improve the reporting of discrete-event simulation, system dynamics and agent-based simulation models within the field of Operational Research and Management Science. Incomplete or ambiguous reporting means that many simulation studies are not reproducible, leaving other modellers with an incomplete picture of what has been done and unable to judge the reliability of the results. Crucially, unclear reporting makes it difficult to reproduce or reuse findings. In this paper, we review the evidence on the quality of model reporting and consolidate previous work. We derive general good practice principles and three 20-item checklists aimed at Strengthening The Reporting of Empirical Simulation Studies (STRESS): STRESS-DES, STRESS-ABS and STRESS-SD for discrete-event simulation, agent-based simulation and system dynamics, respectively. Given the variety of simulation projects, we provide usage and troubleshooting advice to cover a wide range of situations.;,citation_author=Thomas Monks;,citation_author=Christine S. M. Currie;,citation_author=Bhakti Stephan Onggo;,citation_author=Stewart Robinson;,citation_author=Martin Kunc;,citation_author=Simon J. E. Taylor;,citation_publication_date=2019-01;,citation_cover_date=2019-01;,citation_year=2019;,citation_issue=1;,citation_doi=10.1080/17477778.2018.1442155;,citation_issn=1747-7778;,citation_volume=13;,citation_journal_title=Journal of Simulation;,citation_publisher=Taylor &amp;amp;amp; Francis;">
+<meta name="citation_reference" content="citation_title=Using simulation studies to evaluate statistical methods;,citation_abstract=Simulation studies are computer experiments that involve creating data by pseudo-random sampling. A key strength of simulation studies is the ability to understand the behavior of statistical methods because some “truth” (usually some parameter/s of interest) is known from the process of generating the data. This allows us to consider properties of methods, such as bias. While widely used, simulation studies are often poorly designed, analyzed, and reported. This tutorial outlines the rationale for using simulation studies and offers guidance for design, execution, analysis, reporting, and presentation. In particular, this tutorial provides a structured approach for planning and reporting simulation studies, which involves defining aims, data-generating mechanisms, estimands, methods, and performance measures (“ADEMP”); coherent terminology for simulation studies; guidance on coding simulation studies; a critical discussion of key performance measures and their estimation; guidance on structuring tabular and graphical presentation of results; and new graphical presentations. With a view to describing recent practice, we review 100 articles taken from Volume 34 of Statistics in Medicine, which included at least one simulation study and identify areas for improvement.;,citation_author=Tim P. Morris;,citation_author=Ian R. White;,citation_author=Michael J. Crowther;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=11;,citation_doi=10.1002/sim.8086;,citation_issn=1097-0258;,citation_volume=38;,citation_language=en-US;,citation_journal_title=Statistics in Medicine;">
+<meta name="citation_reference" content="citation_title=Pitfalls and potentials in simulation studies: Questionable research practices in comparative simulation studies allow for spurious claims of superiority of any method;,citation_abstract=Comparative simulation studies are workhorse tools for benchmarking statistical methods. As with other empirical studies, the success of simulation studies hinges on the quality of their design, execution, and reporting. If not conducted carefully and transparently, their conclusions may be misleading. In this paper, we discuss various questionable research practices, which may impact the validity of simulation studies, some of which cannot be detected or prevented by the current publication process in statistics journals. To illustrate our point, we invent a novel prediction method with no expected performance gain and benchmark it in a preregistered comparative simulation study. We show how easy it is to make the method appear superior over well-established competitor methods if questionable research practices are employed. Finally, we provide concrete suggestions for researchers, reviewers, and other academic stakeholders for improving the methodological quality of comparative simulation studies, such as preregistering simulation protocols, incentivizing neutral simulation studies, and code and data sharing.;,citation_author=Samuel Pawel;,citation_author=Lucas Kook;,citation_author=Kelly Reeve;,citation_issue=n/a;,citation_doi=10.1002/bimj.202200091;,citation_issn=1521-4036;,citation_volume=n/a;,citation_language=en-US;,citation_journal_title=Biometrical Journal;">
+<meta name="citation_reference" content="citation_title=A Reproducible Data Analysis Workflow;,citation_abstract=In this tutorial, we describe a workflow to ensure long-term reproducibility of R-based data analyses. The workflow leverages established tools and practices from software engineering. It combines the benefits of various open-source software tools including R Markdown, Git, Make, and Docker, whose interplay ensures seamless integration of version management, dynamic report generation conforming to various journal styles, and full cross-platform and long-term computational reproducibility. The workflow ensures meeting the primary goals that 1) the reporting of statistical results is consistent with the actual statistical results (dynamic report generation), 2) the analysis exactly reproduces at a later point in time even if the computing platform or software is changed (computational reproducibility), and 3) changes at any time (during development and post-publication) are tracked, tagged, and documented while earlier versions of both data and code remain accessible. While the research community increasingly recognizes dynamic document generation and version management as tools to ensure reproducibility, we demonstrate with practical examples that these alone are not sufficient to ensure long-term computational reproducibility. Combining containerization, dependence management, version management, and dynamic document generation, the proposed workflow increases scientific productivity by facilitating later reproducibility and reuse of code and data.;,citation_author=Aaron Peikert;,citation_author=Andreas M. Brandmaier;,citation_publication_date=2021-05;,citation_cover_date=2021-05;,citation_year=2021;,citation_doi=10.5964/qcmb.3763;,citation_issn=2699-8432;,citation_volume=1;,citation_journal_title=Quantitative and Computational Methods in Behavioral Sciences;">
+<meta name="citation_reference" content="citation_title=Reproducible Research in R: A Tutorial on How to Do the Same Thing More Than Once;,citation_abstract=Computational reproducibility is the ability to obtain identical results from the same data with the same computer code. It is a building block for transparent and cumulative science because it enables the originator and other researchers, on other computers and later in time, to reproduce and thus understand how results came about, while avoiding a variety of errors that may lead to erroneous reporting of statistical and computational results. In this tutorial, we demonstrate how the R package repro supports researchers in creating fully computationally reproducible research projects with tools from the software engineering community. Building upon this notion of fully automated reproducibility, we present several applications including the preregistration of research plans with code (Preregistration as Code, PAC). PAC eschews all ambiguity of traditional preregistration and offers several more advantages. Making technical advancements that serve reproducibility more widely accessible for researchers holds the potential to innovate the research process and to help it become more productive, credible, and reliable.;,citation_author=Aaron Peikert;,citation_author=Caspar J. Lissa;,citation_author=Andreas M. Brandmaier;,citation_publication_date=2021-12;,citation_cover_date=2021-12;,citation_year=2021;,citation_issue=4;,citation_doi=10.3390/psych3040053;,citation_issn=2624-8611;,citation_volume=3;,citation_language=en-US;,citation_journal_title=Psych;">
+<meta name="citation_reference" content="citation_title=Towards Transparency and Open Science: A Principled Perspective on Computational Reproducibility and Preregistration;,citation_abstract=Psychology and other empirical sciences are in the middle of a crisis, as many researchers have become aware that many findings do not have as much empirical support as they once believed. Several causes of this crisis have been suggested: misuse of statistical methods, sociological biases, and weak theories. This dissertation proposes the following rationale: to some extent, imprecise theories are unavoidable, but they still can be subjected to an empirical test by employing induction. Data may be used to amend theories, allowing precise predictions that can be compared to reality. However, such a strategy comes at a cost. While induction is necessary, it causes overconfidence in empirical findings. When assessing findings, this overconfidence must be taken into account. The extent of the overconfidence depends on the properties of the inductive process. Some inductive processes can be made fully transparent, so their bias can be accounted for appropriately. I show that this is the case for induction that can be repeated at will on other data, highlighting the importance of computational reproducibility. Induction involving the researcher and their cognitive model can not be repeated; hence, the extent of overconfidence must be judged with uncertainty. I propose that reducing this uncertainty should be the objective of preregistration. Having explicated the goals of computational reproducibility and preregistration from a perspective of transparency about induction in the synopsis, I put forward recommendations for the practice of both in the articles published as part of this dissertation.;,citation_author=Aaron Peikert;,citation_publication_date=2023-02;,citation_cover_date=2023-02;,citation_year=2023;,citation_language=en-US;,citation_dissertation_institution=Humboldt-Universität zu Berlin;">
+<meta name="citation_reference" content="citation_title=Teaching open and reproducible scholarship: A critical review of the evidence base for current pedagogical methods and their outcomes;,citation_abstract=In recent years, the scientific community has called for improvements in the credibility, robustness and reproducibility of research, characterized by increased interest and promotion of open and transparent research practices. While progress has been positive, there is a lack of consideration about how this approach can be embedded into undergraduate and postgraduate research training. Specifically, a critical overview of the literature which investigates how integrating open and reproducible science may influence student outcomes is needed. In this paper, we provide the first critical review of literature surrounding the integration of open and reproducible scholarship into teaching and learning and its associated outcomes in students. Our review highlighted how embedding open and reproducible scholarship appears to be associated with (i) students’ scientific literacies (i.e. students’ understanding of open research, consumption of science and the development of transferable skills); (ii) student engagement (i.e. motivation and engagement with learning, collaboration and engagement in open research) and (iii) students’ attitudes towards science (i.e. trust in science and confidence in research findings). However, our review also identified a need for more robust and rigorous methods within pedagogical research, including more interventional and experimental evaluations of teaching practice. We discuss implications for teaching and learning scholarship.;,citation_author=Madeleine Pownall;,citation_author=Flávio Azevedo;,citation_author=Laura M. König;,citation_author=Hannah R. Slack;,citation_author=Thomas Rhys Evans;,citation_author=Zoe Flack;,citation_author=Sandra Grinschgl;,citation_author=Mahmoud M. Elsherif;,citation_author=Katie A. Gilligan-Lee;,citation_author=Catia M. F. Oliveira;,citation_author=Biljana Gjoneska;,citation_author=Tamara Kalandadze;,citation_author=Katherine Button;,citation_author=Sarah Ashcroft-Jones;,citation_author=Jenny Terry;,citation_author=Nihan Albayrak-Aydemir;,citation_author=Filip Děchtěrenko;,citation_author=Shilaan Alzahawi;,citation_author=Bradley J. Baker;,citation_author=Merle-Marie Pittelkow;,citation_author=Lydia Riedl;,citation_author=Kathleen Schmidt;,citation_author=Charlotte R. Pennington;,citation_author=John J. Shaw;,citation_author=Timo Lüke;,citation_author=Matthew C. Makel;,citation_author=Helena Hartmann;,citation_author=Mirela Zaneva;,citation_author=Daniel Walker;,citation_author=Steven Verheyen;,citation_author=Daniel Cox;,citation_author=Jennifer Mattschey;,citation_author=Tom Gallagher-Mitchell;,citation_author=Peter Branney;,citation_author=Yanna Weisberg;,citation_author=Kamil Izydorczak;,citation_author=Ali H. Al-Hoorie;,citation_author=Ann-Marie Creaven;,citation_author=Suzanne L. K. Stewart;,citation_author=Kai Krautter;,citation_author=Karen Matvienko-Sikar;,citation_author=Samuel J. Westwood;,citation_author=Patrícia Arriaga;,citation_author=Meng Liu;,citation_author=Myriam A. Baum;,citation_author=Tobias Wingen;,citation_author=Robert M. Ross;,citation_author=Aoife O’Mahony;,citation_author=Agata Bochynska;,citation_author=Michelle Jamieson;,citation_author=Myrthe Vel Tromp;,citation_author=Siu Kit Yeung;,citation_author=Martin R. Vasilev;,citation_author=Amélie Gourdon-Kanhukamwe;,citation_author=Leticia Micheli;,citation_author=Markus Konkol;,citation_author=David Moreau;,citation_author=James E. Bartlett;,citation_author=Kait Clark;,citation_author=Gwen Brekelmans;,citation_author=Theofilos Gkinopoulos;,citation_author=Samantha L. Tyler;,citation_author=Jan Philipp Röer;,citation_author=Zlatomira G. Ilchovska;,citation_author=Christopher R. Madan;,citation_author=Olly Robertson;,citation_author=Bethan J. Iley;,citation_author=Samuel Guay;,citation_author=Martina Sladekova;,citation_author=Shanu Sadhwani;,citation_author=null null;,citation_publication_date=2023-05;,citation_cover_date=2023-05;,citation_year=2023;,citation_issue=5;,citation_doi=10.1098/rsos.221255;,citation_volume=10;,citation_journal_title=Royal Society Open Science;,citation_publisher=Royal Society;">
+<meta name="citation_reference" content="citation_title=Big little lies: A compendium and simulation of p-hacking strategies;,citation_abstract=In many research fields, the widespread use of questionable research practices has jeopardized the credibility of scientific results. One of the most prominent questionable research practices is p-hacking. Typically, p-hacking is defined as a compound of strategies targeted at rendering non-significant hypothesis testing results significant. However, a comprehensive overview of these p-hacking strategies is missing, and current meta-scientific research often ignores the heterogeneity of strategies. Here, we compile a list of 12 p-hacking strategies based on an extensive literature review, identify factors that control their level of severity, and demonstrate their impact on false-positive rates using simulation studies. We also use our simulation results to evaluate several approaches that have been proposed to mitigate the influence of questionable research practices. Our results show that investigating p-hacking at the level of strategies can provide a better understanding of the process of p-hacking, as well as a broader basis for developing effective countermeasures. By making our analyses available through a Shiny app and R package, we facilitate future meta-scientific research aimed at investigating the ramifications of p-hacking across multiple strategies, and we hope to start a broader discussion about different manifestations of p-hacking in practice.;,citation_author=Angelika M. Stefan;,citation_author=Felix D. Schönbrodt;,citation_publication_date=2023-02;,citation_cover_date=2023-02;,citation_year=2023;,citation_issue=2;,citation_doi=10.1098/rsos.220346;,citation_volume=10;,citation_journal_title=Royal Society Open Science;,citation_publisher=Royal Society;">
+<meta name="citation_reference" content="citation_title=WORCS: A workflow for open reproducible code in science;,citation_abstract=Adopting open science principles can be challenging, requiring conceptual education and training in the use of new tools. This paper introduces the Workflow for Open Reproducible Code in Science (WORCS): A step-by-step procedure that researchers can;,citation_author=Caspar J. Van Lissa;,citation_author=Andreas M. Brandmaier;,citation_author=Loek Brinkman;,citation_author=Anna-Lena Lamprecht;,citation_author=Aaron Peikert;,citation_author=Marijn E. Struiksma;,citation_author=Barbara M. I. Vreede;,citation_publication_date=2021-01;,citation_cover_date=2021-01;,citation_year=2021;,citation_issue=(in press);,citation_doi=10.3233/DS-210031;,citation_issn=2451-8484;,citation_volume=(in press);,citation_language=en-US;,citation_journal_title=Data Science;,citation_publisher=IOS Press;">
+<meta name="citation_reference" content="citation_title=The Flipped Classroom in Introductory Statistics: Early Evidence From a Systematic Review and Meta-Analysis;,citation_abstract=The flipped classroom (FC) inverts the traditional classroom by having students participate in passive aspects of learning at home and active aspects of learning in class with the guide of an instructor. The introductory statistics course for nonmath majors may be especially suited to the FC model given its unique challenges as a required course for students with varying mathematical skills and background. For example, these students often have low interest and high statistics-related anxiety. Recent studies suggest the FC for introductory statistics courses leads to increased performance relative to a traditional lecture-based classroom (LC). This meta-analysis compared the academic performance of students in introductory statistics courses for nonmath majors who were taught in a FC versus those taught in a LC. Results indicate that students in the FC had statistically discernibly higher final performance outcomes compared to the LC delivery with an average difference of 6.9% in performance (Hedge’s g = 0.43), though there was evidence of moderation by the presence of weekly in-class quizzes. These findings suggest that implementing the FC within the introductory statistics classroom at the undergraduate level may improve learning achievement, but more research is needed to explore the role of regular class quizzes. Supplementary materials for this article are available online.;,citation_author=Linda Farmus;,citation_author=Robert A. Cribbie;,citation_author=Michael A. Rotondi;,citation_publication_date=2020-09;,citation_cover_date=2020-09;,citation_year=2020;,citation_issue=3;,citation_doi=10.1080/10691898.2020.1834475;,citation_issn=null;,citation_volume=28;,citation_journal_title=Journal of Statistics Education;,citation_publisher=Taylor &amp;amp;amp; Francis;">
+<meta name="citation_reference" content="citation_title=Do frequency representations eliminate conjunction effects? An exercise in adversarial collaboration;,citation_author=B. Mellers;,citation_author=R. Hertwig;,citation_author=D. Kahneman;,citation_publication_date=2001;,citation_cover_date=2001;,citation_year=2001;,citation_fulltext_html_url=https://doi.org/10.1111/1467-9280.00350;,citation_issue=4;,citation_doi=10.1111/1467-9280.00350;,citation_volume=12;,citation_journal_title=Psychological Science;">
+<meta name="citation_reference" content="citation_title=Thinking, fast and slow;,citation_author=D. Kahneman;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;">
+<meta name="citation_reference" content="citation_title=An evaluation of non-iterative estimators in the structural after measurement (SAM) approach to structural equation modeling (SEM);,citation_author=S. Dhaene;,citation_author=Y. Rosseel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://doi.org/10.1080/10705511.2023.2220135;,citation_issue=6;,citation_doi=10.1080/10705511.2023.2220135;,citation_volume=30;,citation_journal_title=Structural Equation Modeling: A Multidisciplinary Journal;">
+<meta name="citation_reference" content="citation_title=Comparing the robustness of the structural after measurement (SAM) approach to structural equation modeling (SEM) against local model misspecifications with alternative estimation approaches;,citation_author=A. Robitzsch;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.3390/stats5030039;,citation_issue=3;,citation_doi=10.3390/stats5030039;,citation_volume=5;,citation_journal_title=Stats;">
+<meta name="citation_reference" content="citation_title=A structural after measurement approach to structural equation modeling;,citation_author=Y. Rosseel;,citation_author=W. W. Loh;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.1037/met0000503;,citation_doi=10.1037/met0000503;,citation_journal_title=Psychological Methods;">
+<meta name="citation_reference" content="citation_title=Using simulation studies to evaluate statistical methods;,citation_author=T. P. Morris;,citation_author=I. R. White;,citation_author=M. J. Crowther;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_fulltext_html_url=https://doi.org/10.1002/sim.8086;,citation_doi=10.1002/sim.8086;,citation_volume=38;,citation_journal_title=Statistics in Medicine;">
+<meta name="citation_reference" content="citation_title=The road less traveled: Understanding adversaries is hard but smarter than ignoring them;,citation_author=C. J. Clark;,citation_author=T. Costello;,citation_author=G. Mitchell;,citation_author=P. E. Tetlock;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.1037/mac0000020;,citation_issue=1;,citation_doi=10.1037/mac0000020;,citation_volume=11;,citation_journal_title=Journal of Applied Research in Memory and Cognition;">
+<meta name="citation_reference" content="citation_title=A simple handbook for non-traditional red teaming;,citation_author=M. Kardos;,citation_author=P. Dexter;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;">
+<meta name="citation_reference" content="citation_title=Exploring collaborative work among graduate students through the C5 model of collaboration: A diary study;,citation_author=C. Shah;,citation_author=C. Leeder;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_fulltext_html_url=https://doi.org/10.1177/0165551515603322;,citation_issue=5;,citation_doi=10.1177/0165551515603322;,citation_volume=42;,citation_journal_title=Journal of Information Science;">
+<meta name="citation_reference" content="citation_title=Adversarial collaboration: The next science reform;,citation_author=C. Clark;,citation_author=P. Tetlock;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_fulltext_html_url=https://doi.org/10.1007/978-3-031-29148-7_32;,citation_doi=10.1007/978-3-031-29148-7_32;">
+<meta name="citation_reference" content="citation_title=Structural equation model trees;,citation_abstract=In the behavioral and social sciences, structural equation models (SEMs) have become widely accepted as a modeling tool for the relation between latent and observed variables. SEMs can be seen as a unification of several multivariate analysis techniques. SEM Trees combine the strengths of SEMs and the decision tree paradigm by building tree structures that separate a data set recursively into subsets with significantly different parameter estimates in a SEM. SEM Trees provide means for finding covariates and covariate interactions that predict differences in structural parameters in observed as well as in latent space and facilitate theory-guided exploration of empirical data. We describe the methodology, discuss theoretical and practical implications, and demonstrate applications to a factor model and a linear growth curve model.;,citation_author=Andreas M. Brandmaier;,citation_author=Timo Oertzen;,citation_author=John J. McArdle;,citation_author=Ulman Lindenberger;,citation_publication_date=2013-03;,citation_cover_date=2013-03;,citation_year=2013;,citation_issue=1;,citation_doi=10.1037/a0030001;,citation_issn=1939-1463;,citation_volume=18;,citation_language=en-US;,citation_journal_title=Psychological Methods;,citation_journal_abbrev=Psychol Methods;">
+<meta name="citation_reference" content="citation_title=Theory-guided exploration with structural equation model forests;,citation_abstract=Structural equation model (SEM) trees, a combination of SEMs and decision trees, have been proposed as a data-analytic tool for theory-guided exploration of empirical data. With respect to a hypothesized model of multivariate outcomes, such trees recursively find subgroups with similar patterns of observed data. SEM trees allow for the automatic selection of variables that predict differences across individuals in specific theoretical models, for instance, differences in latent factor profiles or developmental trajectories. However, SEM trees are unstable when small variations in the data can result in different trees. As a remedy, SEM forests, which are ensembles of SEM trees based on resamplings of the original dataset, provide increased stability. Because large forests are less suitable for visual inspection and interpretation, aggregate measures provide researchers with hints on how to improve their models: (a) variable importance is based on random permutations of the out-of-bag (OOB) samples of the individual trees and quantifies, for each variable, the average reduction of uncertainty about the model-predicted distribution; and (b) case proximity enables researchers to perform clustering and outlier detection. We provide an overview of SEM forests and illustrate their utility in the context of cross-sectional factor models of intelligence and episodic memory. We discuss benefits and limitations, and provide advice on how and when to use SEM trees and forests in future research. (PsycINFO Database Record (c) 2016 APA, all rights reserved);,citation_author=Andreas M. Brandmaier;,citation_author=John J. Prindle;,citation_author=John J. McArdle;,citation_author=Ulman Lindenberger;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=4;,citation_doi=10.1037/met0000090;,citation_issn=1939-1463;,citation_volume=21;,citation_journal_title=Psychological Methods;,citation_publisher=American Psychological Association;">
+<meta name="citation_reference" content="citation_title=Feature Selection with the &amp;amp;amp;lt;b&amp;gt;Boruta&amp;lt;/b&amp;gt; Package;,citation_author=Miron B. Kursa;,citation_author=Witold R. Rudnicki;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_fulltext_html_url=http://www.jstatsoft.org/v36/i11/;,citation_issue=11;,citation_doi=10.18637/jss.v036.i11;,citation_issn=1548-7660;,citation_volume=36;,citation_language=en-US;,citation_journal_title=Journal of Statistical Software;,citation_journal_abbrev=J. Stat. Soft.;">
+<meta name="citation_reference" content="citation_title=Distributed Representations of Words and Phrases and their Compositionality;,citation_abstract=The recently introduced continuous Skip-gram model is an efficient method for learning high-quality distributed vector representations that capture a large number of precise syntactic and semantic word relationships. In this paper we present several extensions that improve both the quality of the vectors and the training speed. By subsampling of the frequent words we obtain significant speedup and also learn more regular word representations. We also describe a simple alternative to the hierarchical softmax called negative sampling. An inherent limitation of word representations is their indifference to word order and their inability to represent idiomatic phrases. For example, the meanings of &amp;amp;amp;quot;Canada&amp;quot; and &quot;Air&quot; cannot be easily combined to obtain &quot;Air Canada&quot;. Motivated by this example, we present a simple method for finding phrases in text, and show that learning good vector representations for millions of phrases is possible.;,citation_author=Tomas Mikolov;,citation_author=Ilya Sutskever;,citation_author=Kai Chen;,citation_author=Greg Corrado;,citation_author=Jeffrey Dean;,citation_publication_date=2013-10-16;,citation_cover_date=2013-10-16;,citation_year=2013;,citation_fulltext_html_url=http://arxiv.org/abs/1310.4546;,citation_doi=10.48550/arXiv.1310.4546;">
+<meta name="citation_reference" content="citation_title=Efficient Estimation of Word Representations in Vector Space;,citation_abstract=We propose two novel model architectures for computing continuous vector representations of words from very large data sets. The quality of these representations is measured in a word similarity task, and the results are compared to the previously best performing techniques based on different types of neural networks. We observe large improvements in accuracy at much lower computational cost, i.e. it takes less than a day to learn high quality word vectors from a 1.6 billion words data set. Furthermore, we show that these vectors provide state-of-the-art performance on our test set for measuring syntactic and semantic word similarities.;,citation_author=Tomas Mikolov;,citation_author=Kai Chen;,citation_author=Greg Corrado;,citation_author=Jeffrey Dean;,citation_publication_date=2013-09-06;,citation_cover_date=2013-09-06;,citation_year=2013;,citation_fulltext_html_url=http://arxiv.org/abs/1301.3781;,citation_doi=10.48550/arXiv.1301.3781;">
+<meta name="citation_reference" content="citation_title=Data citizenship: Rethinking data literacy in the age of disinformation, misinformation, and malinformation;,citation_author=Elinor Carmi;,citation_author=Simeon J. Yates;,citation_author=Eleanor Lockley;,citation_author=Alicja Pawluczuk;,citation_publication_date=2020-05-28;,citation_cover_date=2020-05-28;,citation_year=2020;,citation_fulltext_html_url=https://policyreview.info/node/1481;,citation_issue=2;,citation_doi=10.14763/2020.2.1481;,citation_issn=2197-6775;,citation_volume=9;,citation_language=en-US;,citation_journal_title=Internet Policy Review;">
+<meta name="citation_reference" content="citation_title=Data literacy assessments: A systematic literature review;,citation_author=Ying Cui;,citation_author=Fu Chen;,citation_author=Alina Lutsyk;,citation_author=Jacqueline P. Leighton;,citation_author=Maria Cutumisu;,citation_publication_date=2023-01-02;,citation_cover_date=2023-01-02;,citation_year=2023;,citation_fulltext_html_url=https://www.tandfonline.com/doi/full/10.1080/0969594X.2023.2182737;,citation_issue=1;,citation_doi=10.1080/0969594X.2023.2182737;,citation_issn=0969-594X, 1465-329X;,citation_volume=30;,citation_language=en-US;,citation_journal_title=Assessment in Education: Principles, Policy &amp;amp;amp; Practice;,citation_journal_abbrev=Assessment in Education: Principles, Policy &amp;amp; Practice;">
+<meta name="citation_reference" content="citation_title=Cognitive style of PowerPoint pitching;,citation_author=Edward R Tufte;,citation_publication_date=2006-01;,citation_cover_date=2006-01;,citation_year=2006;">
+<meta name="citation_reference" content="citation_title=The first rule of logic;,citation_author=Charles Sanders Peirce;,citation_editor=Charles Hartshorne;,citation_editor=Paul Weiss;,citation_publication_date=1931;,citation_cover_date=1931;,citation_year=1931;,citation_inbook_title=Collected papers of charles sanders peirce, volume 1: Principles of philosophy;">
+<meta name="citation_reference" content="citation_title=Experience and prediction: An analysis of the foundations and the structure of knowledge;,citation_author=Hans Reichenbach;,citation_publication_date=1938;,citation_cover_date=1938;,citation_year=1938;">
+<meta name="citation_reference" content="citation_title=Replicability of simulation studies for the investigation of statistical methods: The RepliSims project;,citation_author=K Luijken;,citation_author=A Lohmann;,citation_author=U Alter;,citation_author=J Claramunt Gonzalez;,citation_author=FJ Clouth;,citation_author=JL Fossum;,citation_author=L Hesen;,citation_author=AHJ Huizing;,citation_author=J Ketelaar;,citation_author=AK Montoya;,citation_author=others;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=1;,citation_volume=11;,citation_journal_title=Royal Society open science;,citation_publisher=The Royal Society;">
+<meta name="citation_reference" content="citation_title=Pitfalls and potentials in simulation studies: Questionable research practices in comparative simulation studies allow for spurious claims of superiority of any method;,citation_author=Samuel Pawel;,citation_author=Lucas Kook;,citation_author=Kelly Reeve;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=1;,citation_volume=66;,citation_journal_title=Biometrical Journal;,citation_publisher=Wiley Online Library;">
+<meta name="citation_reference" content="citation_title=Simulation studies for methodological research in psychology: A standardized template for planning, preregistration, and reporting.;,citation_author=Björn S Siepe;,citation_author=František Bartoš;,citation_author=Tim P Morris;,citation_author=Anne-Laure Boulesteix;,citation_author=Daniel W Heck;,citation_author=Samuel Pawel;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_journal_title=Psychological methods;,citation_publisher=American Psychological Association;">
+<meta name="citation_reference" content="citation_title=Factors relevant to the validity of experiments in social settings;,citation_author=Donald T. Campbell;,citation_publication_date=1957;,citation_cover_date=1957;,citation_year=1957;,citation_volume=54;,citation_journal_title=Psychological Bulletin;">
+<meta name="citation_reference" content="citation_title=Quasi-experimentation : Design &amp;amp;amp; analysis issues for field settings;,citation_author=Thomas D. Cook;,citation_author=Donald T. Campbell;,citation_publication_date=1979;,citation_cover_date=1979;,citation_year=1979;,citation_isbn=0395307902;">
+<meta name="citation_reference" content="citation_title=Dynamic fit index cutoffs for confirmatory factor analysis models.;,citation_author=Daniel McNeish;,citation_author=Melissa G Wolf;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=1;,citation_volume=28;,citation_journal_title=Psychological Methods;,citation_publisher=American Psychological Association;">
+<meta name="citation_reference" content="citation_title=Against the “one method fits all data sets” philosophy for comparison studies in methodological research;,citation_author=Carolin Strobl;,citation_author=Friedrich Leisch;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=1;,citation_volume=66;,citation_journal_title=Biometrical Journal;,citation_publisher=Wiley Online Library;">
+<meta name="citation_reference" content="citation_title=Managing validity versus reliability trade-offs in scale-building decisions.;,citation_author=Jeremy DW Clifton;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_issue=3;,citation_volume=25;,citation_journal_title=Psychological Methods;,citation_publisher=American Psychological Association;">
+<meta name="citation_reference" content="citation_title=Ethical implications of validity-vs.-reliability trade-offs in educational research;,citation_author=Lynn Fendler;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=2;,citation_volume=11;,citation_journal_title=Ethics and Education;,citation_publisher=Taylor &amp;amp;amp; Francis;">
+<meta name="citation_reference" content="citation_title=Design and analysis of monte carlo experiments: Attacking the conventional wisdom;,citation_author=Anders Skrondal;,citation_publication_date=2000;,citation_cover_date=2000;,citation_year=2000;,citation_issue=2;,citation_volume=35;,citation_journal_title=Multivariate Behavioral Research;,citation_publisher=Taylor &amp;amp;amp; Francis;">
+<meta name="citation_reference" content="citation_title=Pitfalls and potentials in simulation studies: Questionable research practices in comparative simulation studies allow for spurious claims of superiority of any method;,citation_author=Samuel Pawel;,citation_author=Lucas Kook;,citation_author=Kelly Reeve;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=1;,citation_volume=66;,citation_journal_title=Biometrical Journal;,citation_publisher=Wiley Online Library;">
+<meta name="citation_reference" content="citation_title=Simulation studies for methodological research in psychology: A standardized template for planning, preregistration, and reporting.;,citation_author=Björn S Siepe;,citation_author=František Bartoš;,citation_author=Tim P Morris;,citation_author=Anne-Laure Boulesteix;,citation_author=Daniel W Heck;,citation_author=Samuel Pawel;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_journal_title=Psychological methods;,citation_publisher=American Psychological Association;">
+<meta name="citation_reference" content="citation_title=Dynamic fit index cutoffs for confirmatory factor analysis models.;,citation_author=Daniel McNeish;,citation_author=Melissa G Wolf;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=1;,citation_volume=28;,citation_journal_title=Psychological Methods;,citation_publisher=American Psychological Association;">
+<meta name="citation_reference" content="citation_title=Against the “one method fits all data sets” philosophy for comparison studies in methodological research;,citation_author=Carolin Strobl;,citation_author=Friedrich Leisch;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=1;,citation_volume=66;,citation_journal_title=Biometrical Journal;,citation_publisher=Wiley Online Library;">
+<meta name="citation_reference" content="citation_title=Space-filling exploratory experimental design;,citation_author=Kasturi Talapatra;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_dissertation_institution=North Carolina State University;">
+<meta name="citation_reference" content="citation_title=Metamodels for computer-based engineering design: Survey and recommendations;,citation_author=Timothy W Simpson;,citation_author=Jesse D Poplinski;,citation_author=Patrick N Koch;,citation_author=Janet K Allen;,citation_publication_date=2001;,citation_cover_date=2001;,citation_year=2001;,citation_issue=2;,citation_volume=17;,citation_journal_title=Engineering with computers;,citation_publisher=Springer;">
+<meta name="citation_reference" content="citation_title=Space-filling designs for computer experiments: A review;,citation_author=V Roshan Joseph;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=1;,citation_volume=28;,citation_journal_title=Quality Engineering;,citation_publisher=Taylor &amp;amp;amp; Francis;">
+<meta name="citation_reference" content="citation_title=Design of experiments: overview;,citation_author=Jack PC Kleijnen;,citation_publication_date=2008;,citation_cover_date=2008;,citation_year=2008;,citation_conference_title=2008 winter simulation conference;,citation_conference=IEEE;">
+<meta name="citation_reference" content="citation_title=Cross-validation based single response adaptive design of experiments for kriging metamodeling of deterministic computer simulations;,citation_author=Vikrant Aute;,citation_author=Khaled Saleh;,citation_author=Omar Abdelaziz;,citation_author=Shapour Azarm;,citation_author=Reinhard Radermacher;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_issue=3;,citation_volume=48;,citation_journal_title=Structural and Multidisciplinary Optimization;,citation_publisher=Springer;">
+<meta name="citation_reference" content="citation_title=Adaptive design of experiments based on gaussian processes;,citation_author=Evgeny Burnaev;,citation_author=Maxim Panov;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_conference_title=International symposium on statistical learning and data sciences;,citation_conference=Springer;">
+<meta name="citation_reference" content="citation_title=Design of experiments for model discrimination using gaussian process surrogate models;,citation_author=Simon Olofsson;,citation_author=Marc Peter Deisenroth;,citation_author=Ruth Misener;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_volume=44;,citation_inbook_title=Computer aided chemical engineering;">
+<meta name="citation_reference" content="citation_title=An empirical study of the prediction performance of space-filling designs;,citation_author=Rachel T Johnson;,citation_author=Douglas C Montgomery;,citation_author=Bradley Jones;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;,citation_issue=1;,citation_volume=2;,citation_journal_title=International Journal of Experimental Design and Process Optimisation;,citation_publisher=Inderscience Publishers Ltd;">
+<meta name="citation_reference" content="citation_title=Adaptive design of experiments for global kriging metamodeling through cross-validation information;,citation_author=A. P. Kyprioti;,citation_author=J. Zhang;,citation_author=A. A. Taflanidis;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_fulltext_html_url=https://doi.org/10.1007/s00158-020-02543-1;,citation_issue=3;,citation_doi=10.1007/s00158-020-02543-1;,citation_volume=62;,citation_journal_title=Structural and Multidisciplinary Optimization;">
+<meta name="citation_reference" content="citation_title=10-year longitudinal dopamine D2-receptor losses are associated with cognitive decline in healthy aging;,citation_abstract=Aging-related dopamine decline has been suggested as a key factor behind individual differences in cognitive decline at older ages. Thus far, the hypothesized age-dopamine-cognition triad has been extrapolated from cross-sectional studies, which cannot uncover change associations. Using data from the longitudinal Cognition, Brain, and Aging (COBRA) study, we examined whether dopamine D2-receptor availability changes are correlated with cognitive changes across individuals in old age. At the first wave, 181 healthy adults aged 64 to 68&nbsp;years underwent positron emission tomography with 11C-raclopride, magnetic resonance imaging, multiple cognitive tests assessing episodic memory, working memory, and perceptual speed, and mapping of health-related factors. The returnees (n = 129 after 5&nbsp;years; n = 93 after 10&nbsp;years) were representative of the parent sample regarding gender composition, educational attainment, cognitive performance, and dopamine D2-receptor status at baseline. Bayesian structural equation modeling revealed mean decline and individual differences in decline for striatal dopamine D2-receptor availability (approximately -5% per decade) and for all three cognitive abilities. Changes in dopamine D2-receptor and a factor of general cognition were positively correlated (r = 0.31, P(r &amp;amp;amp;gt; 0.00) &amp;gt; 0.95). Taken together, these longitudinal findings support that striatal dopamine decline is associated with cognitive aging, possibly reflecting dopamine influences via striato-thalamo-cortical loops on general cognitive functions.;,citation_author=Erik Lundgren;,citation_author=Ulman Lindenberger;,citation_author=Martin Lövdén;,citation_author=Micael Andersson;,citation_author=Jan Axelsson;,citation_author=Lars Bäckman;,citation_author=Jarkko Johansson;,citation_author=Goran Papenberg;,citation_author=Katrine Riklund;,citation_author=Alireza Salami;,citation_author=Anders Wåhlin;,citation_author=Lars Nyberg;,citation_author=Nina Karalija;,citation_publication_date=2025-11;,citation_cover_date=2025-11;,citation_year=2025;,citation_fulltext_html_url=https://doi.org/10.1093/cercor/bhaf293;,citation_issue=11;,citation_doi=10.1093/cercor/bhaf293;,citation_issn=1460-2199;,citation_volume=35;,citation_journal_title=Cerebral Cortex;">
+<meta name="citation_reference" content="citation_title=Trends in intracranial and cerebral volumes of framingham heart study participants born 1930 to 1970;,citation_author=Charles DeCarli;,citation_author=Pauline Maillard;,citation_author=Matthew P. Pase;,citation_author=Alexa S. Beiser;,citation_author=Daniel Kojis;,citation_author=Claudia L. Satizabal;,citation_author=Jayandra J. Himali;,citation_author=Hugo J. Aparicio;,citation_author=Evan Fletcher;,citation_author=Sudha Seshadri;,citation_publication_date=2024-05;,citation_cover_date=2024-05;,citation_year=2024;,citation_fulltext_html_url=https://doi.org/10.1001/jamaneurol.2024.0469;,citation_issue=5;,citation_doi=10.1001/jamaneurol.2024.0469;,citation_issn=2168-6149;,citation_volume=81;,citation_journal_title=JAMA Neurology;">
+<meta name="citation_reference" content="citation_title=Dynamic structural equation models;,citation_author=Tihomir Asparouhov;,citation_author=Ellen L Hamaker;,citation_author=Bengt Muthén;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_issue=3;,citation_doi=10.1080/10705511.2017.1406803;,citation_volume=25;,citation_journal_title=Structural Equation Modeling: A Multidisciplinary Journal;">
+<meta name="citation_reference" content="citation_title=Differences in the between–person and within–person structures of affect are a matter of degree;,citation_author=Annette Brose;,citation_author=Manuel C Voelkle;,citation_author=Martin Lövdén;,citation_author=Ulman Lindenberger;,citation_author=Florian Schmiedek;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_issue=1;,citation_doi=10.1002/per.1961;,citation_volume=29;,citation_journal_title=European Journal of Personality;">
+<meta name="citation_reference" content="citation_title=Continuous time structural equation modelling with r package ctsem;,citation_author=Charles Driver;,citation_author=Johan Oud;,citation_author=Manuel Voelkle;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_doi=10.18637/jss.v077.i05;,citation_volume=77;,citation_journal_title=Journal of Statistical Software;">
+<meta name="citation_reference" content="citation_title=A primer on two-level dynamic structural equation models for intensive longitudinal data in mplus;,citation_author=Daniel McNeish;,citation_author=Ellen L Hamaker;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_issue=5;,citation_doi=10.1037/met0000250;,citation_volume=25;,citation_journal_title=Psychological Methods;">
+<meta name="citation_reference" content="citation_title=Uncovering asymmetric temporal dynamics using threshold dynamics parameters;,citation_author=Jeroen V Schaaf;,citation_author=Øystein Sørensen;,citation_author=Ethan M McCormick;,citation_author=Maria Aristodemou;,citation_author=Rogier A Kievit;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_doi=10.1080/10705511.2025.2519208;,citation_journal_title=Structural Equation Modeling: A Multidisciplinary Journal;">
+<meta name="citation_reference" content="citation_title=Toward a unified framework for the study of between-person and within-person structures: Building a bridge between two research paradigms;,citation_author=Manuel C Voelkle;,citation_author=Annette Brose;,citation_author=Florian Schmiedek;,citation_author=Ulman Lindenberger;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_issue=3;,citation_doi=10.1080/00273171.2014.889593;,citation_volume=49;,citation_journal_title=Multivariate Behavioral Research;">
+<meta name="citation_reference" content="citation_title=Causality: Models, reasoning, and inference;,citation_author=Judea Pearl;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_isbn=978-0-521-89560-6;,citation_language=en-US;">
+<meta name="citation_reference" content="citation_title=Biases in Dynamic Models with Fixed Effects;,citation_author=Stephen Nickell;,citation_publication_date=1981-11;,citation_cover_date=1981-11;,citation_year=1981;,citation_fulltext_html_url=https://www.jstor.org/stable/1911408?origin=crossref;,citation_issue=6;,citation_doi=10.2307/1911408;,citation_issn=00129682;,citation_volume=49;,citation_journal_title=Econometrica;,citation_journal_abbrev=Econometrica;">
+<meta name="citation_reference" content="citation_title=The multilevel latent covariate model: A new, more reliable approach to group-level effects in contextual studies.;,citation_abstract=In multilevel modeling (MLM), group level (L2) characteristics are often measured by aggregating individual level (L1) characteristics within each group as a means of assessing contextual effects (e.g., group-average effects of SES, achievement, climate). Most previous applications have used a multilevel manifest covariate (MMC) approach, in which the observed (manifest) group mean is assumed to have no measurement error. This paper shows mathematically and with simulation results that this MMC approach can result in substantially biased estimates of contextual effects and can substantially underestimate the associated standard errors, depending on the number of L1 individuals in each of the groups, the number of groups, the intraclass correlation, the sampling ratio (the percentage of cases within each group sampled), and the nature of the data. To address this pervasive problem, we introduce a new multilevel latent covariate (MLC) approach that corrects for unreliability at L2 and results in unbiased estimates of L2 constructs under appropriate conditions. However, our simulation results also suggest that the contextual effects estimated in typical research situations (e.g., fewer than 100 groups) may be highly unreliable. Furthermore, under some circumstances when the sampling ratio approaches 100%, the MMC approach provides more accurate estimates. Based on three simulations and two real-data applications, we critically evaluate the MMC and MLC approaches and offer suggestions as to when researchers should most appropriately use one, the other, or a combination of both approaches.;,citation_author=Oliver Lüdtke;,citation_author=Herbert W. Marsh;,citation_author=Alexander Robitzsch;,citation_author=Ulrich Trautwein;,citation_author=Tihomir Asparouhov;,citation_author=Bengt Muthén;,citation_publication_date=2008-09;,citation_cover_date=2008-09;,citation_year=2008;,citation_fulltext_html_url=https://doi.apa.org/doi/10.1037/a0012869;,citation_issue=3;,citation_doi=10.1037/a0012869;,citation_issn=1939-1463, 1082-989X;,citation_volume=13;,citation_language=en-US;,citation_journal_title=Psychological Methods;,citation_journal_abbrev=Psychological Methods;,citation_publisher=American Psychological Association;">
+<meta name="citation_reference" content="citation_title=Latent Variable Centering of Predictors and Mediators in Multilevel and Time-Series Models;,citation_author=Tihomir Asparouhov;,citation_author=Bengt Muthén;,citation_publication_date=2019-01-02;,citation_cover_date=2019-01-02;,citation_year=2019;,citation_fulltext_html_url=https://www.tandfonline.com/doi/full/10.1080/10705511.2018.1511375;,citation_issue=1;,citation_doi=10.1080/10705511.2018.1511375;,citation_issn=1070-5511, 1532-8007;,citation_volume=26;,citation_language=en-US;,citation_journal_title=Structural Equation Modeling: A Multidisciplinary Journal;,citation_journal_abbrev=Structural Equation Modeling: A Multidisciplinary Journal;">
+<meta name="citation_reference" content="citation_title=A critique of the cross-lagged panel model;,citation_abstract=The cross-lagged panel model (CLPM) is believed by many to overcome the problems associated with the use of cross-lagged correlations as a way to study causal influences in longitudinal panel data. The current article, however, shows that if stability of constructs is to some extent of a trait-like, time-invariant nature, the autoregressive relationships of the CLPM fail to adequately account for this. As a result, the lagged parameters that are obtained with the CLPM do not represent the actual within-person relationships over time, and this may lead to erroneous conclusions regarding the presence, predominance, and sign of causal influences. In this article we present an alternative model that separates the within-person process from stable between-person differences through the inclusion of random intercepts, and we discuss how this model is related to existing structural equation models that include cross-lagged relationships. We derive the analytical relationship between the cross-lagged parameters from the CLPM and the alternative model, and use simulations to demonstrate the spurious results that may arise when using the CLPM to analyze data that include stable, trait-like individual differences. We also present a modeling strategy to avoid this pitfall and illustrate this using an empirical data set. The implications for both existing and future cross-lagged panel research are discussed.;,citation_author=Ellen L. Hamaker;,citation_author=Rebecca M. Kuiper;,citation_author=Raoul P. P. P. Grasman;,citation_publication_date=2015-03;,citation_cover_date=2015-03;,citation_year=2015;,citation_fulltext_html_url=https://www.ncbi.nlm.nih.gov/pubmed/25822208;,citation_issue=1;,citation_doi=10.1037/a0038889;,citation_issn=1939-1463;,citation_volume=20;,citation_language=en-US;,citation_journal_title=Psychological Methods;,citation_journal_abbrev=Psychol Methods;">
+<meta name="citation_reference" content="citation_title=When Should We Use Unit Fixed Effects Regression Models for Causal Inference with Longitudinal Data?;,citation_abstract=Many researchers use unit fixed effects regression models as their default methods for causal inference with longitudinal data. We show that the ability of these models to adjust for unobserved time-invariant confounders comes at the expense of dynamic causal relationships, which are permitted under an alternative selection-on-observables approach. Using the nonparametric directed acyclic graph, we highlight two key causal identification assumptions of unit fixed effects models: Past treatments do not directly influence current outcome, and past outcomes do not affect current treatment. Furthermore, we introduce a new nonparametric matching framework that elucidates how various unit fixed effects models implicitly compare treated and control observations to draw causal inference. By establishing the equivalence between matching and weighted unit fixed effects estimators, this framework enables a diverse set of identification strategies to adjust for unobservables in the absence of dynamic causal relationships between treatment and outcome variables. We illustrate the proposed methodology through its application to the estimation of GATT membership effects on dyadic trade volume.;,citation_author=Kosuke Imai;,citation_author=In Song Kim;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12417;,citation_issue=2;,citation_doi=10.1111/ajps.12417;,citation_issn=1540-5907;,citation_volume=63;,citation_language=en-US;,citation_journal_title=American Journal of Political Science;">
+<meta name="citation_reference" content="citation_title=Two-way fixed effects estimators with heterogeneous treatment effects;,citation_author=Clément De Chaisemartin;,citation_author=Xavier Haultfoeuille;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_fulltext_html_url=https://www.aeaweb.org/articles?id=10.1257/aer.20181169;,citation_issue=9;,citation_volume=110;,citation_journal_title=American economic review;,citation_publisher=American Economic Association 2014 Broadway, Suite 305, Nashville, TN 37203;">
+<meta name="citation_reference" content="citation_title=From Data to Causes III: Bayesian Priors for General Cross-Lagged Panel Models (GCLM);,citation_author=Michael J. Zyphur;,citation_author=Ellen L. Hamaker;,citation_author=Louis Tay;,citation_author=Manuel Voelkle;,citation_author=Kristopher J. Preacher;,citation_author=Zhen Zhang;,citation_author=Paul D. Allison;,citation_author=Dean C. Pierides;,citation_author=Peter Koval;,citation_author=Edward F. Diener;,citation_publication_date=2021-02-15;,citation_cover_date=2021-02-15;,citation_year=2021;,citation_fulltext_html_url=https://www.frontiersin.org/articles/10.3389/fpsyg.2021.612251/full;,citation_doi=10.3389/fpsyg.2021.612251;,citation_issn=1664-1078;,citation_volume=12;,citation_journal_title=Frontiers in Psychology;,citation_journal_abbrev=Front. Psychol.;">
+<meta name="citation_reference" content="citation_title=Dynamic Structural Equation Models;,citation_abstract=This article presents dynamic structural equation modeling (DSEM), which can be used to study the evolution of observed and latent variables as well as the structural equation models over time. DSEM is suitable for analyzing intensive longitudinal data where observations from multiple individuals are collected at many points in time. The modeling framework encompasses previously published DSEM models and is a comprehensive attempt to combine time-series modeling with structural equation modeling. DSEM is estimated with Bayesian methods using the Markov chain Monte Carlo Gibbs sampler and the Metropolis–Hastings sampler. We provide a detailed description of the estimation algorithm as implemented in the Mplus software package. DSEM can be used for longitudinal analysis of any duration and with any number of observations across time. Simulation studies are used to illustrate the framework and study the performance of the estimation method. Methods for evaluating model fit are also discussed.;,citation_author=Tihomir Asparouhov;,citation_author=Ellen L. Hamaker;,citation_author=Bengt Muthén;,citation_publication_date=2018-05-04;,citation_cover_date=2018-05-04;,citation_year=2018;,citation_fulltext_html_url=https://doi.org/10.1080/10705511.2017.1406803;,citation_issue=3;,citation_doi=10.1080/10705511.2017.1406803;,citation_issn=1070-5511;,citation_volume=25;,citation_language=en-US;,citation_journal_title=Structural Equation Modeling: A Multidisciplinary Journal;,citation_journal_abbrev=Structural Equation Modeling: A Multidisciplinary Journal;">
+</head>
+
+<body class="quarto-light">
+
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">ReMis [A fun title could go here]</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+        
+        <div class="quarto-title-meta">
+
+                <div>
+            <div class="quarto-title-meta-heading">Author</div>
+            <div class="quarto-title-meta-contents">
+                        <p>Leonie Hagitte </p>
+                      </div>
+          </div>
+                
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="remis.pdf"><i class="bi bi-file-pdf"></i>PDF</a></p></div></div></div>
+    </div>
+
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
+  <ul class="collapse">
+  <li><a href="#replication" id="toc-replication" class="nav-link" data-scroll-target="#replication"><span class="header-section-number">1.1</span> Replication</a></li>
+  <li><a href="#replicating-structural-equation-models" id="toc-replicating-structural-equation-models" class="nav-link" data-scroll-target="#replicating-structural-equation-models"><span class="header-section-number">1.2</span> Replicating Structural Equation Models</a>
+  <ul class="collapse">
+  <li><a href="#global-model-fit-versus-parameter-level-replication" id="toc-global-model-fit-versus-parameter-level-replication" class="nav-link" data-scroll-target="#global-model-fit-versus-parameter-level-replication"><span class="header-section-number">1.2.1</span> Global model fit versus parameter-level replication</a></li>
+  </ul></li>
+  <li><a href="#invariance-testing" id="toc-invariance-testing" class="nav-link" data-scroll-target="#invariance-testing"><span class="header-section-number">1.3</span> Invariance Testing</a></li>
+  <li><a href="#using-invariance-testing-to-replicate-sems" id="toc-using-invariance-testing-to-replicate-sems" class="nav-link" data-scroll-target="#using-invariance-testing-to-replicate-sems"><span class="header-section-number">1.4</span> Using Invariance Testing to replicate SEMs</a></li>
+  <li><a href="#quantifying-and-evaluating-discrepancies" id="toc-quantifying-and-evaluating-discrepancies" class="nav-link" data-scroll-target="#quantifying-and-evaluating-discrepancies"><span class="header-section-number">1.5</span> Quantifying and Evaluating Discrepancies</a></li>
+  <li><a href="#practical-evaluation-of-replication-outcomes" id="toc-practical-evaluation-of-replication-outcomes" class="nav-link" data-scroll-target="#practical-evaluation-of-replication-outcomes"><span class="header-section-number">1.6</span> Practical Evaluation of Replication Outcomes</a>
+  <ul class="collapse">
+  <li><a href="#example-1-full-replication-despite-parameter-differences" id="toc-example-1-full-replication-despite-parameter-differences" class="nav-link" data-scroll-target="#example-1-full-replication-despite-parameter-differences"><span class="header-section-number">1.6.1</span> Example 1: Full Replication Despite Parameter Differences</a></li>
+  <li><a href="#example-2-approximate-replication" id="toc-example-2-approximate-replication" class="nav-link" data-scroll-target="#example-2-approximate-replication"><span class="header-section-number">1.6.2</span> Example 2: Approximate Replication</a></li>
+  <li><a href="#example-3-partial-replication" id="toc-example-3-partial-replication" class="nav-link" data-scroll-target="#example-3-partial-replication"><span class="header-section-number">1.6.3</span> Example 3: Partial Replication</a></li>
+  <li><a href="#example-4-replication-failure" id="toc-example-4-replication-failure" class="nav-link" data-scroll-target="#example-4-replication-failure"><span class="header-section-number">1.6.4</span> Example 4: Replication Failure</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">2</span> Discussion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3</span> References</a></li>
+  </ul>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="Appendix A-preview.html"><i class="bi bi-journal-code"></i>Appendix A: Formal Framework</a></li><li><a href="pathdiagrams-preview.html"><i class="bi bi-journal-code"></i>Path Diagrams Replication/Generalization</a></li></ul></div></nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+  
+
+
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>Structural equation models (SEMs) are widely used in applied research to test hypotheses about latent constructs and their relationships. In practice, replication is typically assessed by fitting the same model to a new dataset and evaluating whether global fit indices remain acceptable or whether selected parameters retain statistical significance. Empirically, these approaches often yield ambiguous or unstable outcomes. Models may exhibit acceptable global fit across datasets while differing substantially in parameter estimates, reflecting the non-uniqueness of the model-implied covariance structure. Conversely, parameters that were statistically significant in an original study may fail to reach significance in a replication due to differences in sample size, measurement quality, or sampling variability. In addition, estimation itself may be unstable. A model that converges in one dataset may fail to converge in another sample drawn from the same population, or even in resampled versions of the original data. Such behavior indicates sensitivity of the model to sampling fluctuations or weak identification, and implies that replication may fail at the level of model estimation rather than parameter comparison. These issues suggest that replication in SEM requires an explicit framework for distinguishing model fit, parameter stability, and theoretical stability. We argue that replication of SEMs can be assessed using the logic of invariance testing: measurement invariance establishes whether parameters can be meaningfully compared across datasets, parameter stability provides statistical evidence for replication, and theoretical stability determines whether the substantive claim encoded by the model is preserved.</p>
+<section id="replication" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="replication"><span class="header-section-number">1.1</span> Replication</h2>
+<p>Replication is the ability to obtain consistent findings when a study is repeated with new independent data being collected under the same or sufficiently similar methodological and theoretical conditions as the original study. In the context of empirical research, a finding can be understood at different analytical levels: as an empirical regularity, as an estimand-based claim, or as a theoretical claim about an underlying mechanism that generates observed patterns. The type or extent of replication relevant to a finding depends on which of these levels the finding is defined at.</p>
+<p><span class="citation" data-cites="Radder1992">Radder (<a href="#ref-Radder1992" role="doc-biblioref">1992</a>)</span> characterizes replication as comprising three distinct forms: (a) material replication; (b) reproducibility of the theoretical interpretation; and (c) replication of the experimental result through an alternative material procedure. <span class="citation" data-cites="Schmidt2009">Schmidt (<a href="#ref-Schmidt2009" role="doc-biblioref">2009</a>)</span> builds on this definition and establishes the concepts of direct replication as a restrictive and narrow form of replication and conceptual replication as a wider notion of replication.</p>
+<p>Direct replication refers to a repetition of the original experimental or observational procedure aimed at re-estimating the same estimand under equivalent conditions. Formally, direct replication concerns approximate agreement in the estimation of the same substantive quantity:</p>
+<p><span class="math display">\[\theta^{*(1)} \approx \theta^{*(2)}.\]</span></p>
+<p>Under finite sampling, exact numerical equality of parameter estimates is generally implausible. Thus, direct replication refers to a repetition of the original experimental or observational procedure aimed at re-estimating the same estimand under equivalent conditions. This in turn relates to non-experimental methods as when a new study estimates the same estimand under conditions that are equal to the original, operationalizing the variables in the same way, with differences limited to incidental sources of variation such as sample, time, or setting. Under this definition, deviations from the original estimate should be small, but exact numerical equality is not required.</p>
+<p>By contrast, conceptual replication concerns the stability of a theoretical claim under changes in operationalization. This relates to <span class="citation" data-cites="Radder1992">Radder (<a href="#ref-Radder1992" role="doc-biblioref">1992</a>)</span>, his b and c compartments of a replication, so that the same theoretical claim or construct is supported using a different estimand that is theoretically analogous to the original. This involves changes in operationalization, such as different independent or dependent measures, while retaining the underlying conceptual target. <!--
+Let $\theta^{(1)} \in \Theta_1$ and $\theta^{(2)} \in \Theta_2$ denote estimands from two differently operationalized studies. 
+--> Conceptual replication can then be expressed through a mapping <span class="math inline">\(\phi\)</span> such that</p>
+<p><span class="math display">\[C(\theta^{(1)}) = C(\phi(\theta^{(2)})), \]</span></p>
+<p>where <span class="math inline">\(C(\cdot)\)</span> denotes the theoretical claim supported by the estimand. In this case, replication is evaluated at the level of theoretical equivalence rather than parameter identity.</p>
+</section>
+<section id="replicating-structural-equation-models" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="replicating-structural-equation-models"><span class="header-section-number">1.2</span> Replicating Structural Equation Models</h2>
+<p>According to <span class="citation" data-cites="Kaplan2009">Kaplan (<a href="#ref-Kaplan2009" role="doc-biblioref">2009</a>)</span>, SEM comprises a class of methodologies designed to express a hypothesized model through summary statistics derived from empirical observations, parameterized by a reduced set of structural parameters. As SEMs are also considered to be a way to formulate social science theories<span class="citation" data-cites="DeLeeuw2009">(<a href="#ref-DeLeeuw2009" role="doc-biblioref">De Leeuw and Berk 2009</a>)</span>, for a SEM to be deemed replicated, the encompassed theory needs to hold in the data, either globally or regarding certain parameters.</p>
+<p>For models involving continuous latent variables, the associated hypotheses typically pertain to the means, variances, and covariances of the observed variables. Hypotheses may also concern effect sizes, ordering of parameter magnitudes, or specific parameter values. Because SEMs often contain many estimated parameters, replication should generally focus on those outcomes that are substantively relevant to the hypothesis under study.</p>
+<section id="global-model-fit-versus-parameter-level-replication" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="global-model-fit-versus-parameter-level-replication"><span class="header-section-number">1.2.1</span> Global model fit versus parameter-level replication</h3>
+<p>Global model fit concerns the adequacy of the model-implied covariance structure. Let <span class="math inline">\(\boldsymbol{\Sigma}(\theta)\)</span> denote the covariance matrix implied by the model parameters <span class="math inline">\(\theta\)</span>, and let <span class="math inline">\(\mathbf{S}^{(d)}\)</span> denote the observed covariance matrix in dataset <span class="math inline">\(d\)</span>. Global fit evaluates whether</p>
+<p><span class="math display">\[\boldsymbol{\Sigma}(\theta) \approx \mathbf{S}.\]</span></p>
+<p>However, good global fit in both datasets does not imply replication at the level of parameters. Multiple parameter configurations may produce similar model-implied covariance structures. Global fit therefore concerns the adequacy of the model-implied distribution, whereas replication at the level of parameters concerns the stability of theoretically relevant estimands.</p>
+<p>Accordingly, replication in SEM should be evaluated with respect to those parameters that directly encode the substantive claim under investigation. Let <span class="math inline">\(\theta^*\)</span> denote the subset of theory-relevant model parameters. Replication at the parameter level may then be expressed as</p>
+<p><span class="math display">\[
+\theta^{*(1)}
+\approx
+\theta^{*(2)}.
+\]</span></p>
+<p>This formulation captures stability of theory-relevant estimands rather than merely adequacy of the model-implied covariance structure. At the same time, parameter stability should not be equated with replication success itself. Replication ultimately concerns the stability of the substantive conclusions supported by these parameters.</p>
+<p>If replication is viewed as a comparison of theory-relevant parameters across independent datasets, both datasets may be treated as realizations of the same underlying population model. The resulting problem is therefore one of systematic parameter comparison across datasets. In the following sections, we argue that the logic of measurement and structural invariance provides a natural methodological framework for addressing this problem.</p>
+</section>
+</section>
+<section id="invariance-testing" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="invariance-testing"><span class="header-section-number">1.3</span> Invariance Testing</h2>
+<p>Measurement invariance (MI) refers to the statistical property that a measurement instrument assesses the same latent construct equivalently across different groups. In other words, the measurement model operates in the same manner across groups. When MI is established, meaningful comparisons of the underlying construct between groups are justified.</p>
+<p>From a statistical modelling perspective, MI refers to invariance of the measurement parameters across groups. <span class="math display">\[ \theta_M^{(g)} = \theta_M \quad \forall g ,\]</span> where <span class="math inline">\(\theta_M\)</span> denotes the set of measurement parameters, including factor loadings, intercepts, and residual variances.</p>
+<p>Structural invariance (SI), by contrast, refers to equality of structural coefficients across groups, that is, to the requirement that the same association between latent factors exists across groups. <span class="math display">\[\theta_S^{(g)} = \theta_S \quad \forall g,\]</span> where <span class="math inline">\(\theta_S\)</span> denotes the set of structural parameters governing the relationships among latent variables.</p>
+<p>Traditionally, MI and SI are characterized via increasingly strict levels of invariance that each add further restrictions on statistical parameters across groups. In the classical view, MI is attained only when configural, metric, scalar, and residual invariance hold. These correspond to successive equality restrictions on factor loadings, intercepts, and residual variances across groups. More recent perspectives conceptualize invariance more generally as the absence of systematic moderation of model parameters by variables external to the model. Formally, if model parameters depend on group membership through</p>
+<p><span class="math display">\[ \theta^{(g)} = \theta + \Delta^{(g)}, \]</span></p>
+<p>then invariance corresponds to the condition</p>
+<p><span class="math display">\[ \Delta^{(g)} = 0 \quad \forall g. \]</span></p>
+<p>Covariance invariance analyses evaluate whether covariances among latent factors are equivalent across groups, whereas SI analyses examine whether the structural relationships among latent factors are equal across groups. Together, these analyses assess whether relationships among latent variables remain stable across groups or vary systematically as a function of group membership.</p>
+</section>
+<section id="using-invariance-testing-to-replicate-sems" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="using-invariance-testing-to-replicate-sems"><span class="header-section-number">1.4</span> Using Invariance Testing to replicate SEMs</h2>
+<p>The central argument of this paper is that the logic of invariance testing can be repurposed as a methodological framework for assessing replication in SEM. Measurement invariance is not itself a theory of replication. Rather, it provides a statistical procedure for evaluating whether theory-relevant parameters remain stable under a specified source of variation. In traditional applications, this variation is induced by group membership. In replication research, the relevant source of variation is independent data collection. The methodological role of invariance testing therefore remains unchanged, while the substantive interpretation shifts from group comparison to replication assessment.</p>
+<p>Whereas measurement invariance is conditional on group definitions, replication is conditional on independent datasets. Nevertheless, both involve the assessment of parameter stability under variation. This makes the relation between replication and invariance testing explicit: both evaluate whether theory-relevant parameters remain stable when conditions change, differing primarily in the source of that variation.<br>
+Replication of SEMs across an original and a replication sample should therefore proceed within a sequential multiple-group manner.</p>
+<p>Replication, as defined above, refers to the stability of theory-relevant parameters across independent datasets and is not conditional on measurement invariance. However, in the context of SEM, the empirical assessment of structural parameter stability requires that the underlying measurement model operates equivalently across datasets. Without such equivalence, observed differences in structural parameters may reflect differences in measurement rather than differences in the underlying relations of interest. Measurement invariance is therefore a necessary condition for the valid interpretation of structural replication.</p>
+<p>The analogy to invariance testing applies primarily to the statistical assessment of parameter stability. As in measurement invariance research, evidence against exact equality does not necessarily imply substantively meaningful non-equivalence. Accordingly, the outcome of invariance tests should be interpreted with respect to the theoretical claims represented by the constrained parameters. This suggests a distinction between the statistical assessment of replication and its substantive interpretation. Measurement invariance provides the methodological framework, parameter stability constitutes the statistical target, and theoretical stability serves as the criterion for replication. The former concerns the stability of theory-relevant parameters across datasets, whereas the latter concerns whether any observed differences alter the theoretical conclusions supported by the model.</p>
+<p>First, measurement invariance between the two samples has to be established:</p>
+<p><span class="math display">\[\theta_M^{(1)} = \theta_M^{(2)}. \]</span></p>
+<p>At a minimum, sufficient measurement invariance must be established for the structural parameters of interest to be meaningfully compared across datasets. Conditional on sufficient measurement invariance, structural replication is assessed by comparing an unconstrained multiple-group model, in which the structural parameters of interest are freely estimated across datasets, with a constrained model in which they are set to be equal:</p>
+<p><span class="math display">\[ H_0: \theta_S^{*(1)} = \theta_S^{*(2)}. \]</span></p>
+<p>This comparison could be evaluated with a likelihood-ratio statistic. If a model in which the parameters are constrained to be equal across groups fits the data no worse than a model in which they are freely estimated, this is consistent with structural stability of those parameters. Conversely, if the constrained model fits the data worse, this indicates that the parameters differ across groups. At the same time, such tests should be interpreted cautiously because they are sensitive to sample size and do not by themselves capture uncertainty in a substantively calibrated way.</p>
+</section>
+<section id="quantifying-and-evaluating-discrepancies" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="quantifying-and-evaluating-discrepancies"><span class="header-section-number">1.5</span> Quantifying and Evaluating Discrepancies</h2>
+<p>Evidence against exact equality does not necessarily imply replication failure. As in the measurement invariance literature, statistically detectable differences may have negligible substantive consequences [NYE Reference]. <!-- NYE Reference add here --> The question therefore shifts from whether parameters differ to whether the observed differences alter the theoretical claim supported by the model.</p>
+<p>This perspective is consistent with the earlier formulation of conceptual replication, where replication was evaluated through preservation of a theoretical claim rather than equality of estimands. The same logic can be extended to direct replication. Let</p>
+<p><span class="math display">\[
+C(\theta)
+\]</span></p>
+<p>denote the theoretical claim implied by a parameter configuration <span class="math inline">\(\theta\)</span>. Direct replication may then be interpreted as preservation of the same theoretical claim across independent datasets:</p>
+<p><span class="math display">\[
+C\left(\theta^{*(1)}\right) = C\left(\theta^{*(2)}\right).
+\]</span></p>
+<p>Under this formulation, parameter stability constitutes evidence for replication, but replication itself is evaluated at the level of theoretical conclusions. Consequently, statistically detectable parameter differences need not imply replication failure if the substantive claim represented by those parameters remains unchanged.</p>
+<p>This formulation unifies direct and conceptual replication within a common framework. For conceptual replication, preservation of a theoretical claim is evaluated across theoretically related estimands:</p>
+<p><span class="math display">\[
+C\left(\theta^{(1)}\right) = C\left(\phi\left(\theta^{(2)}\right)\right),
+\]</span></p>
+<p>where <span class="math inline">\(\phi\)</span> denotes a mapping between different operationalizations. By contrast, direct replication concerns preservation of the same theoretical claim for the same estimand across independent datasets:</p>
+<p><span class="math display">\[
+C\left(\theta^{*(1)}\right) = C\left(\theta^{*(2)}\right).
+\]</span></p>
+<p>This implies that replication of SEMs is best understood as a graded, parameter- and claim-relative process.<br>
+Because theoretical claims are evaluated through model parameters, assessment of theoretical stability requires a corresponding assessment of parameter stability. Let</p>
+<p><span class="math display">\[ \theta^* = \{\theta_1^*, \dots, \theta_r^*\} \]</span></p>
+<p>denote the set of parameters relevant to the theoretical claim of interest. Parameter stability can then be represented as the vector</p>
+<p><span class="math display">\[ \hat{S} = \left( \mathbb{I}\left(\left|\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\right| \le \epsilon_j\right) \right)_{j=1}^r, \]</span></p>
+<p>where <span class="math inline">\(\mathbb{I}(\cdot)\)</span> is an indicator function and <span class="math inline">\(\epsilon_j\)</span> is a substantively justified tolerance for parameter <span class="math inline">\(j\)</span>. A parameter is said to be empirically <em>stable</em> if</p>
+<p><span class="math display">\[\left|\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\right| \le \epsilon_j.\]</span></p>
+<p>Direct and conceptual replication therefore differ in the degree of operational similarity between studies, but both may be understood as instances of theoretical stability. In direct replication, stability is assessed for the same estimand across datasets, whereas in conceptual replication stability is assessed across theoretically related estimands linked through <span class="math inline">\(\phi\)</span>.</p>
+<p>Full replication corresponds to preservation of all theory-relevant claims across datasets. Partial replication corresponds to preservation of only a subset of those claims. Parameter stability, as represented by the criterion above, provides empirical evidence regarding replication but should not be interpreted as identical to replication itself. This perspective renders approximate and partial replication theoretically grounded rather than ad hoc, because limited deviations in parameter estimates can be interpreted as meaningful quantitative differences rather than categorical failures of replication, paralleling contemporary approaches to approximate invariance.</p>
+</section>
+<section id="practical-evaluation-of-replication-outcomes" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="practical-evaluation-of-replication-outcomes"><span class="header-section-number">1.6</span> Practical Evaluation of Replication Outcomes</h2>
+<p>The preceding sections established a distinction between parameter stability and theoretical stability. Measurement invariance provides the methodological framework for comparing parameters across datasets, whereas replication is ultimately evaluated with respect to the theoretical claims supported by those parameters. The remaining question is therefore how observed parameter discrepancies should be quantified and interpreted in practice.</p>
+<p>Consistent with Nye et al.’s consequence-based perspective on measurement nonequivalence, replication assessment may focus on the substantive consequences of parameter discrepancies rather than their mere statistical presence. In practical applications, replication assessment therefore proceeds in three stages: (a) establish measurement comparability, (b) assess parameter stability, and (c) evaluate whether any remaining discrepancies alter the theoretical claim of interest. The framework proposed here does not prescribe a unique discrepancy metric. Rather, the choice of metric should reflect the substantive consequences of the observed parameter differences. In this sense, replication assessment may be viewed as consequence-based: the relevant question is not merely how much parameter estimates differ, but how much the theoretical implications of the model change as a result.</p>
+<p>Several operationalizations are possible. Discrepancies may be expressed as standardized parameter differences, relative deviations from the original estimate, changes in latent covariance structures, or changes in the model-implied covariance matrix. The common principle is that discrepancy measures should be interpreted with respect to their consequences for the theoretical claim under investigation.</p>
+<!-- Examples -->
+<section id="example-1-full-replication-despite-parameter-differences" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="example-1-full-replication-despite-parameter-differences"><span class="header-section-number">1.6.1</span> Example 1: Full Replication Despite Parameter Differences</h3>
+<p>Consider a structural path relating a latent predictor to a latent outcome. In the original study, the standardized path coefficient is</p>
+<p><span class="math display">\[\hat{\beta}^{(1)} = .50,\]</span> whereas the replication study yields <span class="math display">\[\hat{\beta}^{(2)} = .45.\]</span> The absolute discrepancy is <span class="math display">\[\left|\hat{\beta}^{(1)}-\hat{\beta}^{(2)}\right|=.05.\]</span></p>
+<p>A relative discrepancy measure may be defined as</p>
+<p><span class="math display">\[
+W=
+\frac{\left|\hat{\beta}^{(1)}-\hat{\beta}^{(2)}\right|}
+{\left|\hat{\beta}^{(1)}\right|}.
+\]</span></p>
+<p>Substituting the observed values gives <span class="math display">\[W= \frac{.05}{.50} = .10.\]</span></p>
+<p>Thus, the replication estimate differs by approximately 10% from the original estimate. The discrepancy is therefore small relative to the magnitude of the original effect. Despite this discrepancy, both studies support the same substantive conclusion: the predictor exhibits a positive and moderately sized effect on the outcome. Under the framework proposed here, replication would therefore be considered successful because the theoretical claim is preserved:</p>
+<p><span class="math display">\[
+C\left(\theta^{*(1)}\right) = C\left(\theta^{*(2)}\right).
+\]</span></p>
+</section>
+<section id="example-2-approximate-replication" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="example-2-approximate-replication"><span class="header-section-number">1.6.2</span> Example 2: Approximate Replication</h3>
+<p>Now consider a smaller original effect <span class="math display">\[\hat{\beta}^{(1)}=.10,\]</span> with the replication estimate <span class="math display">\[\hat{\beta}^{(2)}=.05.\]</span> The absolute discrepancy is again <span class="math inline">\(.05,\)</span> but the relative discrepancy becomes</p>
+<p><span class="math display">\[
+W= \frac{.05}{.10} = .50.
+\]</span></p>
+<p>Thus, approximately half of the original effect has disappeared. The absolute discrepancy is identical to that in Example 1, yet its substantive consequences are considerably larger. This illustrates why absolute parameter differences alone may be misleading as indicators of replication success. Depending on the theoretical context, the underlying claim may still be regarded as preserved, but with weaker empirical support. This situation illustrates approximate replication: parameter differences exist, yet the theoretical implication remains largely intact.</p>
+</section>
+<section id="example-3-partial-replication" class="level3" data-number="1.6.3">
+<h3 data-number="1.6.3" class="anchored" data-anchor-id="example-3-partial-replication"><span class="header-section-number">1.6.3</span> Example 3: Partial Replication</h3>
+<p>Suppose a theory predicts three relations among latent variables.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Relation</th>
+<th>Study 1</th>
+<th>Study 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A → B</td>
+<td>.70</td>
+<td>.68</td>
+</tr>
+<tr class="even">
+<td>A → C</td>
+<td>.40</td>
+<td>.41</td>
+</tr>
+<tr class="odd">
+<td>B → C</td>
+<td>.50</td>
+<td>.20</td>
+</tr>
+</tbody>
+</table>
+<p>A discrepancy measure based on the latent relation matrix may be defined as</p>
+<p><span class="math display">\[
+W=
+\max
+\left|
+R^{(1)}-R^{(2)}
+\right|.
+\]</span></p>
+<p>For the example above <span class="math inline">\(W=.30.\)</span>, indicating that at least one theoretically relevant relation differs substantially across studies. Consequently, some theoretical claims are preserved while others are not. Under the proposed framework, this outcome would be interpreted as partial replication rather than complete success or complete failure.</p>
+</section>
+<section id="example-4-replication-failure" class="level3" data-number="1.6.4">
+<h3 data-number="1.6.4" class="anchored" data-anchor-id="example-4-replication-failure"><span class="header-section-number">1.6.4</span> Example 4: Replication Failure</h3>
+<p>Finally, Consider an original study yielding <span class="math inline">\(\hat{\beta}^{(1)}=.45,\)</span> whereas the replication study yields <span class="math inline">\(\hat{\beta}^{(2)}=-.05.\)</span> Although both estimates may be statistically distinguishable from zero, the substantive interpretation changes fundamentally. The original study supports a positive relation between the constructs, whereas the replication study suggests no meaningful relation or even a weak negative association.</p>
+<p>In this case, <span class="math inline">\(C\left(\theta^{*(1)}\right)\neq C\left(\theta^{*(2)}\right),\)</span> because the theoretical conclusion implied by the model is no longer preserved. Replication would therefore be considered unsuccessful.</p>
+<p>These examples illustrate that replication assessment depends not only on the magnitude of parameter differences but also on their consequences for the theoretical claims represented by the model. Consequently, discrepancy measures should be interpreted with respect to the substantive conclusions they support rather than in isolation.</p>
+</section>
+</section>
+</section>
+<section id="discussion" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Discussion</h1>
+<p>It follows that models in their entirety should not be treated as the primary objects of replication. Rather, models serve as entry points for evaluating the stability of the theoretical commitments they encode. This shifts attention away from global model fit toward the robustness of substantively meaningful parameters. Because parameter stability under model misspecification may reflect shared misspecification rather than stability of the underlying relations, global fit is a necessary but not sufficient condition for meaningful interpretation of replication. At the same time, imperfect global fit does not necessarily invalidate replication at the level of specific theory-relevant parameters. Measurement quality also becomes central to replication validity, because instability across datasets may reflect violations of measurement equivalence rather than instability of the structural relations themselves. Replication claims that do not explicitly address measurement equivalence therefore remain ambiguous.</p>
+<p>Conceptual replication has a formal structure under this perspective as it concerns stability of higher-level theoretical claims under deliberate changes in operationalization. This can be understood as stability of <span class="math inline">\(C(\cdot)\)</span> under transformations of the estimand space, rather than equality of the same parameter across datasets. Replication success therefore becomes explicitly conditional on the estimand, the theoretical scope, and the operational context, requiring precise statements about what exactly has or has not replicated. The distinction between invariance testing and replication may therefore be understood as one of scope rather than kind. Invariance evaluates stability across groups within a dataset, whereas replication evaluates stability across independent datasets or study instantiations, but both address the same underlying question of robustness under variation.</p>
+</section>
+<section id="references" class="level1 unnumbered" data-number="3">
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">3 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-DeLeeuw2009" class="csl-entry" role="listitem">
+De Leeuw, J., and R. Berk. 2009. <span>“<span>Preface</span>.”</span> In <em>Structural Equation Modeling: Foundations and Extensions</em>, 2nd ed., edited by J. De Leeuw and R. Berk. SAGE Publications, Inc. <a href="https://doi.org/10.4135/9781452226576">https://doi.org/10.4135/9781452226576</a>.
+</div>
+<div id="ref-Kaplan2009" class="csl-entry" role="listitem">
+Kaplan, David. 2009. <em>Structural <span>Equation</span> <span>Modeling</span> (2nd Ed.): <span>Foundations</span> and <span>Extensions</span></em>. 2nd ed. Edited by J. De Leeuw and R. Berk. SAGE Publications, Inc. <a href="https://doi.org/10.4135/9781452226576">https://doi.org/10.4135/9781452226576</a>.
+</div>
+<div id="ref-Radder1992" class="csl-entry" role="listitem">
+Radder, Hans. 1992. <span>“Experimental Reproducibility and the Experimenters’ Regress.”</span> <em>PSA: Proceedings of the Biennial Meeting of the Philosophy of Science Association</em> 1992: 63–73. <a href="http://www.jstor.org/stable/192744">http://www.jstor.org/stable/192744</a>.
+</div>
+<div id="ref-Schmidt2009" class="csl-entry" role="listitem">
+Schmidt, Stefan. 2009. <span>“Shall We <span>Really</span> Do It <span>Again</span>? <span>The</span> <span>Powerful</span> <span>Concept</span> of <span>Replication</span> Is <span>Neglected</span> in the <span>Social</span> <span>Sciences</span>.”</span> <em>Review of General Psychology</em> 13 (2): 90–100. <a href="https://doi.org/10.1037/a0015108">https://doi.org/10.1037/a0015108</a>.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
