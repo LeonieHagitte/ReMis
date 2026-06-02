@@ -194,11 +194,7 @@ Measurement invariance is therefore a necessary condition for the valid interpre
 
 The analogy to invariance testing applies primarily to the statistical assessment of parameter stability. 
 As in measurement invariance research, evidence against exact equality does not necessarily imply substantively meaningful non-equivalence. 
-Accordingly, the outcome of invariance tests should be interpreted with respect to the theoretical claims represented by the constrained parameters. 
-This suggests a distinction between the statistical assessment of replication and its substantive interpretation. 
-Measurement invariance provides the methodological framework, parameter stability constitutes the statistical target, and theoretical stability serves as the criterion for replication.
-The former concerns the stability of theory-relevant parameters across datasets, whereas the latter concerns whether any observed differences alter the theoretical conclusions supported by the model.
-
+Consequently, observed parameter differences must be interpreted with respect to the theoretical claims represented by the constrained parameters.
 First, measurement invariance between the two samples has to be established:
 
 $$\theta_M^{(1)} = \theta_M^{(2)}. $$
@@ -414,9 +410,9 @@ Because parameter stability under model misspecification may reflect shared miss
 Measurement quality also becomes central to replication validity, because instability across datasets may reflect violations of measurement equivalence rather than instability of the structural relations themselves. 
 Replication claims that do not explicitly address measurement equivalence therefore remain ambiguous.
 
-Conceptual replication has a formal structure under this perspective as it concerns stability of higher-level theoretical claims under deliberate changes in operationalization. 
+Conceptual replication extends this logic to situations in which theoretical claims are evaluated across different operationalizations. 
+Replication success therefore depends on the estimand, the theoretical claim of interest, and the operational context in which that claim is evaluated.
 This can be understood as stability of $C(\cdot)$ under transformations of the estimand space, rather than equality of the same parameter across datasets. 
-Replication success therefore becomes explicitly conditional on the estimand, the theoretical scope, and the operational context, requiring precise statements about what exactly has or has not replicated. 
 The distinction between invariance testing and replication may therefore be understood as one of scope rather than kind.
 Invariance evaluates stability across groups within a dataset, whereas replication evaluates stability across independent datasets or study instantiations, but both address the same underlying question of robustness under variation.
 
