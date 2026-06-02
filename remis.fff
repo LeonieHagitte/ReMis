@@ -1,0 +1,45 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+\noindent{\textbf{Replication Types}}
+
+\vspace{1em}
+
+\setlength{\fboxsep}{6pt}
+\setlength{\fboxrule}{0.4pt}
+
+\begin{minipage}{0.82\textwidth}
+
+\noindent\textbf{(a)} \textit{Direct replication}
+
+\smallskip
+
+\centering
+\fcolorbox{gray!40}{gray!10}{%
+  \includegraphics[width=0.68\linewidth]{direct_rep_sem.png}
+}
+
+\vspace{1.5em}
+
+\raggedright
+\textbf{(b)} \textit{Conceptual replication}
+
+\smallskip
+
+\centering
+\fcolorbox{gray!40}{gray!10}{%
+  \includegraphics[width=0.68\linewidth]{concepual_rep_sem.png}
+}
+
+\vspace{2em}
+
+\captionof{figure}{
+Structural equation model representations of direct and conceptual replications.
+Red arrows indicate theoretically focal relations whose reproduction is evaluated across studies.
+}
+\label{fig:sem_replications}
+
+\end{minipage}
+
+\end{figure*}

@@ -1,14 +1,22 @@
 ---
 title: "ReMis [A fun title could go here]"
 shorttitle: "ReMis"
+
 author:
   - name: "Leonie Hagitte"
 
 bibliography: references.bib
+
 format:
   pdf:
     documentclass: apa7
     classoption: [man]
+    include-in-header:
+      text: |
+        \usepackage{graphicx}
+        \usepackage{xcolor}
+        \usepackage{caption}
+        \captionsetup[figure]{font=small}
 ---
 
 # Introduction 
@@ -78,6 +86,50 @@ Global fit therefore concerns the adequacy of the model-implied distribution, wh
 
 Accordingly, replication in SEM should be evaluated with respect to those parameters that directly encode the substantive claim under investigation. 
 Let $\theta^*$ denote the subset of theory-relevant model parameters. 
+Figure X illustrates this idea. <!-- Add number of figure -->
+The highlighted paths represent theory-relevant relations whose stability is relevant for replication assessment, whereas the remaining model parameters are not necessarily central to the substantive hypothesis under investigation.
+
+<!-- Figure here -->
+\begin{center}
+
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{0.5pt}
+
+\fcolorbox{gray!40}{gray!10}{%
+\begin{minipage}{\textwidth}
+
+\textbf{Replication Types}
+
+\vspace{0.15em}
+
+\noindent\textbf{(a)} \textit{Direct replication}
+
+\smallskip
+
+\centering
+\includegraphics[width=0.95\linewidth, height=0.35\textheight]{direct_rep_sem.png}
+
+\vspace{0.2em}
+
+\raggedright
+\textbf{(b)} \textit{Conceptual replication}
+
+\smallskip
+
+\centering
+\includegraphics[width=0.95\linewidth, height=0.35\textheight]{concepual_rep_sem.png}
+
+\end{minipage}
+}
+
+\vspace{0.5em}
+
+\captionof{figure}{Note. Structural equation model representations of direct and conceptual replication. Highlighted paths indicate theory-relevant parameters ($\theta^*$) whose stability is relevant for replication assessment. In direct replication (a), the same theory-relevant relations are evaluated across studies. In conceptual replication (b), different parameter configurations may support the same higher-level theoretical claim.}
+
+\label{fig:sem_replications}
+
+\end{center}
+
 Replication at the parameter level may then be expressed as
 
 $$
@@ -161,6 +213,34 @@ If a model in which the parameters are constrained to be equal across groups fit
 Conversely, if the constrained model fits the data worse, this indicates that the parameters differ across groups. 
 At the same time, such tests should be interpreted cautiously because they are sensitive to sample size and do not by themselves capture uncertainty in a substantively calibrated way.
 
+<!-- Maybe add a short implementation paragraph-->
+
+\begin{center}
+
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{0.5pt}
+
+\fcolorbox{gray!40}{gray!10}{%
+\begin{minipage}{\textwidth}
+
+\textbf{Ambiguous Replication}
+
+\vspace{0.15em}
+
+\centering
+\includegraphics[width=0.95\linewidth, height=0.35\textheight]{ambiguous_rep_sem.png}
+
+\end{minipage}
+}
+
+\vspace{0.5em}
+
+\captionof{figure}{Note. Ambiguous replication outcome in SEM. Differences are observed in theory-relevant parameters across studies, but their implications for replication remain unclear. Evaluation requires consideration of measurement equivalence and the extent to which the observed discrepancies alter the underlying theoretical claim.}
+
+\label{fig:sem_replications}
+
+\end{center}
+
 ## Quantifying and Evaluating Discrepancies
 
 Evidence against exact equality does not necessarily imply replication failure. 
@@ -229,9 +309,11 @@ Measurement invariance provides the methodological framework for comparing param
 The remaining question is therefore how observed parameter discrepancies should be quantified and interpreted in practice. 
 
 Consistent with Nye et al.'s consequence-based perspective on measurement nonequivalence, replication assessment may focus on the substantive consequences of parameter discrepancies rather than their mere statistical presence.
+<!-- How much difference in observed responses is created by measurement non-equivalence across the entire latent trait distribution. Instead of asking Are the parameters identical? ask How much do the substantive conclusions change? -->
 In practical applications, replication assessment therefore proceeds in three stages: (a) establish measurement comparability, (b) assess parameter stability, and (c) evaluate whether any remaining discrepancies alter the theoretical claim of interest. 
 The framework proposed here does not prescribe a unique discrepancy metric. 
 Rather, the choice of metric should reflect the substantive consequences of the observed parameter differences. 
+<!-- explicitly state criteria for a good discrepancy metric.-->
 In this sense, replication assessment may be viewed as consequence-based: the relevant question is not merely how much parameter estimates differ, but how much the theoretical implications of the model change as a result.
 
 Several operationalizations are possible. 

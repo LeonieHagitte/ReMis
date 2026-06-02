@@ -141,7 +141,10 @@
  
 
 
-\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{caption}
+\captionsetup[figure]{font=small}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -329,8 +332,52 @@ theoretically relevant estimands.
 Accordingly, replication in SEM should be evaluated with respect to
 those parameters that directly encode the substantive claim under
 investigation. Let \(\theta^*\) denote the subset of theory-relevant
-model parameters. Replication at the parameter level may then be
-expressed as
+model parameters. Figure X illustrates this idea. The highlighted paths
+represent theory-relevant relations whose stability is relevant for
+replication assessment, whereas the remaining model parameters are not
+necessarily central to the substantive hypothesis under investigation.
+
+\begin{center}
+
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{0.5pt}
+
+\fcolorbox{gray!40}{gray!10}{%
+\begin{minipage}{\textwidth}
+
+\textbf{Replication Types}
+
+\vspace{0.15em}
+
+\noindent\textbf{(a)} \textit{Direct replication}
+
+\smallskip
+
+\centering
+\includegraphics[width=0.95\linewidth, height=0.35\textheight]{direct_rep_sem.png}
+
+\vspace{0.2em}
+
+\raggedright
+\textbf{(b)} \textit{Conceptual replication}
+
+\smallskip
+
+\centering
+\includegraphics[width=0.95\linewidth, height=0.35\textheight]{concepual_rep_sem.png}
+
+\end{minipage}
+}
+
+\vspace{0.5em}
+
+\captionof{figure}{Note. Structural equation model representations of direct and conceptual replication. Highlighted paths indicate theory-relevant parameters ($\theta^*$) whose stability is relevant for replication assessment. In direct replication (a), the same theory-relevant relations are evaluated across studies. In conceptual replication (b), different parameter configurations may support the same higher-level theoretical claim.}
+
+\label{fig:sem_replications}
+
+\end{center}
+
+Replication at the parameter level may then be expressed as
 
 \[
 \theta^{*(1)}
@@ -472,6 +519,32 @@ time, such tests should be interpreted cautiously because they are
 sensitive to sample size and do not by themselves capture uncertainty in
 a substantively calibrated way.
 
+\begin{center}
+
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{0.5pt}
+
+\fcolorbox{gray!40}{gray!10}{%
+\begin{minipage}{\textwidth}
+
+\textbf{Ambiguous Replication}
+
+\vspace{0.15em}
+
+\centering
+\includegraphics[width=0.95\linewidth, height=0.35\textheight]{ambiguous_rep_sem.png}
+
+\end{minipage}
+}
+
+\vspace{0.5em}
+
+\captionof{figure}{Note. Ambiguous replication outcome in SEM. Differences are observed in theory-relevant parameters across studies, but their implications for replication remain unclear. Evaluation requires consideration of measurement equivalence and the extent to which the observed discrepancies alter the underlying theoretical claim.}
+
+\label{fig:sem_replications}
+
+\end{center}
+
 \subsection{Quantifying and Evaluating
 Discrepancies}\label{quantifying-and-evaluating-discrepancies}
 
@@ -596,9 +669,9 @@ Differences}\label{example-1-full-replication-despite-parameter-differences}
 Consider a structural path relating a latent predictor to a latent
 outcome. In the original study, the standardized path coefficient is
 
-\(\hat{\beta}^{(1)} = .50,\) whereas the replication study yields
-\(\hat{\beta}^{(2)} = .45.\) The absolute discrepancy is
-\(\left|\hat{\beta}^{(1)}-\hat{\beta}^{(2)}\right|=.05.\)
+\[\hat{\beta}^{(1)} = .50,\] whereas the replication study yields
+\[\hat{\beta}^{(2)} = .45.\] The absolute discrepancy is
+\[\left|\hat{\beta}^{(1)}-\hat{\beta}^{(2)}\right|=.05.\]
 
 A relative discrepancy measure may be defined as
 
@@ -606,7 +679,9 @@ A relative discrepancy measure may be defined as
 W=
 \frac{\left|\hat{\beta}^{(1)}-\hat{\beta}^{(2)}\right|}
 {\left|\hat{\beta}^{(1)}\right|}.
-\] Substituting the observed values gives \(W= \frac{.05}{.50} = .10.\)
+\]
+
+Substituting the observed values gives \[W= \frac{.05}{.50} = .10.\]
 
 Thus, the replication estimate differs by approximately 10\% from the
 original estimate. The discrepancy is therefore small relative to the
@@ -623,8 +698,8 @@ C\left(\theta^{*(1)}\right) = C\left(\theta^{*(2)}\right).
 \subsubsection{Example 2: Approximate
 Replication}\label{example-2-approximate-replication}
 
-Now consider a smaller original effect \(\hat{\beta}^{(1)}=.10,\) with
-the replication estimate \(\hat{\beta}^{(2)}=.05.\) The absolute
+Now consider a smaller original effect \[\hat{\beta}^{(1)}=.10,\] with
+the replication estimate \[\hat{\beta}^{(2)}=.05.\] The absolute
 discrepancy is again \(.05,\) but the relative discrepancy becomes
 
 \[
