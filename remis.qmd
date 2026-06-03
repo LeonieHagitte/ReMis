@@ -30,7 +30,7 @@ It is now generally accepted that the combination of questionable research pract
 Meanwhile, replication studies have gained more attention and appraisal in the community. 
 While there has been many perspective on how replication should be approached methodologically and conceptually in univariate statistics [citations needed], there has been less attention on how replication of latent variable models should be approached.
 Structural equation models (SEMs) are widely used class of latent variable models in applied research to test hypotheses about latent constructs and their relationships. 
-Fundamentally, they distinguish a measurement model that relates observed and latent variables and a structural model that relates latent variables to each other. 
+This renders the replication of SEMs an important task for research, especially in the behavioural and social sciences. 
 In practice, replication is typically assessed by fitting the same model to a new dataset and evaluating whether global fit indices remain acceptable or whether selected parameters retain statistical significance.
 
 Empirically, these approaches often yield ambiguous or unstable outcomes. 
