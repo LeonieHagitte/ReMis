@@ -3,8 +3,7 @@ title: "Appendix A: Formal Framework"
 
 format:
   pdf:
-    documentclass: apa7
-    classoption: [man]
+    documentclass: article
 ---
 
 # A.1 Notation

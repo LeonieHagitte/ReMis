@@ -4,6 +4,8 @@ project:
 
 manuscript:
   article: remis.qmd
+  notebooks:
+    - notebook: AppendixA.qmd
 
 bibliography: references.bib
 
