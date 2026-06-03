@@ -2,7 +2,7 @@
 title: "ReMis [A fun title could go here]"
 shorttitle: "ReMis"
 
-author: 'Leonie Hagitte$^{1,2,3}$, Andreas M. Brandmaier$^{2,3,4}$'
+author: 'Leonie Hagitte$^{1,2,3}$, Andreas M. Brandmaier$^{2,3,4}$, Aaron Peikert$^{2,4}$'
 
 bibliography: references.bib
 
@@ -16,7 +16,7 @@ format:
         $^{2}$Max Planck Institute for Human Development{,} Berlin{,} Germany\\
         $^{3}$MSB Medical School Berlin{,} Berlin{,} Germany\\
         $^{4}$Max Planck UCL Centre for Computational Psychiatry and Ageing Research{,} Berlin{,} Germany}
-        \authornote{Leonie Hagitte (ORCID: 0000-0001-6850-6970) Andreas M. Brandmaier (ORCID: 0000-0001-8765-6982) Correspondence concerning this article should be addressed to Leonie Hagitte, Max Planck Institute for Human Development, Berlin, Germany. Email: hagitte@mpib-berlin.mpg.de}
+        \authornote{Leonie Hagitte (ORCID: 0000-0001-6850-6970), Andreas M. Brandmaier (ORCID: 0000-0001-8765-6982), Aaron Peikert (ORCID: 0000-0001-7813-818X); Correspondence concerning this article should be addressed to Leonie Hagitte, Max Planck Institute for Human Development, Berlin, Germany. Email: hagitte@mpib-berlin.mpg.de}
         \usepackage{graphicx}
         \usepackage{xcolor}
         \usepackage{caption}
@@ -28,7 +28,7 @@ format:
 Replication studies, that is, attempts to demonstrate that the same findings can be obtained in new study, have long been neglected in psychology -- even though it is a fundamental exercise to corroborate a finding or demonstrate its generalizability across time, persons, or situations [@schmidt2009shall].
 It is now generally accepted that the combination of questionable research practices and a renunciation of replication studies has led to a state of psychology, which some have characterized as "A Vast Graveyard of Undead Theories" [@ferguson2012].
 Meanwhile, replication studies have gained more attention and appraisal in the community. 
-While there has been many perspective on how replication should be approached methodologically and conceptually in univariate statistics [citations needed], there has been less attention on how replication of latent variable models should be approached.
+While there has been many perspective on how replication should be approached methodologically and conceptually in univariate statistics<!--[citations needed -->, there has been less attention on how replication of latent variable models should be approached.
 Structural equation models (SEMs) are widely used class of latent variable models in applied research to test hypotheses about latent constructs and their relationships. 
 This renders the replication of SEMs an important task for research, especially in the behavioural and social sciences. 
 In practice, replication is typically assessed by fitting the same model to a new dataset and evaluating whether global fit indices remain acceptable or whether selected parameters retain statistical significance.
