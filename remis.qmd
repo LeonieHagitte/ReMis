@@ -25,7 +25,7 @@ format:
 
 # Introduction 
 
-Replication studies, that is, attempts to demonstrate that the same findings can be obtained in new study, have long been neglected in psychology -- even though it is a fundamental exercise to corroborate a finding or demonstrate its generalizability across time, persons, or situations [@schmidt2009shall].
+Replication studies, that is, attempts to demonstrate that the same findings can be obtained in new study, have long been neglected in psychology -- even though it is a fundamental exercise to corroborate a finding or demonstrate its generalizability across time, persons, or situations [@Schmidt2009].
 It is now generally accepted that the combination of questionable research practices and a renunciation of replication studies has led to a state of psychology, which some have characterized as "A Vast Graveyard of Undead Theories" [@ferguson2012].
 Meanwhile, replication studies have gained more attention and appraisal in the community. 
 While there has been many perspective on how replication should be approached methodologically and conceptually in univariate statistics<!--[citations needed -->, there has been less attention on how replication of latent variable models should be approached.
@@ -49,19 +49,20 @@ In the context of empirical research, a finding can be understood at different a
 The type or extent of replication relevant to a finding depends on which of these levels the finding is defined at.
 
 @Radder1992 characterizes replication as comprising three distinct forms: *(a) material replication*; *(b) reproducibility of the theoretical interpretation*; and *(c) replication of the experimental result through an alternative material procedure*. 
-@Schmidt2009 builds on this definition and establishes the concepts of *direct replication* as a restrictive and narrow form of replication and *conceptual replication* as a wider notion of replication.
+@Schmidt2009 builds on this definition and establishes the concepts of *direct replication* as a restrictive and narrow form of replication and *conceptual replication* as a wider notion of replication, which targets generalization of the effect of interest.
 
 Direct replication refers to a repetition of the original experimental or observational procedure aimed at re-estimating the same estimand under equivalent conditions. 
+As a consequence, the only difference between effect size estimates in direct replications of an original study are attributable to random sampling error.
 Formally, direct replication concerns approximate agreement in the estimation of the same substantive quantity:
 
 $$\theta^{*(1)} \approx \theta^{*(2)}.$$
 
 Under finite sampling, exact numerical equality of parameter estimates is generally implausible. 
 Thus, direct replication refers to a repetition of the original experimental or observational procedure aimed at re-estimating the same estimand under equivalent conditions. 
-This in turn relates to non-experimental methods as when a new study estimates the same estimand under conditions that are equal to the original, operationalizing the variables in the same way, with differences limited to incidental sources of variation such as sample, time, or setting. 
-Under this definition, deviations from the original estimate should be small, but exact numerical equality is not required.
+This in turn relates to non-experimental methods as when a new study estimates the same estimand under conditions that are equal to the original, operationalizing the variables in the same way, with differences limited to incidental sources of variation such as sample, time, or setting as long as we can assume that they do not confound or moderate the effect of interest. 
+Under this definition, deviations of estimates from a replication attempt from the original estimate should be expected to be small, but exact numerical equality is obviously not required.
 
-By contrast, conceptual replication concerns the stability of a theoretical claim under changes in operationalization. 
+By contrast, conceptual replication concerns different forms of generalization, such as the stability of a theoretical claim under changes in operationalization. 
 This relates to @Radder1992, his *b* and *c* compartments of a replication, so that the same theoretical claim or construct is supported using a different estimand that is theoretically analogous to the original. 
 This involves changes in operationalization, such as different independent or dependent measures, while retaining the underlying conceptual target. 
 Conceptual replication can then be expressed through a mapping $\phi$ such that 
@@ -79,18 +80,20 @@ As SEMs are also considered to be a way to formulate social science theories [@D
 For models involving continuous latent variables, the associated hypotheses typically pertain to the means, variances, and covariances of the observed variables. 
 Hypotheses may also concern effect sizes, ordering of parameter magnitudes, or specific parameter values. 
 Because SEMs often contain many estimated parameters, replication should generally focus on those outcomes that are substantively relevant to the hypothesis under study.
+As a result, the same two SEMs estimated in two datasets may successfully replicate one effect but not another one; it is therefore important to regard the success of replication in multivariate models conditional on an effect of interest.
 
 ### Global model fit versus parameter-level replication
 
-Global model fit concerns the adequacy of the model-implied covariance structure. 
+Global model fit concerns the adequacy of the model-implied covariance matrix and means vector to represent the empirically observed covariance matrix and means vector
+
 Let $\boldsymbol{\Sigma}(\theta)$ denote the covariance matrix implied by the model parameters $\theta$, and let $\mathbf{S}^{(d)}$ denote the observed covariance matrix in dataset $d$. 
 Global fit evaluates whether
 
-$$\boldsymbol{\Sigma}(\theta) \approx \mathbf{S}.$$
+$$\boldsymbol{\Sigma}(\theta) \approx \mathbf{S}\ \text{and}\ \boldsymbol{\mu}(\theta) \approx \boldsymbol{m}.$$
 
 However, good global fit in both datasets does not imply replication at the level of parameters. 
 Multiple parameter configurations may produce similar model-implied covariance structures. 
-Global fit therefore concerns the adequacy of the model-implied distribution, whereas replication at the level of parameters concerns the stability of theoretically relevant estimands.
+Global fit therefore concerns the adequacy of the model-implied multivariate distribution, whereas replication at the level of parameters concerns the stability of theoretically relevant estimands.
 
 Accordingly, replication in SEM should be evaluated with respect to those parameters that directly encode the substantive claim under investigation. 
 Let $\theta^*$ denote the subset of theory-relevant model parameters. 
