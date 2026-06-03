@@ -4,23 +4,7 @@ shorttitle: "ReMis"
 
 author:
   - name: "Leonie Hagitte"
-    corresponding: true
-    orcid: 0000-0001-6850-6970
-    email: hagitte@mpib-berlin.mpg.de
-    affiliations:
-      - name: Max Planck Institute for Human Development
-        department: Center for Lifespan Psychology
-      - name: MSB Medical School Berlin
-        deparment: Department of Psychology
-  - name: "Andreas M. Brandmaier"
-    orcid: 0000-0001-8765-6982
-    email: brandmaier@mpib-berlin.mpg.de
-    affiliations:
-      - name: Max Planck Institute for Human Development
-        department: Center for Lifespan Psychology
-      - name: MSB Medical School Berlin
-        deparment: Department of Psychology
-        
+
 bibliography: references.bib
 
 format:
