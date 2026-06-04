@@ -60,7 +60,7 @@ $$\theta^{*(1)} \approx \theta^{*(2)}.$$
 Under finite sampling, exact numerical equality of parameter estimates is generally implausible. 
 Thus, direct replication refers to a repetition of the original experimental or observational procedure aimed at re-estimating the same estimand under equivalent conditions. 
 This in turn relates to non-experimental methods as when a new study estimates the same estimand under conditions that are equal to the original, operationalizing the variables in the same way, with differences limited to incidental sources of variation such as sample, time, or setting as long as we can assume that they do not confound or moderate the effect of interest. 
-Under this definition, deviations of estimates from a replication attempt from the original estimate should be expected to be small, but exact numerical equality is obviously not required.
+Under this definition, parameter estimates obtained in a replication study are expected to be similar to those from the original study, although exact numerical equality is neither expected nor required.
 
 By contrast, conceptual replication concerns different forms of generalization, such as the stability of a theoretical claim under changes in operationalization. 
 This relates to @Radder1992, his *b* and *c* compartments of a replication, so that the same theoretical claim or construct is supported using a different estimand that is theoretically analogous to the original. 
@@ -84,7 +84,7 @@ As a result, the same two SEMs estimated in two datasets may successfully replic
 
 ### Global model fit versus parameter-level replication
 
-Global model fit concerns the adequacy of the model-implied covariance matrix and means vector to represent the empirically observed covariance matrix and means vector
+Global model fit concerns the extent to which the model-implied covariance matrix and mean vector reproduce the empirically observed covariance matrix and mean vector.
 
 Let $\boldsymbol{\Sigma}(\theta)$ denote the covariance matrix implied by the model parameters $\theta$, and let $\mathbf{S}^{(d)}$ denote the observed covariance matrix in dataset $d$. 
 Global fit evaluates whether
