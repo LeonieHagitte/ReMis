@@ -25,7 +25,7 @@ format:
 
 # Introduction 
 
-Replication studies, that is, attempts to demonstrate that the same findings can be obtained in new study, have long been neglected in psychology -- even though it is a fundamental exercise to corroborate a finding or demonstrate its generalizability across time, persons, or situations [@Schmidt2009].
+Replication studies, that is, attempts to demonstrate that the same findings can be obtained in new study, have long been neglected in psychology - even though it is a fundamental exercise to corroborate a finding or demonstrate its generalizability across time, persons, or situations [@Schmidt2009].
 It is now generally accepted that the combination of questionable research practices and a renunciation of replication studies has led to a state of psychology, which some have characterized as "A Vast Graveyard of Undead Theories" [@ferguson2012].
 Meanwhile, replication studies have gained more attention and appraisal in the community. 
 While there has been many perspective on how replication should be approached methodologically and conceptually in univariate statistics<!--[citations needed -->, there has been less attention on how replication of latent variable models should be approached.
@@ -428,10 +428,13 @@ These examples illustrate that replication assessment depends not only on the ma
 
 # Powering replication studies
 
-Replication studies must have adequate precision to detect a substantive effect of interest. Precision is usually presented as statistical power in frequentist frameworks, which is the probability of rejecting the null hypothesis if it is false. Precision also translates to the (expected) width of a confidence interval around an effect size estimate of interest. When planning a replication attempt, we can primarily influence precision by choosing an appropriate sample size because sample size stands out as a modifiable condition that does not influence the identity of original and replication study [@micheloud2022power]. Note that it is typically not a good idea to just assume the original studies' estimate at face value because it may be a result of publication bias and, particularly if the original study has a low sample size, is a rather uncertain estimate -- instead some form of correction could be applied to correct for overoptimism in this estimate [@anderson2017].
+Replication studies must have adequate precision to detect a substantive effect of interest. 
+Precision is usually presented as statistical power in frequentist frameworks, which is the probability of rejecting the null hypothesis if it is false. 
+Precision also translates to the (expected) width of a confidence interval around an effect size estimate of interest. 
+When planning a replication attempt, we can primarily influence precision by choosing an appropriate sample size because sample size stands out as a modifiable condition that does not influence the identity of original and replication study [@micheloud2022power]. 
+Note that it is typically not a good idea to just assume the original studies' estimate at face value because it may be a result of publication bias and, particularly if the original study has a low sample size, is a rather uncertain estimate - instead some form of correction could be applied to correct for overoptimism in this estimate [@anderson2017].
 Following our earlier arguments, sample size planning must not only consider the power to detect differences in the substantial effect of interest but also adequate precision to estimate the measurement model and being able to make meaningful comparison of the measurement quality.
-To this end, it is necessary to define a level of violation of invariance that is intolerable (e.g., at the level of factor loadings or item intercepts) and then estimate power to detect violations of at least that size.
-
+To this end, it is necessary to define a level of violation of invariance that is intolerable (e.g., at the level of factor loadings or item intercepts) and then estimate power to detect violations of at least that size. 
 
 # Discussion 
 
