@@ -328,10 +328,7 @@ In this sense, replication assessment may be viewed as consequence-based: the re
 
 Several operationalizations are possible. 
 Discrepancies may be expressed as standardized parameter differences, relative deviations from the original estimate, changes in latent covariance structures, or changes in the model-implied covariance matrix. 
-The common principle is that discrepancy measures should be interpreted with respect to their consequences for the theoretical claim under investigation.
-
-<!-- Examples -->
-### Example 1: Full Replication Despite Parameter Differences
+The common principle is that discrepancy measures should be interpreted with respect to their consequences for the theoretical claim under investigation. 
 
 In practice, theoretical claims in SEM may take different forms depending on the substantive hypothesis under investigation. 
 As stated earlier, for models involving continuous latent variables, claims often concern the existence, direction, or magnitude of relationships among latent constructs. 
@@ -341,9 +338,16 @@ Whether a discrepancy constitutes replication failure therefore depends on the e
 For example, a small reduction in a positive path coefficient may leave a claim regarding the existence of a positive association unchanged, whereas a change in sign may directly contradict the original theoretical prediction. 
 Similarly, a change in the magnitude of an effect may or may not be consequential depending on whether the theory predicts only the direction of an effect, a minimum effect size, or a specific parameter value.
 
+The specificity of the theoretical claim is therefore central to replication assessment.
+Theories that predict only the existence or direction of an effect place relatively weak constraints on observable outcomes, because a broad range of parameter values remain consistent with the same conclusion.
+By contrast, theories that predict effect magnitudes, relative ordering of effects, or specific parameter values are more restrictive and therefore more informative with respect to replication outcomes. <!-- Mehl 1990 -->
+Consequently, the interpretation of parameter discrepancies depends not only on their magnitude but also on the precision of the theoretical prediction against which they are evaluated.
+
 The evaluation of replication is therefore conditional on the theoretical claim represented by the parameter of interest. 
 Discrepancy measures provide information about the magnitude of observed differences, but their interpretation ultimately depends on whether those differences modify the substantive conclusions implied by the model.
 
+<!-- Examples -->
+### Example 1: Full Replication Despite Parameter Differences
 
 Consider a structural path relating a latent predictor to a latent outcome. In the original study, the standardized path coefficient is
 
