@@ -435,10 +435,11 @@ To this end, it is necessary to define a level of violation of invariance that i
 
 # Discussion 
 
-It follows that models in their entirety should not be treated as the primary objects of replication. 
-Rather, models serve as entry points for evaluating the stability of the theoretical commitments they encode. 
+Replication is a fundamental activity for scientific progress.
+While global model fit is usually a primary outcome in SEM, it is not to be treated as the primary object of replication. 
+Rather, models serve as entry points for evaluating the stability of the theoretical commitments they represent. 
 This shifts attention away from global model fit toward the robustness of substantively meaningful parameters. 
-Because parameter stability under model misspecification may reflect shared misspecification rather than stability of the underlying relations, global fit is a necessary but not sufficient condition for meaningful interpretation of replication. At the same time, imperfect global fit does not necessarily invalidate replication at the level of specific theory-relevant parameters. 
+Because parameter stability under model misspecification may reflect shared misspecification rather than stability of the underlying relations, global fit is a necessary but not sufficient condition for meaningful interpretation of replication. At the same time, imperfect global fit does not necessarily invalidate replication at the level of specific theory-relevant parameters -- it is possible that parts of a model have good local fit and valid and reliable measurement models, such that local effects can be accepted as replicated even in the light of inadequate overall fit. 
 Measurement quality also becomes central to replication validity, because instability across datasets may reflect violations of measurement equivalence rather than instability of the structural relations themselves. 
 Replication claims that do not explicitly address measurement equivalence therefore remain ambiguous.
 
