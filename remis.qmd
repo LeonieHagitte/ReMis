@@ -153,7 +153,7 @@ This formulation captures stability of theory-relevant estimands rather than mer
 At the same time, parameter stability should not be equated with replication success itself. 
 Replication ultimately concerns the stability of the substantive conclusions supported by these parameters.
 
-If replication is viewed as a comparison of theory-relevant parameters across independent datasets, both datasets may be treated as realizations of the same underlying population model. 
+If replication is viewed as a comparison of theoretically relevant parameters across independent datasets, both datasets may be treated as realizations of the same underlying population model. 
 The resulting problem is therefore one of systematic parameter comparison across datasets. 
 In the following sections, we argue that the logic of MI and structural invariance (SI) provides a natural methodological framework for addressing this problem.
 
@@ -186,14 +186,13 @@ $$ \Delta^{(g)} = 0 \quad \forall g. $$
 *Covariance invariance* analyses evaluate whether covariances among latent factors are equivalent across groups, whereas SI analyses examine whether the structural relationships among latent factors are equal across groups. 
 Together, these analyses assess whether relationships among latent variables remain stable across groups or vary systematically as a function of group membership. 
 
-## Using Invariance Testing to replicate SEMs 
+## Using Invariance Testing to evaluate replication success in SEMs 
 
-The central argument of this paper is that the logic of invariance testing can be repurposed as a methodological framework for assessing replication in SEM. 
-Invariance testing is not itself a theory of replication. 
-Rather, it provides a statistical procedure for evaluating whether model parameters remain stable under a specified source of variation. 
-In traditional applications, this variation is induced by group membership. 
-In replication research, the relevant source of variation is independent data collection. 
-The methodological role of invariance testing therefore remains unchanged, while the substantive interpretation shifts from group comparison to replication assessment.
+Our central argument  is that invariance testing is central building block for assessing replication in SEM. 
+It provides a statistical procedure for evaluating whether model parameters remain stable under a specified source of variation. 
+In traditional applications, this variation is induced by discrete group membership, e.g., by asking whether there is invariance across a treatment and a control group. 
+In replication research, the relevant source of variation is the context of data collection. 
+While the methodology is the same, the substantive interpretation shifts from group comparison to assessment of replication success.
 
 Whereas conventional invariance analyses evaluate parameter stability across groups, replication evaluates parameter stability across independent datasets.
 Nevertheless, both involve the assessment of parameter stability under variation. 
@@ -206,7 +205,7 @@ Without such equivalence, observed differences may reflect differences in measur
 MI therefore functions as a prerequisite for meaningful comparison of latent-variable model parameters across studies.
 
 The analogy to invariance testing applies primarily to the statistical assessment of parameter stability. 
-As in MI research, evidence against exact equality does not necessarily imply substantively meaningful non-equivalence. <!-- Nye reference -->
+As in classic MI applications, evidence against exact equality does not necessarily imply substantively meaningful non-equivalence. <!-- Nye reference -->
 Consequently, observed parameter differences must be interpreted with respect to the theoretical claims represented by the constrained parameters.
 First, sufficient MI between the two datasets must be established: 
 
@@ -214,8 +213,11 @@ $$\theta_M^{(1)} = \theta_M^{(2)}. $$
 
 At a minimum, sufficient MI is required for latent-variable parameters to be meaningfully compared across datasets. 
 Conditional on sufficient MI, the theory-relevant parameters of interest are then compared across datasets. 
-The specific parameters under investigation depend on the substantive hypothesis and may include factor loadings, latent variances, latent covariances, structural coefficients, or other model parameters. 
-Within a multiple-group SEM framework, replication may therefore be assessed by comparing an unconstrained model, in which the parameters of interest are freely estimated across datasets, with a constrained model in which those parameters are set equal.
+The strictness of MI depends on the substantive question or hypothesis.
+Specific parameters under investigation may include factor loadings, latent variances, latent covariances, structural coefficients, or other model parameters. 
+For example, if a latent mean difference is to be replicated in a sem [see @brandmaier2026rethinking], factor loadings and item intercepts need to be invariant across original and replication study, whereas if a latent covariance is of interest, it suffices to establish invariance at the level of factor loadings.
+The standard approach to establishing increasingly strict levels of invariance is based on a multiple-group SEM framework.
+Replication success is then assessed by comparing an unconstrained model, in which the parameters of interest are freely estimated across datasets, with a constrained model in which those parameters are set equal.
 
 $$ H_0: \theta^{*(1)} = \theta^{*(2)}. $$
 
@@ -423,6 +425,12 @@ In this case, $C\left(\theta^{*(1)}\right)\neq C\left(\theta^{*(2)}\right),$ bec
 Replication would therefore be considered unsuccessful.
 
 These examples illustrate that replication assessment depends not only on the magnitude of parameter differences but also on their consequences for the theoretical claims represented by the model. Consequently, discrepancy measures should be interpreted with respect to the substantive conclusions they support rather than in isolation.
+
+# Powering replication studies
+
+Replication studies must have adequate precision to detect a substantive effect of interest. Precision is usually presented as statistical power in frequentist frameworks, which is the probability of rejecting the null hypothesis if it is false. Precision also translates to the (expected) width of a confidence interval around an effect size estimate of interest. When planning a replication attempt, we can primarily influence precision by choosing an appropriate sample size because sample size stands out as a modifiable condition that does not influence the identity of original and replication study [@micheloud2022power]. Note that it is typically not a good idea to just assume the original studies' estimate at face value because it may be a result of publication bias and, particularly if the original study has a low sample size, is a rather uncertain estimate -- instead some form of correction could be applied to correct for overoptimism in this estimate [@anderson2017].
+Following our earlier arguments, sample size planning must not only consider the power to detect differences in the substantial effect of interest but also adequate precision to estimate the measurement model and being able to make meaningful comparison of the measurement quality.
+To this end, it is necessary to define a level of violation of invariance that is intolerable (e.g., at the level of factor loadings or item intercepts) and then estimate power to detect violations of at least that size.
 
 
 # Discussion 
