@@ -72,6 +72,12 @@ $$C(\theta^{(1)}) = C(\phi(\theta^{(2)})), $$
 where $C(\cdot)$ denotes the theoretical claim supported by the estimand. 
 In this case, replication is evaluated at the level of theoretical equivalence rather than parameter identity. 
 
+The replication literature contains numerous classifications that distinguish replications according to characteristics of the study design, including the degree to which procedures, populations, settings, or operationalizations are modified relative to the original investigation (e.g., Crano & Brewer, 1973; Keppel, 1982; Cronbach, 1983). 
+Such distinctions are important for understanding the scope of generalization targeted by a replication study.
+
+The present paper addresses a narrower question: how replication outcomes can be evaluated once an original and a replication dataset are available. 
+In the following sections, attention is therefore restricted primarily to direct replications, where the same or similar enough theory-relevant parameters are evaluated across independent datasets. 
+
 ## Replicating Structural Equation Models 
 
 According to @Kaplan2009, SEM comprises a class of methodologies designed to express a hypothesized model through summary statistics derived from empirical observations, parameterized by a reduced set of structural parameters. 
@@ -89,7 +95,7 @@ Global model fit concerns the extent to which the model-implied covariance matri
 Let $\boldsymbol{\Sigma}(\theta)$ denote the covariance matrix implied by the model parameters $\theta$, and let $\mathbf{S}^{(d)}$ denote the observed covariance matrix in dataset $d$. 
 Global fit evaluates whether
 
-$$\boldsymbol{\Sigma}(\theta) \approx \mathbf{S}\ \text{and}\ \boldsymbol{\mu}(\theta) \approx \boldsymbol{m}.$$
+$$\boldsymbol{\Sigma}(\theta) \approx \mathbf{S}\ \text{and}\ \mu(\theta) \approx m.$$
 
 However, good global fit in both datasets does not imply replication at the level of parameters. 
 Multiple parameter configurations may produce similar model-implied covariance structures. 
@@ -97,50 +103,6 @@ Global fit therefore concerns the adequacy of the model-implied multivariate dis
 
 Accordingly, replication in SEM should be evaluated with respect to those parameters that directly encode the substantive claim under investigation. 
 Let $\theta^*$ denote the subset of theory-relevant model parameters. 
-Figure 1 illustrates this idea. 
-The highlighted paths represent theory-relevant relations whose stability is relevant for replication assessment, whereas the remaining model parameters are not necessarily central to the substantive hypothesis under investigation.
-
-<!-- Figure here -->
-\begin{center}
-
-\setlength{\fboxsep}{10pt}
-\setlength{\fboxrule}{0.5pt}
-
-\fcolorbox{gray!40}{gray!10}{%
-\begin{minipage}{\textwidth}
-
-\textbf{Replication Types}
-
-\vspace{0.15em}
-
-\noindent\textbf{(a)} \textit{Direct replication}
-
-\smallskip
-
-\centering
-\includegraphics[width=0.95\linewidth, height=0.35\textheight]{direct_rep_sem.png}
-
-\vspace{0.2em}
-
-\raggedright
-\textbf{(b)} \textit{Conceptual replication}
-
-\smallskip
-
-\centering
-\includegraphics[width=0.95\linewidth, height=0.35\textheight]{concepual_rep_sem.png}
-
-\end{minipage}
-}
-
-\vspace{0.5em}
-
-\captionof{figure}{Note. Structural equation model representations of direct and conceptual replication. Highlighted paths indicate theory-relevant parameters ($\theta^*$) whose stability is relevant for replication assessment. In direct replication (a), the same theory-relevant relations are evaluated across studies. In conceptual replication (b), different parameter configurations may support the same higher-level theoretical claim.}
-
-\label{fig:sem_replications}
-
-\end{center}
-
 Replication at the parameter level may then be expressed as
 
 $$
@@ -215,7 +177,7 @@ At a minimum, sufficient MI is required for latent-variable parameters to be mea
 Conditional on sufficient MI, the theory-relevant parameters of interest are then compared across datasets. 
 The strictness of MI depends on the substantive question or hypothesis.
 Specific parameters under investigation may include factor loadings, latent variances, latent covariances, structural coefficients, or other model parameters. 
-For example, if a latent mean difference is to be replicated in a sem [see @brandmaier2026rethinking], factor loadings and item intercepts need to be invariant across original and replication study, whereas if a latent covariance is of interest, it suffices to establish invariance at the level of factor loadings.
+For example, if a latent mean difference is to be replicated in a SEM [see @brandmaier2026rethinking], factor loadings and item intercepts need to be invariant across original and replication study, whereas if a latent covariance is of interest, it suffices to establish invariance at the level of factor loadings.
 The standard approach to establishing increasingly strict levels of invariance is based on a multiple-group SEM framework.
 Replication success is then assessed by comparing an unconstrained model, in which the parameters of interest are freely estimated across datasets, with a constrained model in which those parameters are set equal.
 
@@ -228,69 +190,23 @@ At the same time, such tests should be interpreted cautiously because they are s
 
 <!-- Maybe add a short implementation paragraph-->
 
-\begin{center}
-
-\setlength{\fboxsep}{10pt}
-\setlength{\fboxrule}{0.5pt}
-
-\fcolorbox{gray!40}{gray!10}{%
-\begin{minipage}{\textwidth}
-
-\textbf{Ambiguous Replication}
-
-\vspace{0.15em}
-
-\centering
-\includegraphics[width=0.95\linewidth, height=0.35\textheight]{ambiguous_rep_sem.png}
-
-\end{minipage}
-}
-
-\vspace{0.5em}
-
-\captionof{figure}{Note. Ambiguous replication outcome in SEM. Differences are observed in theory-relevant parameters across studies, but their implications for replication remain unclear. Evaluation requires consideration of measurement equivalence and the extent to which the observed discrepancies alter the underlying theoretical claim.}
-
-\label{fig:sem_replications}
-
-\end{center}
-
 ## Quantifying and Evaluating Discrepancies
 
 Evidence against exact equality does not necessarily imply replication failure. 
-As in the invariance literature, statistically detectable differences may have negligible substantive consequences. <!-- Nye reference -->
-The question therefore shifts from whether parameters differ to whether the observed differences alter the theoretical claim supported by the model. 
-Let 
+As in the invariance literature, statistically detectable differences may have negligible substantive consequences. 
+Replication assessment therefore shifts from the question of whether parameters differ to whether the observed differences alter the theoretical claim supported by the model. 
+
+Let
 
 $$
 C(\theta)
 $$
 
-denote the theoretical claim implied by a parameter configuration $\theta$. 
-Direct replication may then be interpreted as preservation of the same theoretical claim across independent datasets:
-
-$$
-C\left(\theta^{*(1)}\right) = C\left(\theta^{*(2)}\right).
-$$
-
-Under this formulation, parameter stability constitutes evidence for replication, but replication itself is evaluated at the level of theoretical conclusions. 
-Consequently, statistically detectable parameter differences need not imply replication failure if the substantive claim represented by those parameters remains unchanged.
-
-For conceptual replication, preservation of a theoretical claim is evaluated across theoretically related estimands:
-
-$$
-C\left(\theta^{(1)}\right) = C\left(\phi\left(\theta^{(2)}\right)\right),
-$$
-
-where $\phi$ denotes a mapping between different operationalizations. 
-By contrast, direct replication concerns preservation of the same theoretical claim for the same estimand across independent datasets:
-
-$$
-C\left(\theta^{*(1)}\right) = C\left(\theta^{*(2)}\right).
-$$
-
-This implies that replication of SEMs is best understood as a graded, parameter- and claim-relative process.  
-Because theoretical claims are evaluated through model parameters, assessment of theoretical stability requires a corresponding assessment of parameter stability. 
-Let
+denote the theoretical claim implied by a parameter configuration $\theta$.
+Under this formulation, replication is evaluated at the level of theoretical conclusions rather than parameter equality alone. 
+Consequently, parameter differences need not imply replication failure if the substantive claim represented by those parameters remains unchanged. 
+Because theoretical claims are evaluated through model parameters, assessment of theoretical stability requires a corresponding assessment of parameter stability.
+Let 
 
 $$ \theta^* = \{\theta_1^*, \dots, \theta_r^*\} $$
 
@@ -299,18 +215,41 @@ Parameter stability can then be represented as the vector
 
 $$ \hat{S} = \left( \mathbb{I}\left(\left|\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\right| \le \epsilon_j\right) \right)_{j=1}^r, $$
 
-where $\mathbb{I}(\cdot)$ is an indicator function and $\epsilon_j$ is a substantively justified tolerance for parameter $j$. 
+where $\mathbb{I}(\cdot)$ is an indicator function and $\epsilon_j$ denotes an acceptable discrepancy for parameter $j$. 
+In practice, the choice of $\epsilon_j$ should reflect the uncertainty associated with the parameter estimates being compared, such that larger deviations may be tolerated when estimates are subject to substantial sampling variability. 
+Consequently, $\epsilon_j$ is treated as context-dependent rather than fixed. 
 A parameter is said to be empirically stable if
 
 $$\left|\hat\theta_j^{*(1)} - \hat\theta_j^{*(2)}\right| \le \epsilon_j.$$
 
-Direct and conceptual replication therefore differ in the degree of operational similarity between studies, but both may be understood as instances of theoretical stability. 
-In direct replication, stability is assessed for the same estimand across datasets, whereas in conceptual replication stability is assessed across theoretically related estimands linked through $\phi$.
+In many SEM applications, parameter stability and theoretical stability will often coincide, because theoretical claims are frequently formulated in comparatively broad terms, such as the existence, direction, or general magnitude of an association. 
+In such cases, moderate differences in parameter estimates may leave the substantive conclusion unchanged. 
+But theoretical stability does not logically follow from parameter stability. 
+More restrictive theories may specify minimum effect sizes, relative ordering of effects, or specific parameter values. 
+In such cases, even small parameter discrepancies may alter the theoretical conclusion. 
+Parameter stability therefore provides evidence for theoretical stability, but the two concepts should not be treated as identical. 
 
-Full replication corresponds to preservation of all theory-relevant claims across datasets. 
-Partial replication corresponds to preservation of only a subset of those claims. 
-Parameter stability, as represented by the criterion above, provides empirical evidence regarding replication but should not be interpreted as identical to replication itself.
-This perspective renders approximate and partial replication theoretically grounded rather than ad hoc, because limited deviations in parameter estimates can be interpreted as meaningful quantitative differences rather than categorical failures of replication, paralleling contemporary approaches to approximate invariance. 
+Direct and conceptual replication of SEMs can both be understood within this framework of theoretical stability. 
+Direct replication of SEMs concerns preservation of the same theoretical claim for the same estimand across independent datasets:
+
+$$
+C\left(\theta^{*(1)}\right) = C\left(\theta^{*(2)}\right).
+$$
+
+By contrast, conceptual replication of SEMs concerns the preservation of a theoretical claim across theoretically related estimands:
+
+$$
+C\left(\theta^{*(1)}\right) = C\left(\phi\left(\theta^{*(2)}\right)\right),
+$$
+where $\phi$ denotes a theoretically justified mapping between estimands obtained under different operationalizations. 
+Not every change in operationalization necessitates such a mapping. 
+Conceptual replication arises when the relation between the original and replication estimands can no longer be treated as identity and must instead be justified theoretically. 
+Direct and conceptual replication therefore differ in the degree of operational similarity between studies, but both may be understood as instances of theoretical stability. 
+
+<!-- something on full-, partial- and approximate replication -->
+
+This implies that replication of SEMs is best understood as a graded, parameter- and claim-relative process. 
+
 
 ## Practical Evaluation of Replication Outcomes 
 
@@ -340,7 +279,7 @@ Similarly, a change in the magnitude of an effect may or may not be consequentia
 
 The specificity of the theoretical claim is therefore central to replication assessment.
 Theories that predict only the existence or direction of an effect place relatively weak constraints on observable outcomes, because a broad range of parameter values remain consistent with the same conclusion.
-By contrast, theories that predict effect magnitudes, relative ordering of effects, or specific parameter values are more restrictive and therefore more informative with respect to replication outcomes. <!-- Mehl 1990 -->
+By contrast, theories that predict effect magnitudes, relative ordering of effects, or specific parameter values are more restrictive and therefore more informative with respect to replication outcomes. <!-- Mehl 1990 ; Lakens 2026-->
 Consequently, the interpretation of parameter discrepancies depends not only on their magnitude but also on the precision of the theoretical prediction against which they are evaluated.
 
 The evaluation of replication is therefore conditional on the theoretical claim represented by the parameter of interest. 
@@ -431,6 +370,7 @@ Replication would therefore be considered unsuccessful.
 These examples illustrate that replication assessment depends not only on the magnitude of parameter differences but also on their consequences for the theoretical claims represented by the model. Consequently, discrepancy measures should be interpreted with respect to the substantive conclusions they support rather than in isolation.
 
 # Powering replication studies
+<!-- logic of e.g. SemPower and simulation based approaches to power estimation -->
 
 Replication studies must have adequate precision to detect a substantive effect of interest. 
 Precision is usually presented as statistical power in frequentist frameworks, which is the probability of rejecting the null hypothesis if it is false. 
@@ -441,6 +381,9 @@ Following our earlier arguments, sample size planning must not only consider the
 To this end, it is necessary to define a level of violation of invariance that is intolerable (e.g., at the level of factor loadings or item intercepts) and then estimate power to detect violations of at least that size. 
 
 # Discussion 
+<!-- Ideas/ points for discussion 
+- scale validation & multiple groups as existing use case, unconnected to this framework
+-->
 
 Replication is a fundamental activity for scientific progress.
 While global model fit is usually a primary outcome in SEM, it is not to be treated as the primary object of replication. 
