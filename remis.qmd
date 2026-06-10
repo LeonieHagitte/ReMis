@@ -246,7 +246,16 @@ Not every change in operationalization necessitates such a mapping.
 Conceptual replication arises when the relation between the original and replication estimands can no longer be treated as identity and must instead be justified theoretically. 
 Direct and conceptual replication therefore differ in the degree of operational similarity between studies, but both may be understood as instances of theoretical stability. 
 
-<!-- something on full-, partial- and approximate replication -->
+<!-- something on full-, partial- and approximate replication
+Replication outcomes may differ in the extent to which theory-relevant claims are preserved across datasets. 
+Full replication corresponds to preservation of all theory-relevant claims. 
+Approximate replication refers to situations in which the same theoretical claims are preserved despite meaningful discrepancies in the corresponding parameter estimates. 
+Partial replication occurs when only a subset of the theory-relevant claims is preserved. 
+Replication failure occurs when the core theoretical claims supported by the original study are no longer supported in the replication dataset. 
+Approximate and partial replication address different aspects of replication outcomes: approximate replication concerns the magnitude of discrepancies associated with a given claim, whereas partial replication concerns the number of claims that remain supported. 
+Consequently, a replication may be approximate, partial, or both.
+
+-->
 
 This implies that replication of SEMs is best understood as a graded, parameter- and claim-relative process. 
 
@@ -258,10 +267,14 @@ MI and SI provide the methodological framework for comparing parameters across d
 The remaining question is therefore how observed parameter discrepancies should be quantified and interpreted in practice. 
 
 Consistent with @Nye consequence-based perspective on measurement nonequivalence, replication assessment may focus on the substantive consequences of parameter discrepancies rather than their mere statistical presence. <!-- Nye reference -->
-<!-- How much difference in observed responses is created by measurement non-equivalence across the entire latent trait distribution. Instead of asking Are the parameters identical? ask How much do the substantive conclusions change? -->
+<!-- How much difference in observed responses is created by measurement non-equivalence across the entire latent trait distribution. 
+Instead of asking Are the parameters identical? ask How much do the substantive conclusions change? -->
 In practical applications, replication assessment therefore proceeds in three stages: (a) establish measurement comparability, (b) assess parameter stability, and (c) evaluate whether any remaining discrepancies alter the theoretical claim of interest. 
 The framework proposed here does not prescribe a unique discrepancy metric. 
-Rather, the choice of metric should reflect the substantive consequences of the observed parameter differences. 
+Rather, the choice of metric should reflect both the uncertainty associated with the estimates and the substantive consequences of the observed parameter differences. 
+Likewise, the framework does not prescribe a universal threshold for acceptable discrepancies. 
+The interpretation of parameter differences should account for the uncertainty associated with the estimates being compared as well as their substantive consequences. 
+
 <!-- explicitly state criteria for a good discrepancy metric.-->
 In this sense, replication assessment may be viewed as consequence-based: the relevant question is not merely how much parameter estimates differ, but how much the theoretical implications of the model change as a result.
 
@@ -269,21 +282,10 @@ Several operationalizations are possible.
 Discrepancies may be expressed as standardized parameter differences, relative deviations from the original estimate, changes in latent covariance structures, or changes in the model-implied covariance matrix. 
 The common principle is that discrepancy measures should be interpreted with respect to their consequences for the theoretical claim under investigation. 
 
-In practice, theoretical claims in SEM may take different forms depending on the substantive hypothesis under investigation. 
-As stated earlier, for models involving continuous latent variables, claims often concern the existence, direction, or magnitude of relationships among latent constructs. 
-Other claims may concern the ordering of effects, the relative importance of predictors, the covariance structure among latent variables, or specific parameter values predicted by a theory.
-
-Whether a discrepancy constitutes replication failure therefore depends on the extent to which it alters the relevant theoretical claim. 
-For example, a small reduction in a positive path coefficient may leave a claim regarding the existence of a positive association unchanged, whereas a change in sign may directly contradict the original theoretical prediction. 
-Similarly, a change in the magnitude of an effect may or may not be consequential depending on whether the theory predicts only the direction of an effect, a minimum effect size, or a specific parameter value.
-
-The specificity of the theoretical claim is therefore central to replication assessment.
+The specificity of the theoretical claim is central to replication assessment.
 Theories that predict only the existence or direction of an effect place relatively weak constraints on observable outcomes, because a broad range of parameter values remain consistent with the same conclusion.
 By contrast, theories that predict effect magnitudes, relative ordering of effects, or specific parameter values are more restrictive and therefore more informative with respect to replication outcomes. <!-- Mehl 1990 ; Lakens 2026-->
 Consequently, the interpretation of parameter discrepancies depends not only on their magnitude but also on the precision of the theoretical prediction against which they are evaluated.
-
-The evaluation of replication is therefore conditional on the theoretical claim represented by the parameter of interest. 
-Discrepancy measures provide information about the magnitude of observed differences, but their interpretation ultimately depends on whether those differences modify the substantive conclusions implied by the model.
 
 <!-- Examples -->
 ### Example 1: Full Replication Despite Parameter Differences
